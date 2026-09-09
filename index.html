@@ -183,17 +183,16 @@
       { id: 128, hebrew: "כְּלִיבָה", transcription: "клива́", russian: "Струбцина / Зажим", category: "Столярка и CNC" },
       { id: 129, hebrew: "בְּטִיחוּת", transcription: "бетиху́т", russian: "Безопасность", category: "Столярка и CNC" },
       { id: 130, hebrew: "משְׁקָפַיִם", transcription: "мишкафа́им", russian: "Защитные очки", category: "Столярка и CNC" },
-{"id":131,"hebrew":"הוֹפָעָה","transcription":"хофа'а́","russian":"Поставка / Поступление","category":"Столярка и CNC"},
-  {"id":132,"hebrew":"הַזְמָנָה","transcription":"хазмана́","russian":"Заказ","category":"Столярка и CNC"},
-  {"id":133,"hebrew":"סַפָּק","transcription":"сапа́к","russian":"Поставщик","category":"Столярка и CNC"},
-  {"id":134,"hebrew":"קַבְּלָן","transcription":"кабла́н","russian":"Подрядчик","category":"Столярка и CNC"},
-  {"id":135,"hebrew":"מִשְׁלוֹחַ","transcription":"мишло́ах","russian":"Доставка","category":"Столярка и CNC"},
-  {"id":136,"hebrew":"תְּעוּדַת מִשְׁלוֹחַ","transcription":"теуда́т мишло́ах","russian":"Накладная","category":"Столярка и CNC"},
-  {"id":137,"hebrew":"חָסֵר","transcription":"хасе́р","russian":"Не хватает / Отсутствует","category":"Столярка и CNC"},
-  {"id":138,"hebrew":"מְלַאי","transcription":"млай","russian":"Запас / Наличие на складе","category":"Столярка и CNC"},
-  {"id":139,"hebrew":"מַחְסָן","transcription":"махса́н","russian":"Склад","category":"Столярка и CNC"},
-  {"id":140,"hebrew":"מַלְגֵּזָה","transcription":"мальгеза́","russian":"Погрузчик","category":"Столярка и CNC"}
-
+      { id: 131, hebrew: "הוֹפָעָה", transcription: "хофа'а́", russian: "Поставка / Поступление", category: "Столярка и CNC" },
+      { id: 132, hebrew: "הַזְמָנָה", transcription: "хазмана́", russian: "Заказ", category: "Столярка и CNC" },
+      { id: 133, hebrew: "סַפָּק", transcription: "сапа́к", russian: "Поставщик", category: "Столярка и CNC" },
+      { id: 134, hebrew: "קַבְּלָן", transcription: "кабла́н", russian: "Подрядчик", category: "Столярка и CNC" },
+      { id: 135, hebrew: "מִשְׁלוֹחַ", transcription: "мишло́ах", russian: "Доставка", category: "Столярка и CNC" },
+      { id: 136, hebrew: "תְּעוּדַת מִשְׁלוֹחַ", transcription: "теуда́т мишло́ах", russian: "Накладная", category: "Столярка и CNC" },
+      { id: 137, hebrew: "חָסֵר", transcription: "хасе́р", russian: "Не хватает / Отсутствует", category: "Столярка и CNC" },
+      { id: 138, hebrew: "מְלַאי", transcription: "млай", russian: "Запас / Наличие на складе", category: "Столярка и CNC" },
+      { id: 139, hebrew: "מַחְסָן", transcription: "махса́н", russian: "Склад", category: "Столярка и CNC" },
+      { id: 140, hebrew: "מַלְגֵּזָה", transcription: "мальгеза́", russian: "Погрузчик", category: "Столярка и CNC" },
 
       // --- 🩺 ВРАЧ И ПОЛИКЛИНИКА ---
       { id: 201, hebrew: "רוֹפֵא", transcription: "рофе́", russian: "Врач (м.р.)", category: "Врач и поликлиника" },
@@ -270,22 +269,9 @@
       { id: 6, hebrew: "סְלִיחָה", transcription: "слиха́", russian: "Извините / Простите", category: "Общее" },
       { id: 7, hebrew: "בּסֵדֶר", transcription: "бесе́дер", russian: "Хорошо / В порядке", category: "Общее" },
       { id: 8, hebrew: "מָה נִשְׁמָע", transcription: "ма нишма́", russian: "Как дела?", category: "Приветствия" }
-
     ];
 
-    let words = JSON.parse(localStorage.getItem('hebrew_v2_words')) || vocabularyDB;
-[
-  {"id":131,"hebrew":"הוֹפָעָה","transcription":"хофа'а́","russian":"Поставка / Поступление","category":"Рабочая площадка"},
-  {"id":132,"hebrew":"הַזְמָנָה","transcription":"хазмана́","russian":"Заказ","category":"Рабочая площадка"},
-  {"id":133,"hebrew":"סַפָּק","transcription":"сапа́к","russian":"Поставщик","category":"Рабочая площадка"},
-  {"id":134,"hebrew":"קַבְּלָן","transcription":"кабла́н","russian":"Подрядчик","category":"Рабочая площадка"},
-  {"id":135,"hebrew":"מִשְׁלוֹחַ","transcription":"мишло́ах","russian":"Доставка","category":"Рабочая площадка"},
-  {"id":136,"hebrew":"תְּעוּדַת מִשְׁלוֹחַ","transcription":"теуда́т мишло́ах","russian":"Накладная","category":"Рабочая площадка"},
-  {"id":137,"hebrew":"חָסֵר","transcription":"хасе́р","russian":"Не хватает / Отсутствует","category":"Рабочая площадка"},
-  {"id":138,"hebrew":"מְלַאי","transcription":"млай","russian":"Запас / Наличие на складе","category":"Рабочая площадка"},
-  {"id":139,"hebrew":"מַחְסָן","transcription":"махса́н","russian":"Склад","category":"Рабочая площадка"},
-  {"id":140,"hebrew":"מַלְגֵּזָה","transcription":"мальгеза́","russian":"Погрузчик","category":"Рабочая площадка"}
-]
+    let words = JSON.parse(localStorage.getItem('hebrew_v3_words')) || vocabularyDB;
     let queue = [];
     let initialQueueLength = 0;
     let sessionLearned = 0;
@@ -305,7 +291,7 @@
     const progressBar = document.getElementById('progress-bar');
 
     function save() {
-      localStorage.setItem('hebrew_v2_words', JSON.stringify(words));
+      localStorage.setItem('hebrew_v3_words', JSON.stringify(words));
     }
 
     function initCategoryQueue() {
@@ -358,6 +344,7 @@
     }
 
     function answer(remembered) {
+      if (queue.length === 0) return;
       const current = queue.shift();
       
       if (remembered) {
@@ -373,7 +360,9 @@
 
     document.getElementById('btn-remember').addEventListener('click', () => answer(true));
     document.getElementById('btn-forget').addEventListener('click', () => answer(false));
-    document.getElementById('btn-audio').addEventListener('click', () => speak(queue[0].hebrew));
+    document.getElementById('btn-audio').addEventListener('click', () => {
+      if (queue.length > 0) speak(queue[0].hebrew);
+    });
     
     document.getElementById('btn-reset').addEventListener('click', () => {
       initCategoryQueue();
