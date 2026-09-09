@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Иврит Алеф — 300 Слов</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .hebrew-text { font-family: 'Rubik', sans-serif; direction: rtl; }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
+
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+    <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-between">
+      <h1 class="text-base font-bold text-indigo-600 flex items-center gap-2">
+        <i class="fa-solid fa-language"></i> Иврит 300+
+      </h1>
+      <div class="flex space-x-1 text-xs font-semibold">
+        <button id="nav-study" class="px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-600">Учить</button>
+        <button id="nav-dict" class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100">Словарь</button>
+        <button id="nav-add" class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100">Импорт</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-md w-full mx-auto p-4 flex flex-col justify-between">
+
+    <!-- РЕЖИМ ОБУЧЕНИЯ -->
+    <section id="sec-study" class="flex-1 flex flex-col justify-between py-2">
+      
+      <div class="mb-3">
+        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Выберите тему:</label>
+        <select id="category-filter" class="w-full bg-white border border-slate-200 text-sm font-semibold text-slate-700 py-2 px-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <option value="ALL">🌟 Все категории</option>
+          <option value="Детский сад">👶 Детский сад</option>
+          <option value="Врач и поликлиника">🩺 Врач и поликлиника</option>
+          <option value="Соседи и дом">💬 Соседи и дом</option>
+          <option value="Столярка и CNC">🪵 Столярка и CNC</option>
+        </select>
+      </div>
+
+      <div>
+        <div class="flex justify-between items-center text-xs font-medium text-slate-500 mb-1.5">
+          <span>Осталось слов: <strong id="remaining-count" class="text-indigo-600">0</strong></span>
+          <span>Изучено: <strong id="learned-count" class="text-emerald-600">0</strong></span>
+        </div>
+        <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
+          <div id="progress-bar" class="bg-indigo-600 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div id="card-wrapper" class="my-auto py-3">
+        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md text-center relative flex flex-col justify-between min-h-[260px]">
+          <button id="btn-audio" class="absolute top-4 right-4 text-slate-400 hover:text-indigo-600 p-2 text-xl">
+            <i class="fa-solid fa-volume-high"></i>
+          </button>
+
+          <div class="my-auto pt-2">
+            <div id="card-hebrew" class="hebrew-text text-4xl font-bold text-slate-800 mb-2">
+              שָׁלוֹם
+            </div>
+            <div id="card-transcription" class="text-base font-semibold text-indigo-600 mb-3">
+              [шало́м]
+            </div>
+            <hr class="border-slate-100 my-2">
+            <div id="card-russian" class="text-xl font-bold text-slate-700">
+              Привет / Мир
+            </div>
+          </div>
+
+          <div id="card-category" class="text-[11px] uppercase tracking-wider font-bold text-indigo-500 bg-indigo-50 self-center px-3 py-1 rounded-full mt-2">
+            Категория
+          </div>
+        </div>
+      </div>
+
+      <div id="action-buttons" class="grid grid-cols-2 gap-3 pt-2">
+        <button id="btn-forget" class="bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition">
+          <i class="fa-solid fa-xmark text-lg"></i> Не помню
+        </button>
+        <button id="btn-remember" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-600 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition">
+          <i class="fa-solid fa-check text-lg"></i> Помню
+        </button>
+      </div>
+
+      <div id="empty-state" class="hidden text-center py-12 my-auto bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <h3 class="text-xl font-bold text-slate-800 mb-1">Все слова пройдены!</h3>
+        <button id="btn-reset" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-indigo-700 transition mt-4">
+          Повторить заново
+        </button>
+      </div>
+
+    </section>
+
+    <!-- СЛОВАРЬ -->
+    <section id="sec-dict" class="hidden py-2 space-y-3">
+      <input type="text" id="dict-search" placeholder="Поиск слов..." class="w-full p-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+      <div class="bg-white rounded-2xl border border-slate-200 divide-y divide-slate-100 overflow-hidden max-h-[65vh] overflow-y-auto" id="dict-list"></div>
+    </section>
+
+    <!-- ИМПОРТ / ДОБАВЛЕНИЕ -->
+    <section id="sec-add" class="hidden py-2 space-y-4">
+      <div class="bg-white p-5 rounded-2xl border border-slate-200">
+        <h2 class="font-bold text-slate-800 mb-2">Загрузить полный бак (300 слов)</h2>
+        <p class="text-xs text-slate-500 mb-3">Вставьте подготовленный текстовый массив от бота в поле ниже и нажмите «Импортировать».</p>
+        <textarea id="import-json" rows="6" placeholder="Вставьте массив слов формата JSON сюда..." class="w-full p-2.5 border border-slate-200 rounded-xl text-xs font-mono"></textarea>
+        <button id="btn-import" class="w-full mt-2 bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition">Загрузить слова</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    let words = JSON.parse(localStorage.getItem('hebrew_300_words')) || [];
+    let queue = [];
+    let initialQueueLength = 0;
+    let sessionLearned = 0;
+
+    const elHebrew = document.getElementById('card-hebrew');
+    const elTrans = document.getElementById('card-transcription');
+    const elRus = document.getElementById('card-russian');
+    const elCat = document.getElementById('card-category');
+    const categoryFilter = document.getElementById('category-filter');
+    
+    const cardWrapper = document.getElementById('card-wrapper');
+    const actionButtons = document.getElementById('action-buttons');
+    const emptyState = document.getElementById('empty-state');
+    
+    const elRemaining = document.getElementById('remaining-count');
+    const elLearned = document.getElementById('learned-count');
+    const progressBar = document.getElementById('progress-bar');
+
+    function save() {
+      localStorage.setItem('hebrew_300_words', JSON.stringify(words));
+    }
+
+    function initCategoryQueue() {
+      const selected = categoryFilter.value;
+      if (selected === 'ALL') {
+        queue = [...words];
+      } else {
+        queue = words.filter(w => w.category === selected);
+      }
+      initialQueueLength = queue.length;
+      sessionLearned = 0;
+      renderCard();
+    }
+
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        const cleanText = text.replace(/[\u0591-\u05C7]/g, "");
+        const u = new SpeechSynthesisUtterance(cleanText);
+        u.lang = 'he-IL';
+        u.rate = 0.8;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    function renderCard() {
+      if (words.length === 0) {
+        cardWrapper.classList.add('hidden');
+        actionButtons.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        emptyState.querySelector('h3').textContent = 'Словарь пуст!';
+        emptyState.querySelector('p')?.remove();
+        return;
+      }
+
+      if (queue.length === 0) {
+        cardWrapper.classList.add('hidden');
+        actionButtons.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        progressBar.style.width = '100%';
+        elRemaining.textContent = 0;
+        return;
+      }
+
+      cardWrapper.classList.remove('hidden');
+      actionButtons.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+
+      const current = queue[0];
+      elHebrew.textContent = current.hebrew;
+      elTrans.textContent = `[${current.transcription}]`;
+      elRus.textContent = current.russian;
+      elCat.textContent = current.category;
+
+      elRemaining.textContent = queue.length;
+      elLearned.textContent = sessionLearned;
+
+      const progress = Math.round(((initialQueueLength - queue.length) / initialQueueLength) * 100);
+      progressBar.style.width = `${Math.max(0, progress)}%`;
+    }
+
+    function answer(remembered) {
+      const current = queue.shift();
+      if (remembered) {
+        sessionLearned++;
+      } else {
+        queue.push(current);
+      }
+      renderCard();
+    }
+
+    categoryFilter.addEventListener('change', initCategoryQueue);
+    document.getElementById('btn-remember').addEventListener('click', () => answer(true));
+    document.getElementById('btn-forget').addEventListener('click', () => answer(false));
+    document.getElementById('btn-audio').addEventListener('click', () => speak(queue[0].hebrew));
+    document.getElementById('btn-reset').addEventListener('click', () => initCategoryQueue());
+
+    // Импорт
+    document.getElementById('btn-import').addEventListener('click', () => {
+      try {
+        const jsonText = document.getElementById('import-json').value;
+        const parsed = JSON.parse(jsonText);
+        if (Array.isArray(parsed)) {
+          words = parsed;
+          save();
+          alert(`Успешно загружено ${words.length} слов!`);
+          switchTab('study');
+          initCategoryQueue();
+        }
+      } catch(e) {
+        alert('Ошибка формата! Убедитесь, что скопировали текст полностью.');
+      }
+    });
+
+    const secStudy = document.getElementById('sec-study');
+    const secDict = document.getElementById('sec-dict');
+    const secAdd = document.getElementById('sec-add');
+
+    function switchTab(tab) {
+      [secStudy, secDict, secAdd].forEach(s => s.classList.add('hidden'));
+      if (tab === 'study') secStudy.classList.remove('hidden');
+      if (tab === 'dict') {
+        secDict.classList.remove('hidden');
+        renderDict();
+      }
+      if (tab === 'add') secAdd.classList.remove('hidden');
+    }
+
+    document.getElementById('nav-study').addEventListener('click', () => switchTab('study'));
+    document.getElementById('nav-dict').addEventListener('click', () => switchTab('dict'));
+    document.getElementById('nav-add').addEventListener('click', () => switchTab('add'));
+
+    function renderDict(filter = '') {
+      const list = document.getElementById('dict-list');
+      list.innerHTML = '';
+      words.filter(w => w.hebrew.includes(filter) || w.russian.toLowerCase().includes(filter.toLowerCase()) || w.transcription.toLowerCase().includes(filter.toLowerCase()))
+        .forEach(w => {
+          const div = document.createElement('div');
+          div.className = 'p-3 flex justify-between items-center text-sm border-b border-slate-100';
+          div.innerHTML = `
+            <div>
+              <span class="hebrew-text font-bold text-lg text-slate-800">${w.hebrew}</span>
+              <span class="text-xs text-indigo-600 font-medium ml-1.5">[${w.transcription}]</span>
+              <div class="text-slate-600 text-xs font-medium">${w.russian}</div>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 bg-indigo-50 text-indigo-600 font-bold rounded-full">${w.category}</span>
+          `;
+          list.appendChild(div);
+        });
+    }
+
+    document.getElementById('dict-search').addEventListener('input', e => renderDict(e.target.value));
+
+    initCategoryQueue();
+  </script>
+</body>
+</html>
