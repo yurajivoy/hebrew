@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Иврит Алеф — Специализированный Карточки</title>
+  <title>Иврит — Разговорные Фразы</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
@@ -12,406 +12,145 @@
     .hebrew-text { font-family: 'Rubik', sans-serif; direction: rtl; }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between p-4 max-w-md mx-auto">
 
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
-    <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-between">
-      <h1 class="text-base font-bold text-indigo-600 flex items-center gap-2">
-        <i class="fa-solid fa-language"></i> Иврит Алеф+
-      </h1>
-      <div class="flex space-x-1 text-xs font-semibold">
-        <button id="nav-study" class="px-2.5 py-1.5 rounded-lg bg-indigo-50 text-indigo-600">Учить</button>
-        <button id="nav-dict" class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100">Словарь</button>
-        <button id="nav-add" class="px-2.5 py-1.5 rounded-lg text-slate-600 hover:bg-slate-100">Добавить</button>
-      </div>
+  <!-- ШАПКА -->
+  <header class="flex justify-between items-center bg-white p-4 rounded-2xl border border-slate-200 shadow-sm mb-4">
+    <div>
+      <h1 class="text-base font-bold text-indigo-600"><i class="fa-solid fa-comment-dots"></i> Иврит Фразы</h1>
+      <p class="text-xs text-slate-400">Детсад • Больница • Соседи • CNC</p>
+    </div>
+    <div class="text-right">
+      <span class="text-xs text-slate-500 block">На сегодня:</span>
+      <span id="remaining-count" class="text-lg font-bold text-indigo-600">0</span>
     </div>
   </header>
 
-  <main class="flex-1 max-w-md w-full mx-auto p-4 flex flex-col justify-between">
-
-    <!-- РЕЖИМ ОБУЧЕНИЯ -->
-    <section id="sec-study" class="flex-1 flex flex-col justify-between py-2">
+  <!-- КАРТОЧКА -->
+  <main class="flex-1 flex flex-col justify-center">
+    <div id="card-wrapper" class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md text-center relative flex flex-col justify-between min-h-[300px]">
       
-      <!-- Фильтр категорий -->
-      <div class="mb-3">
-        <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Выберите тему:</label>
-        <select id="category-filter" class="w-full bg-white border border-slate-200 text-sm font-semibold text-slate-700 py-2 px-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <option value="ALL">🌟 Все категории</option>
-          <option value="Детский сад">👶 Детский сад</option>
-          <option value="Врач и поликлиника">🩺 Врач и поликлиника</option>
-          <option value="Соседи и дом">💬 Соседи и дом</option>
-          <option value="Столярка и CNC">🪵 Столярка и CNC</option>
-          <option value="Приветствия">👋 Приветствия</option>
-          <option value="Общее">💬 Общее</option>
-        </select>
-      </div>
+      <!-- Категория (для информации) -->
+      <span id="card-category" class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full self-center">
+        Тема
+      </span>
 
-      <!-- Прогресс -->
-      <div>
-        <div class="flex justify-between items-center text-xs font-medium text-slate-500 mb-1.5">
-          <span>Осталось: <strong id="remaining-count" class="text-indigo-600">0</strong></span>
-          <span>Пройдено в сессии: <strong id="learned-count" class="text-emerald-600">0</strong></span>
+      <!-- Текст карточки -->
+      <div class="my-auto py-4">
+        <!-- Фраза на иврите -->
+        <div id="card-hebrew" class="hebrew-text text-3xl sm:text-4xl font-bold text-slate-800 mb-3 leading-relaxed">
+          שָׁלוֹם, מָה נִשְׁמָע?
         </div>
-        <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden">
-          <div id="progress-bar" class="bg-indigo-600 h-1.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+        
+        <!-- Транскрипция ЛАТИНИЦЕЙ -->
+        <div id="card-transcription" class="text-base font-semibold text-indigo-600 tracking-wide">
+          [Shalom, ma nishma?]
         </div>
       </div>
 
-      <!-- Главная Карточка -->
-      <div id="card-wrapper" class="my-auto py-3">
-        <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md text-center relative flex flex-col justify-between min-h-[260px]">
-          
-          <button id="btn-audio" class="absolute top-4 right-4 text-slate-400 hover:text-indigo-600 p-2 text-xl">
-            <i class="fa-solid fa-volume-high"></i>
-          </button>
+      <!-- Кнопка «Перевод» -->
+      <button id="btn-show-translation" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2 mx-auto">
+        <i class="fa-solid fa-eye"></i> Перевод
+      </button>
 
-          <div class="my-auto pt-2">
-            <div id="card-hebrew" class="hebrew-text text-4xl sm:text-5xl font-bold text-slate-800 mb-2">
-              שָׁלוֹם
-            </div>
-            
-            <div id="card-transcription" class="text-base font-semibold text-indigo-600 mb-3">
-              [шало́м]
-            </div>
+    </div>
 
-            <hr class="border-slate-100 my-2">
-
-            <div id="card-russian" class="text-xl font-bold text-slate-700">
-              Привет / Мир
-            </div>
-          </div>
-
-          <div id="card-category" class="text-[11px] uppercase tracking-wider font-bold text-indigo-500 bg-indigo-50 self-center px-3 py-1 rounded-full mt-2">
-            Приветствия
-          </div>
-        </div>
+    <!-- Финишный экран -->
+    <div id="empty-state" class="hidden text-center py-12 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
+        <i class="fa-solid fa-circle-check"></i>
       </div>
-
-      <!-- Две Кнопки -->
-      <div id="action-buttons" class="grid grid-cols-2 gap-3 pt-2">
-        <button id="btn-forget" class="bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition">
-          <i class="fa-solid fa-xmark text-lg"></i> Не помню
-        </button>
-        <button id="btn-remember" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-600 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition">
-          <i class="fa-solid fa-check text-lg"></i> Помню
-        </button>
-      </div>
-
-      <!-- Финишный экран -->
-      <div id="empty-state" class="hidden text-center py-12 my-auto bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
-        <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
-          <i class="fa-solid fa-check"></i>
-        </div>
-        <h3 class="text-xl font-bold text-slate-800 mb-1">Все слова категории пройдены!</h3>
-        <p class="text-slate-500 text-sm mb-6">Отличная работа. Выберите другую категорию или повторите заново.</p>
-        <button id="btn-reset" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-indigo-700 transition">
-          Повторить эту тему заново
-        </button>
-      </div>
-
-    </section>
-
-    <!-- СЛОВАРЬ -->
-    <section id="sec-dict" class="hidden py-2 space-y-3">
-      <input type="text" id="dict-search" placeholder="Поиск слов..." class="w-full p-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <div class="bg-white rounded-2xl border border-slate-200 divide-y divide-slate-100 overflow-hidden max-h-[70vh] overflow-y-auto" id="dict-list">
-      </div>
-    </section>
-
-    <!-- ДОБАВЛЕНИЕ СЛОВА -->
-    <section id="sec-add" class="hidden py-2">
-      <form id="add-form" class="bg-white p-5 rounded-2xl border border-slate-200 space-y-3">
-        <h2 class="font-bold text-slate-800 mb-2">Добавить новое слово</h2>
-        <div>
-          <label class="text-xs text-slate-500">Иврит (с огласовками)</label>
-          <input type="text" id="add-hebrew" required dir="rtl" placeholder="עֵץ" class="hebrew-text w-full p-2.5 border border-slate-200 rounded-xl text-lg">
-        </div>
-        <div>
-          <label class="text-xs text-slate-500">Транскрипция</label>
-          <input type="text" id="add-trans" required placeholder="эц" class="w-full p-2.5 border border-slate-200 rounded-xl">
-        </div>
-        <div>
-          <label class="text-xs text-slate-500">Перевод на русский</label>
-          <input type="text" id="add-rus" required placeholder="дерево" class="w-full p-2.5 border border-slate-200 rounded-xl">
-        </div>
-        <div>
-          <label class="text-xs text-slate-500">Тема</label>
-          <select id="add-cat" class="w-full p-2.5 border border-slate-200 rounded-xl">
-            <option value="Детский сад">Детский сад</option>
-            <option value="Врач и поликлиника">Врач и поликлиника</option>
-            <option value="Соседи и дом">Соседи и дом</option>
-            <option value="Столярка и CNC">Столярка и CNC</option>
-            <option value="Общее">Общее</option>
-          </select>
-        </div>
-        <button type="submit" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl transition">Сохранить</button>
-      </form>
-    </section>
-
+      <h3 class="text-xl font-bold text-slate-800 mb-1">Все фразы на сегодня пройдены!</h3>
+      <p class="text-slate-500 text-sm mb-4">Возвращайтесь завтра за новыми фразами и повторением.</p>
+      <button id="btn-restart" class="text-xs text-indigo-600 font-semibold hover:underline">Пройти текущий круг еще раз</button>
+    </div>
   </main>
 
+  <!-- КНОПКИ ДЕЙСТВИЯ -->
+  <footer id="action-buttons" class="grid grid-cols-2 gap-3 mt-4">
+    <button id="btn-forget" class="bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition">
+      <i class="fa-solid fa-xmark text-lg"></i> Не помню
+    </button>
+    <button id="btn-remember" class="bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-600 font-bold py-4 rounded-2xl flex items-center justify-center gap-2 active:scale-95 transition">
+      <i class="fa-solid fa-check text-lg"></i> Помню
+    </button>
+  </footer>
+
+  <!-- МОДАЛЬНОЕ ОКНО ПЕРЕВОДА -->
+  <div id="translation-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center shadow-xl transform transition-all border border-slate-100">
+      <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Перевод на русский</h4>
+      <p id="modal-russian-text" class="text-xl font-bold text-slate-800 mb-6 leading-normal">
+        Привет, как дела?
+      </p>
+      <button id="btn-close-modal" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition">
+        Понятно
+      </button>
+    </div>
+  </div>
+
   <script>
-    const vocabularyDB = [
-      // --- 🪵 СТОЛЯРКА И CNC ---
-      { id: 101, hebrew: "נַגָּר", transcription: "нага́р", russian: "Столяр / Плотник", category: "Столярка и CNC" },
-      { id: 102, hebrew: "נַגָּרוּת", transcription: "нагару́т", russian: "Столярная мастерская / Столярное дело", category: "Столярка и CNC" },
-      { id: 103, hebrew: "עֵץ", transcription: "эц", russian: "Дерево / Древесина", category: "Столярка и CNC" },
-      { id: 104, hebrew: "עֵץ מָלֵא", transcription: "эц мале́", russian: "Массив дерева", category: "Столярка и CNC" },
-      { id: 105, hebrew: "סַכִּין", transcription: "саки́ן", russian: "Фреза / Нож", category: "Столярка и CNC" },
-      { id: 106, hebrew: "מְכוֹנָה", transcription: "мехона́", russian: "Станок / Машина", category: "Столярка и CNC" },
-      { id: 107, hebrew: "מִדָּה", transcription: "мида́", russian: "Размер", category: "Столярка и CNC" },
-      { id: 108, hebrew: "מִדּוֹת", transcription: "мидо́т", russian: "Размеры", category: "Столярка и CNC" },
-      { id: 109, hebrew: "עוֹבִי", transcription: "о́ви", russian: "Толщина", category: "Столярка и CNC" },
-      { id: 110, hebrew: "אֹרֶךְ", transcription: "о́рех", russian: "Длина", category: "Столярка и CNC" },
-      { id: 111, hebrew: "רוֹחַב", transcription: "ро́хав", russian: "Ширина", category: "Столярка и CNC" },
-      { id: 112, hebrew: "חִתּוּךְ", transcription: "хиту́х", russian: "Резка / Рез", category: "Столярка и CNC" },
-      { id: 113, hebrew: "כַּרְסוּם", transcription: "карсу́м", russian: "Фрезеровка", category: "Столярка и CNC" },
-      { id: 114, hebrew: "מַכְרְסֵם", transcription: "махрсе́м", russian: "Фрезер", category: "Столярка и CNC" },
-      { id: 115, hebrew: "קֹטֶר", transcription: "ко́тер", russian: "Диаметр", category: "Столярка и CNC" },
-      { id: 116, hebrew: "עֹמֶק", transcription: "о́мек", russian: "Глубина", category: "Столярка и CNC" },
-      { id: 117, hebrew: "תָּכְנִית", transcription: "тохни́т", russian: "Чертеж / Программа", category: "Столярка и CNC" },
-      { id: 118, hebrew: "קֹבֶץ", transcription: "ко́бец", russian: "Файл", category: "Столярка и CNC" },
-      { id: 119, hebrew: "אֶפֶס", transcription: "э́фес", russian: "Ноль / Точка нуля", category: "Столярка и CNC" },
-      { id: 220, hebrew: "כִּוּוּן", transcription: "киву́н", russian: "Калибровка / Настройка", category: "Столярка и CNC" },
-      { id: 121, hebrew: "מהִירוּת", transcription: "мехиру́т", russian: "Скорость", category: "Столярка и CNC" },
-      { id: 122, hebrew: "לַחַץ", transcription: "ла́хац", russian: "Давление / Вакуум", category: "Столярка и CNC" },
-      { id: 123, hebrew: "אֲבָק", transcription: "ава́к", russian: "Пыль / Опилки", category: "Столярка и CNC" },
-      { id: 124, hebrew: "שואב אבָק", transcription: "шоэ́в ава́к", russian: "Аспирация / Струшкоотсос", category: "Столярка и CNC" },
-      { id: 125, hebrew: "דֶּבֶק", transcription: "де́веק", russian: "Клей", category: "Столярка и CNC" },
-      { id: 126, hebrew: "בּוֹרֶג", transcription: "бо́рег", russian: "Винт / Саморез", category: "Столярка и CNC" },
-      { id: 127, hebrew: "מַסְמֵר", transcription: "масме́р", russian: "Гвоздь", category: "Столярка и CNC" },
-      { id: 128, hebrew: "כְּלִיבָה", transcription: "клива́", russian: "Струбцина / Зажим", category: "Столярка и CNC" },
-      { id: 129, hebrew: "בְּטִיחוּת", transcription: "бетиху́т", russian: "Безопасность", category: "Столярка и CNC" },
-      { id: 130, hebrew: "משְׁקָפַיִם", transcription: "мишкафа́им", russian: "Защитные очки", category: "Столярка и CNC" },
-      { id: 131, hebrew: "הוֹפָעָה", transcription: "хофа'а́", russian: "Поставка / Поступление", category: "Столярка и CNC" },
-      { id: 132, hebrew: "הַזְמָנָה", transcription: "хазмана́", russian: "Заказ", category: "Столярка и CNC" },
-      { id: 133, hebrew: "סַפָּק", transcription: "сапа́к", russian: "Поставщик", category: "Столярка и CNC" },
-      { id: 134, hebrew: "קַבְּלָן", transcription: "кабла́н", russian: "Подрядчик", category: "Столярка и CNC" },
-      { id: 135, hebrew: "מִשְׁלוֹחַ", transcription: "мишло́ах", russian: "Доставка", category: "Столярка и CNC" },
-      { id: 136, hebrew: "תְּעוּדַת מִשְׁלוֹחַ", transcription: "теуда́т мишло́ах", russian: "Накладная", category: "Столярка и CNC" },
-      { id: 137, hebrew: "חָסֵר", transcription: "хасе́р", russian: "Не хватает / Отсутствует", category: "Столярка и CNC" },
-      { id: 138, hebrew: "מְלַאי", transcription: "млай", russian: "Запас / Наличие на складе", category: "Столярка и CNC" },
-      { id: 139, hebrew: "מַחְסָן", transcription: "махса́н", russian: "Склад", category: "Столярка и CNC" },
-      { id: 140, hebrew: "מַלְגֵּזָה", transcription: "мальгеза́", russian: "Погрузчик", category: "Столярка и CNC" },
-      { id: 141, hebrew: "לַחְתֹּךְ", transcription: "лахто́х", russian: "Пилить / Резать", category: "Столярка и CNC" },
-      { id: 142, hebrew: "לְכַרְסֵם", transcription: "лехарсе́м", russian: "Фрезеровать", category: "Столярка и CNC" },
-      { id: 143, hebrew: "לִקְדֹּחַ", transcription: "ликдо́ах", russian: "Сверлить", category: "Столярка и CNC" },
-      { id: 144, hebrew: "לְשַׁיֵּף", transcription: "лешайе́ф", russian: "Шлифовать", category: "Столярка и CNC" },
-      { id: 145, hebrew: "לְהַדְבִּיק", transcription: "лехадби́к", russian: "Клеить / Склеивать", category: "Столярка и CNC" },
-      { id: 146, hebrew: "לְהַרְכִּיב", transcription: "лехарки́в", russian: "Собирать / Монтировать", category: "Столярка и CNC" },
-      { id: 147, hebrew: "לְפָרֵק", transcription: "лефаре́к", russian: "Разбирать / Демонтировать", category: "Столярка и CNC" },
-      { id: 148, hebrew: "לִמְדֹד", transcription: "лимдо́д", russian: "Измерять", category: "Столярка и CNC" },
-      { id: 149, hebrew: "לְכַוֵּן", transcription: "лехаве́н", russian: "Настраивать / Калибровать", category: "Столярка и CNC" },
-      { id: 150, hebrew: "לְהַפְעִיל", transcription: "лехафъи́ль", russian: "Запускать / Включать (станок)", category: "Столярка и CNC" },
-      { id: 151, hebrew: "לַעֲצֹר", transcription: "лаацо́р", russian: "Останавливать", category: "Столярка и CNC" },
-      { id: 152, hebrew: "לְנַקּוֹת", transcription: "ленако́т", russian: "Чистить / Убирать", category: "Столярка и CNC" },
-      { id: 153, hebrew: "לְהַחְלִיף", transcription: "лехахли́ф", russian: "Менять / Заменять (инструмент)", category: "Столярка и CNC" },
-      { id: 154, hebrew: "לְחַזֵּק", transcription: "лехазе́к", russian: "Затягивать / Зажимать", category: "Столярка и CNC" },
-      { id: 155, hebrew: "לְשַׁחְרֵר", transcription: "лешахре́р", russian: "Ослаблять / Отжимать", category: "Столярка и CNC" },
-      { id: 156, hebrew: "לִבְדֹּק", transcription: "ливдо́к", russian: "Проверять / Контролировать", category: "Столярка и CNC" },
-      { id: 157, hebrew: "לִצְבֹּעַ", transcription: "лицбо́а", russian: "Красить", category: "Столярка и CNC" },
-      { id: 158, hebrew: "לְצַפּוֹת", transcription: "лецапо́т", russian: "Покрывать (лаком/шпоном)", category: "Столярка и CNC" },
-      { id: 159, hebrew: "לִשְׁאֹב", transcription: "лиш'о́в", russian: "Пылесосить / Всасывать", category: "Столярка и CNC" },
-      { id: 160, hebrew: "לְתַכְנֵן", transcription: "летахне́н", russian: "Проектировать / Программировать", category: "Столярка и CNC" },
-
-      // --- 🩺 ВРАЧ И ПОЛИКЛИНИКА ---
-      { id: 201, hebrew: "רוֹפֵא", transcription: "рофе́", russian: "Врач (м.р.)", category: "Врач и поликлиника" },
-      { id: 202, hebrew: "רוֹפְאָה", transcription: "роф'а́", russian: "Врач (ж.р.)", category: "Врач и поликлиника" },
-      { id: 203, hebrew: "מִרְפָּאָה", transcription: "мирпа'а́", russian: "Поликлиника / Клиника", category: "Врач и поликлиника" },
-      { id: 204, hebrew: "קוּפַת חוֹלִים", transcription: "купа́т холи́м", russian: "Больничная касса", category: "Врач и поликлиника" },
-      { id: 205, hebrew: "תּוֹר", transcription: "тор", russian: "Очередь / Запись к врачу", category: "Врач и поликлиника" },
-      { id: 206, hebrew: "כְּאֵב", transcription: "кеэ́в", russian: "Боль", category: "Врач и поликлиника" },
-      { id: 207, hebrew: "כּוֹאֵב לִי", transcription: "кое́в ли", russian: "Мне болит", category: "Врач и поликлиника" },
-      { id: 208, hebrew: "חֹם", transcription: "хом", russian: "Температура / Жар", category: "Врач и поликлиника" },
-      { id: 209, hebrew: "חוֹלֶה", transcription: "холе́", russian: "Больной", category: "Врач и поликлиника" },
-      { id: 210, hebrew: "תְּרוּפָה", transcription: "труфа́", russian: "Лекарство", category: "Врач и поликлиника" },
-      { id: 211, hebrew: "כַּדּוּר", transcription: "каду́р", russian: "Таблетка", category: "Врач и поликлиника" },
-      { id: 212, hebrew: "מִרְשָׁם", transcription: "мирша́м", russian: "Рецепт врача", category: "Врач и поликлиника" },
-      { id: 213, hebrew: "אִישׁוּר מַחֲלָה", transcription: "ишу́р махала́", russian: "Больничный / Справка", category: "Врач и поликлиника" },
-      { id: 214, hebrew: "בְּדִיקָה", transcription: "бдика́", russian: "Осмотр / Анализ", category: "Врач и поликлиника" },
-      { id: 215, hebrew: "בְּדִיקַת דָּם", transcription: "бдика́т дам", russian: "Анализ крови", category: "Врач и поликлиника" },
-      { id: 216, hebrew: "שִׁעוּל", transcription: "шиу́ль", russian: "Кашель", category: "Врач и поликлиника" },
-      { id: 217, hebrew: "נַזֶּלֶת", transcription: "назе́лет", russian: "Насморк", category: "Врач и поликлиника" },
-      { id: 218, hebrew: "גָּרוֹן", transcription: "гаро́н", russian: "Горло", category: "Врач и поликлиника" },
-      { id: 219, hebrew: "בֶּטֶן", transcription: "бе́тен", russian: "Живот", category: "Врач и поликлиника" },
-      { id: 220, hebrew: "רֹאשׁ", transcription: "рош", russian: "Голова", category: "Врач и поликлиника" },
-      { id: 221, hebrew: "אָחוֹת", transcription: "ахо́т", russian: "Медсестра", category: "Врач и поликлиника" },
-      { id: 222, hebrew: "בֵּית מִרְקַחַת", transcription: "бейт мирка́хат", russian: "Аптека", category: "Врач и поликлиника" },
-
-      // --- 👶 ДЕТСКИЙ САД ---
-      { id: 301, hebrew: "גַּן יְלָדִים", transcription: "ган йелади́м", russian: "Детский сад", category: "Детский сад" },
-      { id: 302, hebrew: "גַּנֶּנֶת", transcription: "гане́нет", russian: "Воспитательница", category: "Детский сад" },
-      { id: 303, hebrew: "סַיַּעַת", transcription: "сая́ат", russian: "Помощник воспитателя", category: "Детский сад" },
-      { id: 304, hebrew: "יֶלֶד", transcription: "йе́лед", russian: "Ребенок (мальчик)", category: "Детский сад" },
-      { id: 305, hebrew: "יַלְדָּה", transcription: "яльда́", russian: "Девочка", category: "Детский сад" },
-      { id: 306, hebrew: "יְלָדִים", transcription: "йелади́м", russian: "Дети", category: "Детский сад" },
-      { id: 307, hebrew: "מִשְׂחָק", transcription: "мисха́к", russian: "Игра / Игрушка", category: "Детский сад" },
-      { id: 308, hebrew: "חָבֵר", transcription: "хаве́р", russian: "Друг", category: "Детский сад" },
-      { id: 309, hebrew: "אֲרוּחַת בֹּקֶר", transcription: "аруха́т бо́кер", russian: "Завтрак", category: "Детский сад" },
-      { id: 310, hebrew: "אֲרוּחַת צָהֳרַיִם", transcription: "аруха́т цохора́им", russian: "Обед", category: "Детский сад" },
-      { id: 311, hebrew: "שֵׁנָה", transcription: "шена́", russian: "Сон / Тихий час", category: "Детский сад" },
-      { id: 312, hebrew: "חִיתוּל", transcription: "хиту́ль", russian: "Подгузник", category: "Детский сад" },
-      { id: 313, hebrew: "מגְבּוֹן", transcription: "магбо́н", russian: "Влажная салфетка", category: "Детский сад" },
-      { id: 314, hebrew: "מוֹצֵץ", transcription: "моце́ц", russian: "Соска", category: "Детский сад" },
-      { id: 315, hebrew: "בַּקְבּוּק", transcription: "бакбу́к", russian: "Бутылочка", category: "Детский сад" },
-      { id: 316, hebrew: "לַקַחַת", transcription: "лака́хат", russian: "Забирать (из сада)", category: "Детский сад" },
-      { id: 317, hebrew: "לְהָבִיא", transcription: "лехави́", russian: "Приводить / Приносить", category: "Детский сад" },
-      { id: 318, hebrew: "בְּכִי", transcription: "бхи", russian: "Плач", category: "Детский сад" },
-      { id: 319, hebrew: "חֲבִילָה", transcription: "хавила́", russian: "Запасные вещи / Посылка", category: "Детский сад" },
-      { id: 320, hebrew: "חֹפֶשׁ", transcription: "хо́феш", russian: "Каникулы / Выходной", category: "Детский сад" },
-      { id: 321, hebrew: "לַאֲכֹל", transcription: "лаахо́ль", russian: "Есть / Кушать", category: "Детский сад" },
-      { id: 322, hebrew: "לִשְׁתּוֹת", transcription: "лишто́т", russian: "Пить", category: "Детский сад" },
-      { id: 323, hebrew: "לִישֹׁן", transcription: "лишо́н", russian: "Спать", category: "Детский сад" },
-      { id: 324, hebrew: "לַשָּׂחֵק", transcription: "лесахэ́к", russian: "Играть", category: "Детский сад" },
-      { id: 325, hebrew: "לַשִּׁיר", transcription: "лаши́р", russian: "Петь", category: "Детский сад" },
-      { id: 326, hebrew: "לִרְקֹד", transcription: "лирко́д", russian: "Танцевать", category: "Детский сад" },
-      { id: 327, hebrew: "לִצְיֹר", transcription: "лицзо́р", russian: "Заниматься творчеством / Мастерить", category: "Детский сад" },
-      { id: 328, hebrew: "לִצְבֹּעַ", transcription: "лицбо́а", russian: "Раскрашивать / Рисовать красками", category: "Детский сад" },
-      { id: 329, hebrew: "לְצַיֵּר", transcription: "лецайе́р", russian: "Рисовать", category: "Детский сад" },
-      { id: 330, hebrew: "לִגְזֹר", transcription: "лигзо́р", russian: "Вырезать (ножницами)", category: "Детский сад" },
-      { id: 331, hebrew: "לִבְכּוֹת", transcription: "ливко́т", russian: "Плакать", category: "Детский сад" },
-      { id: 332, hebrew: "לִצְחֹק", transcription: "лицхо́к", russian: "Смеяться", category: "Детский сад" },
-      { id: 333, hebrew: "לִשְׁמֹעַ", transcription: "лишмо́а", russian: "Слушать / Слушаться", category: "Детский сад" },
-      { id: 334, hebrew: "לַעֲזֹר", transcription: "лаазо́р", russian: "Помогать", category: "Детский сад" },
-      { id: 335, hebrew: "לְסַדֵּר", transcription: "лесаде́р", russian: "Убирать / Наводить порядок", category: "Детский сад" },
-      { id: 336, hebrew: "לִלְבֹּשׁ", transcription: "лилбо́ш", russian: "Надевать (одежду)", category: "Детский сад" },
-      { id: 337, hebrew: "לִנְעֹל", transcription: "линьо́ль", russian: "Обувать (обувь)", category: "Детский сад" },
-      { id: 338, hebrew: "לִשְׁטֹף", transcription: "лишто́ф", russian: "Мыть (руки)", category: "Детский сад" },
-      { id: 339, hebrew: "לַחֲלֹק", transcription: "лахло́к", russian: "Делиться (игрушками)", category: "Детский сад" },
-      { id: 340, hebrew: "לַחְבֹּק", transcription: "лахбо́к", russian: "Обнимать", category: "Детский сад" },
-
-      // --- 💬 СОСЕДИ И ДОМ ---
-      { id: 401, hebrew: "שָׁכֵן", transcription: "шахе́н", russian: "Сосед", category: "Соседи и дом" },
-      { id: 402, hebrew: "שְׁכֵנָה", transcription: "шхена́", russian: "Соседка", category: "Соседи и дом" },
-      { id: 403, hebrew: "בִּנְיָן", transcription: "бинья́н", russian: "Дом / Здание", category: "Соседи и дом" },
-      { id: 404, hebrew: "דִּירָה", transcription: "дира́", russian: "Квартира", category: "Соседи и дом" },
-      { id: 405, hebrew: "קוֹמָה", transcription: "кома́", russian: "Этаж", category: "Соседи и дом" },
-      { id: 406, hebrew: "מַעֲלִית", transcription: "маали́т", russian: "Лифт", category: "Соседи и дом" },
-      { id: 407, hebrew: "מַדְרֵגוֹת", transcription: "мадрего́т", russian: "Лестница", category: "Соседи и дом" },
-      { id: 408, hebrew: "כְּנִיסָה", transcription: "книса́", russian: "Подъезд / Вход", category: "Соседи и дом" },
-      { id: 409, hebrew: "רַעַשׁ", transcription: "ра́аш", russian: "Шум", category: "Соседи и дом" },
-      { id: 410, hebrew: "שֶׁקֶט", transcription: "ше́кет", russian: "Тишина", category: "Соседи и дом" },
-      { id: 411, hebrew: "מַיִם", transcription: "ма́им", russian: "Вода / Протечка", category: "Соседи и дом" },
-      { id: 412, hebrew: "נְזִילָה", transcription: "незила́", russian: "Протекание / Капает вода", category: "Соседи и дом" },
-      { id: 413, hebrew: "חֲנָיָה", transcription: "ханая́", russian: "Парковка", category: "Соседи и дом" },
-      { id: 414, hebrew: "מַפְתֵּחַ", transcription: "мафте́ах", russian: "Ключ", category: "Соседи и дом" },
-      { id: 415, hebrew: "דֹּאַר", transcription: "до́ар", russian: "Почта / Почтовый ящик", category: "Соседи и дом" },
-      { id: 416, hebrew: "וַעַד בַּיִת", transcription: "ва́ад ба́йт", russian: "Домовой комитет", category: "Соседи и дом" },
-      { id: 417, hebrew: "שְׁפֹּצִים", transcription: "шипуци́м", russian: "Ремонт", category: "Соседи и дом" },
-      { id: 418, hebrew: "סְלִיחָה", transcription: "слиха́", russian: "Извините", category: "Соседи и дом" },
-
-      // --- 👋 ПРИВЕТСТВИЯ И ОБЩЕЕ ---
-      { id: 1, hebrew: "שָׁלוֹם", transcription: "шало́м", russian: "Привет / Мир", category: "Приветствия" },
-      { id: 2, hebrew: "תּוֹדָה", transcription: "тода́", russian: "Спасибо", category: "Приветствия" },
-      { id: 3, hebrew: "בְּבַקָּשָׁה", transcription: "бевакаша́", russian: "Пожалуйста", category: "Приветствия" },
-      { id: 4, hebrew: "כֵּן", transcription: "кэн", russian: "Да", category: "Общее" },
-      { id: 5, hebrew: "לֹא", transcription: "ло", russian: "Нет", category: "Общее" },
-      { id: 6, hebrew: "סְלִיחָה", transcription: "слиха́", russian: "Извините / Простите", category: "Общее" },
-      { id: 7, hebrew: "בּסֵדֶר", transcription: "бесе́дер", russian: "Хорошо / В порядке", category: "Общее" },
-      { id: 8, hebrew: "מָה נִשְׁמָע", transcription: "ма нишма́", russian: "Как дела?", category: "Приветствия" },
-      { id: 9, hebrew: "לְדַבֵּר", transcription: "ледабе́р", russian: "Говорить / Разговаривать", category: "Приветствия" },
-      { id: 10, hebrew: "לְהָבִין", transcription: "лехави́н", russian: "Понимать", category: "Общее" },
-      { id: 11, hebrew: "לְבַקֵּשׁ", transcription: "леваке́ш", russian: "Просить", category: "Общее" },
-      { id: 12, hebrew: "לשאֹל", transcription: "лиш'о́ль", russian: "Спрашивать", category: "Общее" },
-      { id: 13, hebrew: "לַעֲנוֹת", transcription: "лаано́т", russian: "Отвечать", category: "Общее" },
-      { id: 14, hebrew: "לָדַעַת", transcription: "ляда́ат", russian: "Знать", category: "Общее" },
-      { id: 15, hebrew: "לַחֲשֹׁב", transcription: "лахшо́в", russian: "Думать", category: "Общее" },
-      { id: 16, hebrew: "לרְצוֹת", transcription: "лирцо́т", russian: "Хотеть", category: "Общее" },
-      { id: 17, hebrew: "לַעֲשׂוֹת", transcription: "лаасо́т", russian: "Делать", category: "Общее" },
-      { id: 18, hebrew: "לָלֶכֶת", transcription: "ляле́хет", russian: "Идти / Ходить", category: "Общее" },
-      { id: 19, hebrew: "לָבוֹא", transcription: "ляво́", russian: "Приходить / Приезжать", category: "Общее" },
-      { id: 20, hebrew: "לנסֹעַ", transcription: "линсо́а", russian: "Ехать / Ездить", category: "Общее" },
-      { id: 21, hebrew: "לָרוּץ", transcription: "ляру́ц", russian: "Бегать", category: "Общее" },
-      { id: 22, hebrew: "לָשֶׁבֶת", transcription: "ляше́вет", russian: "Сидеть", category: "Общее" },
-      { id: 23, hebrew: "לַעֲמֹד", transcription: "лаамо́д", russian: "Стоять", category: "Общее" },
-      { id: 24, hebrew: "לראוֹת", transcription: "лиро́т", russian: "Видеть / Смотреть", category: "Общее" },
-      { id: 25, hebrew: "לִסְתַּכֵּל", transcription: "листаке́ль", russian: "Смотреть / Вглядываться", category: "Общее" },
-      { id: 26, hebrew: "לִשְׁמֹעַ", transcription: "лишмо́а", russian: "Слышать / Слушать", category: "Общее" },
-      { id: 27, hebrew: "לִקְרֹא", transcription: "ликро́", russian: "Читать / Звать", category: "Общее" },
-      { id: 28, hebrew: "לִכְתֹּב", transcription: "лихто́в", russian: "Писать", category: "Общее" },
-      { id: 29, hebrew: "לִלְמֹד", transcription: "лильмо́д", russian: "Учиться / Изучать", category: "Общее" },
-      { id: 30, hebrew: "לַעֲבֹד", transcription: "лааво́д", russian: "Работать", category: "Общее" },
-      { id: 31, hebrew: "לִקְנוֹת", transcription: "ликно́т", russian: "Покупать", category: "Общее" },
-      { id: 32, hebrew: "לִמְכֹּר", transcription: "лимко́р", russian: "Продавать", category: "Общее" },
-      { id: 33, hebrew: "לְשַׁלֵּם", transcription: "лешале́м", russian: "Платить", category: "Общее" },
-      { id: 34, hebrew: "לַעֲלֹת", transcription: "лаало́т", russian: "Стоить / Подниматься", category: "Общее" },
-      { id: 35, hebrew: "לָקַחַת", transcription: "ляка́хат", russian: "Брать", category: "Общее" },
-      { id: 36, hebrew: "לָתֵת", transcription: "ляте́т", russian: "Давать", category: "Общее" },
-      { id: 37, hebrew: "לִמְצֹא", transcription: "лимцо́", russian: "Находить", category: "Общее" },
-      { id: 38, hebrew: "לְחַפֵּשׂ", transcription: "лехапе́с", russian: "Искать", category: "Общее" },
-      { id: 39, hebrew: "לְאַבֵּד", transcription: "леабе́д", russian: "Терять", category: "Общее" },
-      { id: 40, hebrew: "לִפְתֹּחַ", transcription: "лифто́ах", russian: "Открывать", category: "Общее" },
-      { id: 41, hebrew: "לִסְגֹּר", transcription: "лисго́р", russian: "Закрывать", category: "Общее" },
-      { id: 42, hebrew: "לְהַתְחִיל", transcription: "лехатхи́ль", russian: "Начинать", category: "Общее" },
-      { id: 43, hebrew: "לְסַיֵּם", transcription: "лесайе́м", russian: "Заканчивать", category: "Общее" },
-      { id: 44, hebrew: "לִשְׁכֹּחַ", transcription: "лишко́ах", russian: "Забывать", category: "Общее" },
-      { id: 45, hebrew: "לִזְכֹּר", transcription: "лизко́р", russian: "Помнить", category: "Общее" },
-      { id: 46, hebrew: "לַעֲזֹר", transcription: "лаазо́р", russian: "Помогать", category: "Общее" },
-      { id: 47, hebrew: "לְהִתְקַשֵּׁר", transcription: "лехиткаше́р", russian: "Звонить (по телефону)", category: "Общее" },
-      { id: 48, hebrew: "לִשְׁלֹחַ", transcription: "лишло́ах", russian: "Отправлять / Посылать", category: "Общее" },
-      { id: 49, hebrew: "לְקַבֵּל", transcription: "лекабе́ль", russian: "Получать / Принимать", category: "Общее" },
-      { id: 50, hebrew: "לִפְגֹּשׁ", transcription: "лифго́ш", russian: "Встречать", category: "Общее" },
-      { id: 51, hebrew: "לְהַכִּיר", transcription: "лехаки́р", russian: "Знакомить / Знать (кого-то)", category: "Общее" },
-      { id: 52, hebrew: "לְאֱהֹב", transcription: "леэхо́в", russian: "Любить / Нравиться", category: "Общее" },
-      { id: 53, hebrew: "לִצְחֹק", transcription: "лицхо́к", russian: "Смеяться", category: "Общее" },
-      { id: 54, hebrew: "לִבְכּוֹת", transcription: "ливко́т", russian: "Плакать", category: "Общее" },
-      { id: 55, hebrew: "לָגוּר", transcription: "лягу́р", russian: "Жить / Проживать", category: "Общее" },
-      { id: 56, hebrew: "לְהַגִּיעַ", transcription: "лехаги́а", russian: "Прибывать / Добраться", category: "Общее" },
-      { id: 57, hebrew: "לַעֲזֹב", transcription: "лаазо́в", russian: "Покидать / Уходить", category: "Общее" },
-      { id: 58, hebrew: "לְהִשְׁתַּדֵּל", transcription: "лехиштаде́ль", russian: "Стараться / Пытаться", category: "Общее" }
+    // БАЗА ФРАЗ (Все темы перемешаны)
+    const basePhrasesDB = [
+      { id: 1, hebrew: "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", transcription: "Bevakasha lakhtokh et hapanel lefi hamidot", russian: "Пожалуйста, разрежьте панель по размерам", category: "Столярка и CNC" },
+      { id: 2, hebrew: "הַיֶּלֶד אָכַל אֶת כָּל הָאֲרוּחָה הַיּוֹם?", transcription: "Hayeled akhal et kol haarukha hayom?", russian: "Ребенок съел сегодня весь обед?", category: "Детский сад" },
+      { id: 3, hebrew: "יֵשׁ לִי תּוֹר לָרוֹפֵא בְּשָׁעָה עֶשֶׂר", transcription: "Yesh li tor larofe besha'a eser", russian: "У меня запись к врачу в 10 часов", category: "Больница" },
+      { id: 4, hebrew: "סְלִיחָה, יֵשׁ נְזִילַת מַיִם מֵהַדִּירָה שֶׁלְּךָ", transcription: "Slikha, yesh nezilat mayim mehadira shelkha", russian: "Извините, из вашей квартиры протекает вода", category: "Соседи" },
+      { id: 5, hebrew: "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", transcription: "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", category: "Столярка и CNC" },
+      { id: 6, hebrew: "איפה הַבַּקְבּוּק שֶׁל הַיַּלְדָּה?", transcription: "Eifo habakbuk shel hayalda?", russian: "Где бутылочка девочки?", category: "Детский сад" },
+      { id: 7, hebrew: "כּוֹאֵב לִי הַגָּרוֹן וְיֵשׁ לִי חֹם", transcription: "Koev li hagaron veyesh li khom", russian: "У меня болит горло и есть температура", category: "Больница" },
+      { id: 8, hebrew: "אֶפְשָׁר לְהָזִיז אֶת הָרֶכֶב בְּבַקָּשָׁה?", transcription: "Efshar lehaziz et harekhev bevakasha?", russian: "Можно, пожалуйста, переставить машину?", category: "Соседи" }
     ];
 
-    let words = JSON.parse(localStorage.getItem('hebrew_v3_words')) || vocabularyDB;
-    let queue = [];
-    let initialQueueLength = 0;
-    let sessionLearned = 0;
+    // Инициализация данных
+    let masterPhrases = JSON.parse(localStorage.getItem('hebrew_phrases_master')) || basePhrasesDB;
+    let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress')) || {}; 
+    // progressData формат: { phraseId: [ '2026-09-11', '2026-09-12' ] } - даты когда ответили "помню"
 
+    let todayQueue = [];
+
+    // Алгоритм формирования очереди на сегодня
+    function buildTodayQueue() {
+      const todayStr = new Date().toISOString().split('T')[0];
+      const fourteenDaysAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
+
+      todayQueue = masterPhrases.filter(phrase => {
+        const history = progressData[phrase.id] || [];
+        
+        // Показываем если:
+        // 1. Фразу еще ни разу не отвечали "помню"
+        if (history.length === 0) return true;
+
+        // 2. Фразу уже отвечали "помню", но сегодня её ЕЩЁ НЕ проходили,
+        // И с момента ПЕРВОГО успешного ответа не прошло 14 дней
+        const firstSuccess = new Date(history[0]);
+        const answeredToday = history.includes(todayStr);
+
+        return (firstSuccess >= fourteenDaysAgo) && !answeredToday;
+      });
+
+      // Перемешиваем случайным образом
+      todayQueue.sort(() => Math.random() - 0.5);
+    }
+
+    // Элементы DOM
     const elHebrew = document.getElementById('card-hebrew');
     const elTrans = document.getElementById('card-transcription');
-    const elRus = document.getElementById('card-russian');
     const elCat = document.getElementById('card-category');
-    const categoryFilter = document.getElementById('category-filter');
+    const elRemaining = document.getElementById('remaining-count');
     
     const cardWrapper = document.getElementById('card-wrapper');
     const actionButtons = document.getElementById('action-buttons');
     const emptyState = document.getElementById('empty-state');
     
-    const elRemaining = document.getElementById('remaining-count');
-    const elLearned = document.getElementById('learned-count');
-    const progressBar = document.getElementById('progress-bar');
-
-    function save() {
-      localStorage.setItem('hebrew_v3_words', JSON.stringify(words));
-    }
-
-    function initCategoryQueue() {
-      const selected = categoryFilter.value;
-      if (selected === 'ALL') {
-        queue = [...words];
-      } else {
-        queue = words.filter(w => w.category === selected);
-      }
-      initialQueueLength = queue.length;
-      sessionLearned = 0;
-      renderCard();
-    }
-
-    function speak(text) {
-      if ('speechSynthesis' in window) {
-        const cleanText = text.replace(/[\u0591-\u05C7]/g, "");
-        const u = new SpeechSynthesisUtterance(cleanText);
-        u.lang = 'he-IL';
-        u.rate = 0.8;
-        window.speechSynthesis.speak(u);
-      }
-    }
+    const modal = document.getElementById('translation-modal');
+    const modalRussianText = document.getElementById('modal-russian-text');
 
     function renderCard() {
-      if (queue.length === 0) {
+      if (todayQueue.length === 0) {
         cardWrapper.classList.add('hidden');
         actionButtons.classList.add('hidden');
         emptyState.classList.remove('hidden');
-        progressBar.style.width = '100%';
         elRemaining.textContent = 0;
         return;
       }
@@ -420,105 +159,62 @@
       actionButtons.classList.remove('hidden');
       emptyState.classList.add('hidden');
 
-      const current = queue[0];
+      const current = todayQueue[0];
       elHebrew.textContent = current.hebrew;
       elTrans.textContent = `[${current.transcription}]`;
-      elRus.textContent = current.russian;
       elCat.textContent = current.category;
+      modalRussianText.textContent = current.russian;
 
-      elRemaining.textContent = queue.length;
-      elLearned.textContent = sessionLearned;
-
-      const progress = Math.round(((initialQueueLength - queue.length) / initialQueueLength) * 100);
-      progressBar.style.width = `${Math.max(0, progress)}%`;
+      elRemaining.textContent = todayQueue.length;
     }
 
-    function answer(remembered) {
-      if (queue.length === 0) return;
-      const current = queue.shift();
+    function handleAnswer(remembered) {
+      if (todayQueue.length === 0) return;
       
+      const current = todayQueue.shift();
+      const todayStr = new Date().toISOString().split('T')[0];
+
       if (remembered) {
-        sessionLearned++;
+        if (!progressData[current.id]) {
+          progressData[current.id] = [];
+        }
+        if (!progressData[current.id].includes(todayStr)) {
+          progressData[current.id].push(todayStr);
+        }
+        localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
       } else {
-        queue.push(current);
+        // Если "Не помню" — сбрасываем прогресс 14 дней и возвращаем в конец сегодняшней очереди
+        delete progressData[current.id];
+        localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
+        todayQueue.push(current);
       }
 
       renderCard();
     }
 
-    categoryFilter.addEventListener('change', initCategoryQueue);
-
-    document.getElementById('btn-remember').addEventListener('click', () => answer(true));
-    document.getElementById('btn-forget').addEventListener('click', () => answer(false));
-    document.getElementById('btn-audio').addEventListener('click', () => {
-      if (queue.length > 0) speak(queue[0].hebrew);
-    });
+    // События кнопок
+    document.getElementById('btn-remember').addEventListener('click', () => handleAnswer(true));
+    document.getElementById('btn-forget').addEventListener('click', () => handleAnswer(false));
     
-    document.getElementById('btn-reset').addEventListener('click', () => {
-      initCategoryQueue();
+    // Модальное окно перевода
+    document.getElementById('btn-show-translation').addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+    document.getElementById('btn-close-modal').addEventListener('click', () => {
+      modal.classList.add('hidden');
     });
 
-    // Навигация
-    const secStudy = document.getElementById('sec-study');
-    const secDict = document.getElementById('sec-dict');
-    const secAdd = document.getElementById('sec-add');
-
-    function switchTab(tab) {
-      [secStudy, secDict, secAdd].forEach(s => s.classList.add('hidden'));
-      if (tab === 'study') secStudy.classList.remove('hidden');
-      if (tab === 'dict') {
-        secDict.classList.remove('hidden');
-        renderDict();
-      }
-      if (tab === 'add') secAdd.classList.remove('hidden');
-    }
-
-    document.getElementById('nav-study').addEventListener('click', () => switchTab('study'));
-    document.getElementById('nav-dict').addEventListener('click', () => switchTab('dict'));
-    document.getElementById('nav-add').addEventListener('click', () => switchTab('add'));
-
-    // Словарь
-    function renderDict(filter = '') {
-      const list = document.getElementById('dict-list');
-      list.innerHTML = '';
-      words.filter(w => w.hebrew.includes(filter) || w.russian.toLowerCase().includes(filter.toLowerCase()) || w.transcription.toLowerCase().includes(filter.toLowerCase()))
-        .forEach(w => {
-          const div = document.createElement('div');
-          div.className = 'p-3 flex justify-between items-center text-sm hover:bg-slate-50 border-b border-slate-100';
-          div.innerHTML = `
-            <div>
-              <span class="hebrew-text font-bold text-lg text-slate-800">${w.hebrew}</span>
-              <span class="text-xs text-indigo-600 font-medium ml-1.5">[${w.transcription}]</span>
-              <div class="text-slate-600 text-xs font-medium">${w.russian}</div>
-            </div>
-            <span class="text-[10px] px-2 py-0.5 bg-indigo-50 text-indigo-600 font-bold rounded-full">${w.category}</span>
-          `;
-          list.appendChild(div);
-        });
-    }
-
-    document.getElementById('dict-search').addEventListener('input', e => renderDict(e.target.value));
-
-    // Добавление слова
-    document.getElementById('add-form').addEventListener('submit', e => {
-      e.preventDefault();
-      const newWord = {
-        id: Date.now(),
-        hebrew: document.getElementById('add-hebrew').value,
-        transcription: document.getElementById('add-trans').value,
-        russian: document.getElementById('add-rus').value,
-        category: document.getElementById('add-cat').value
-      };
-      words.push(newWord);
-      save();
-      e.target.reset();
-      alert('Слово добавлено!');
-      switchTab('study');
-      initCategoryQueue();
+    document.getElementById('btn-restart').addEventListener('click', () => {
+      buildTodayQueue();
+      renderCard();
     });
 
-    // Запуск
-    initCategoryQueue();
+    // Сохранение основной базы в localStorage при обновлениях из файла
+    localStorage.setItem('hebrew_phrases_master', JSON.stringify(masterPhrases));
+
+    // Старт
+    buildTodayQueue();
+    renderCard();
   </script>
 </body>
 </html>
