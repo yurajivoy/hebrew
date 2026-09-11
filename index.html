@@ -18,11 +18,19 @@
   <header class="flex justify-between items-center bg-white p-4 rounded-2xl border border-slate-200 shadow-sm mb-4">
     <div>
       <h1 class="text-base font-bold text-indigo-600"><i class="fa-solid fa-comment-dots"></i> Иврит Фразы</h1>
-      <p class="text-xs text-slate-400">Детсад • Больница • Соседи • CNC</p>
+      <p class="text-xs text-slate-400">Тренажер интервального повторения</p>
     </div>
-    <div class="text-right">
-      <span class="text-xs text-slate-500 block">На сегодня:</span>
-      <span id="remaining-count" class="text-lg font-bold text-indigo-600">0</span>
+    <div class="flex items-center gap-3">
+      <!-- Переключатель языка лицевой стороны -->
+      <button id="btn-toggle-lang" class="bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-bold text-xs py-1.5 px-3 rounded-xl transition flex items-center gap-1.5" title="Изменить язык лицевой стороны">
+        <i class="fa-solid fa-language text-indigo-600 text-sm"></i>
+        <span id="lang-label">🇮🇱 Иврит</span>
+      </button>
+      
+      <div class="text-right">
+        <span class="text-xs text-slate-500 block">В очереди:</span>
+        <span id="remaining-count" class="text-lg font-bold text-indigo-600">0</span>
+      </div>
     </div>
   </header>
 
@@ -30,17 +38,22 @@
   <main class="flex-1 flex flex-col justify-center">
     <div id="card-wrapper" class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md text-center relative flex flex-col justify-between min-h-[320px]">
       
-      <!-- Категория -->
-      <span id="card-category" class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full self-center">
-        Тема
-      </span>
+      <!-- Категория и Прогресс повторений -->
+      <div class="flex justify-between items-center w-full">
+        <span id="card-category" class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full">
+          Тема
+        </span>
+        <span id="card-streak" class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full" title="Дней успешного повторения подряд (цель — 14)">
+          🔥 0/14 дней
+        </span>
+      </div>
 
-      <!-- Текст карточки -->
+      <!-- Главный текст карточки -->
       <div class="my-auto py-4">
-        <div id="card-hebrew" class="hebrew-text text-3xl sm:text-4xl font-bold text-slate-800 mb-3 leading-relaxed">
+        <div id="card-main-text" class="hebrew-text text-3xl sm:text-4xl font-bold text-slate-800 mb-3 leading-relaxed">
           שָׁלוֹם, מָה נִשְׁמָע?
         </div>
-        <div id="card-transcription" class="text-base font-semibold text-indigo-600 tracking-wide">
+        <div id="card-sub-text" class="text-base font-semibold text-indigo-600 tracking-wide">
           [Shalom, ma nishma?]
         </div>
       </div>
@@ -48,7 +61,7 @@
       <!-- КНОПКИ «ПЕРЕВОД» И «ТЕОРИЯ» -->
       <div class="flex gap-2 justify-center">
         <button id="btn-show-translation" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
-          <i class="fa-solid fa-eye"></i> Перевод
+          <i class="fa-solid fa-eye"></i> <span id="btn-trans-label">Перевод</span>
         </button>
         <button id="btn-show-theory" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-book-open"></i> Теория
@@ -62,9 +75,11 @@
       <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
         <i class="fa-solid fa-circle-check"></i>
       </div>
-      <h3 class="text-xl font-bold text-slate-800 mb-1">Все фразы на сегодня пройдены!</h3>
-      <p class="text-slate-500 text-sm mb-4">Возвращайтесь завтра за новыми фразами и повторением.</p>
-      <button id="btn-restart" class="text-xs text-indigo-600 font-semibold hover:underline">Пройти текущий круг еще раз</button>
+      <h3 class="text-xl font-bold text-slate-800 mb-1">Отликчная работа!</h3>
+      <p class="text-slate-500 text-sm mb-4">Вы выполнили текущий лимит. Хотите взять еще порцию из 5 новых фраз?</p>
+      <button id="btn-next-batch" class="bg-indigo-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-indigo-700 transition shadow-md">
+        Загрузить еще 5 фраз
+      </button>
     </div>
   </main>
 
@@ -81,10 +96,10 @@
   <!-- МОДАЛЬНОЕ ОКНО ПЕРЕВОДА -->
   <div id="translation-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
     <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center shadow-xl transform transition-all border border-slate-100">
-      <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Перевод на русский</h4>
-      <p id="modal-russian-text" class="text-xl font-bold text-slate-800 mb-6 leading-normal">
-        Привет, как дела?
-      </p>
+      <h4 id="modal-trans-title" class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Перевод</h4>
+      <div id="modal-translation-content" class="mb-6">
+        <!-- Подставляется через JS -->
+      </div>
       <button id="btn-close-modal" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition">
         Понятно
       </button>
@@ -108,7 +123,7 @@
   </div>
 
   <script>
-    // БАЗА ФРАЗ
+    // БАЗА ФРАЗ ПО УМОЛЧАНИЮ
     const basePhrasesDB = [
       { id: 1, hebrew: "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", transcription: "Bevakasha lakhtokh et hapanel lefi hamidot", russian: "Пожалуйста, разрежьте панель по размерам", category: "Столярка и CNC", theory: "• <b>בבקשה</b> (бевакаша) — пожалуйста.<br>• <b>לחתוך</b> (лахтох) — инфинитив 'резать' (пааль).<br>• <b>את</b> (эт) — предлог винительного падежа.<br>• <b>לפי</b> (лефи) — предлог 'по / согласно'.<br>• <b>המידות</b> (а-мидот) — 'размеры' с артиклем <b>ה</b>." },
       { id: 2, hebrew: "הַיֶּלֶד אָכַל אֶת כָּל הָאֲרוּחָה הַיּוֹם?", transcription: "Hayeled akhal et kol haarukha hayom?", russian: "Ребенок съел сегодня весь обед?", category: "Детский сад", theory: "• <b>הילד</b> (а-йелед) — ребенок.<br>• <b>אכל</b> (ахаль) — съел (прошедшее время).<br>• <b>את כל הארוחה</b> (эт коль а-аруха) — весь обед.<br>• <b>היום</b> (а-йом) — сегодня." },
@@ -117,36 +132,66 @@
       { id: 5, hebrew: "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", transcription: "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", category: "Столярка и CNC", theory: "• <b>צריך</b> (царих) — нужно.<br>• <b>להחליף</b> (лехахлиф) — заменить (инфинитив, гифъиль).<br>• <b>הסכין</b> (а-сакин) — фреза/лезвие.<br>• <b>במכרסם</b> (ба-махресем) — во фрезере." }
     ];
 
-    // Принудительное обновление базы при несоответствии полей
-    let storedMaster = JSON.parse(localStorage.getItem('hebrew_phrases_master'));
-    if (!storedMaster || !storedMaster[0] || !storedMaster[0].theory) {
-      localStorage.setItem('hebrew_phrases_master', JSON.stringify(basePhrasesDB));
-      storedMaster = basePhrasesDB;
+    // ИНИЦИАЛИЗАЦИЯ И СТРУКТУРА ХРАНЕНИЯ
+    let masterPhrases = JSON.parse(localStorage.getItem('hebrew_phrases_master')) || basePhrasesDB;
+    let cardLanguage = localStorage.getItem('hebrew_card_lang') || 'hebrew'; // 'hebrew' или 'russian'
+    
+    // progressData формат: { [phraseId]: { streak: number, lastDate: "YYYY-MM-DD", status: "active"|"mastered" } }
+    let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress_v2')) || {};
+
+    let activeQueue = []; // Текущая очередь карточек для сессии
+    const BATCH_SIZE = 5;
+
+    function getTodayStr() {
+      return new Date().toISOString().split('T')[0];
     }
 
-    let masterPhrases = storedMaster;
-    let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress')) || {}; 
-    let todayQueue = [];
+    // Построение дневной очереди повторения
+    function initQueue() {
+      const today = getTodayStr();
+      activeQueue = [];
 
-    function buildTodayQueue() {
-      const todayStr = new Date().toISOString().split('T')[0];
-      const fourteenDaysAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
-
-      todayQueue = masterPhrases.filter(phrase => {
-        const history = progressData[phrase.id] || [];
-        if (history.length === 0) return true;
-        const firstSuccess = new Date(history[0]);
-        const answeredToday = history.includes(todayStr);
-        return (firstSuccess >= fourteenDaysAgo) && !answeredToday;
+      // 1. Находим все карточки, которые уже находятся в процессе изучения
+      const reviewPhrases = masterPhrases.filter(phrase => {
+        const prog = progressData[phrase.id];
+        if (!prog) return false;
+        if (prog.status === 'mastered') return false; // Завершенные (14+ дней успеха)
+        
+        // Показываем все фразы, которые проходили ранее и не отвечали сегодня
+        return prog.lastDate !== today;
       });
 
-      todayQueue.sort(() => Math.random() - 0.5);
+      // Сортируем: те, где низкий streak (сложные) или сброшены в 0 — покажем первыми
+      reviewPhrases.sort((a, b) => (progressData[a.id].streak || 0) - (progressData[b.id].streak || 0));
+
+      activeQueue.push(...reviewPhrases);
+
+      // 2. Если в очереди меньше BATCH_SIZE (5) фраз — добавляем новые из базы
+      if (activeQueue.length < BATCH_SIZE) {
+        fetchNextBatch();
+      }
     }
 
-    const elHebrew = document.getElementById('card-hebrew');
-    const elTrans = document.getElementById('card-transcription');
+    // Загрузка следующей порции из 5 абсолютно новых фраз
+    function fetchNextBatch() {
+      const unstudied = masterPhrases.filter(phrase => !progressData[phrase.id]);
+      const newBatch = unstudied.slice(0, BATCH_SIZE);
+      
+      newBatch.forEach(phrase => {
+        if (!activeQueue.some(p => p.id === phrase.id)) {
+          activeQueue.push(phrase);
+        }
+      });
+    }
+
+    // ЭЛЕМЕНТЫ UI
+    const elMainText = document.getElementById('card-main-text');
+    const elSubText = document.getElementById('card-sub-text');
     const elCat = document.getElementById('card-category');
+    const elStreak = document.getElementById('card-streak');
     const elRemaining = document.getElementById('remaining-count');
+    const btnToggleLang = document.getElementById('btn-toggle-lang');
+    const langLabel = document.getElementById('lang-label');
     
     const cardWrapper = document.getElementById('card-wrapper');
     const actionButtons = document.getElementById('action-buttons');
@@ -154,11 +199,12 @@
     
     const transModal = document.getElementById('translation-modal');
     const theoryModal = document.getElementById('theory-modal');
-    const modalRussianText = document.getElementById('modal-russian-text');
+    const modalTransContent = document.getElementById('modal-translation-content');
     const modalTheoryText = document.getElementById('modal-theory-text');
 
+    // ОТОБРАЖЕНИЕ КАРТОЧКИ
     function renderCard() {
-      if (todayQueue.length === 0) {
+      if (activeQueue.length === 0) {
         cardWrapper.classList.add('hidden');
         actionButtons.classList.add('hidden');
         emptyState.classList.remove('hidden');
@@ -170,35 +216,88 @@
       actionButtons.classList.remove('hidden');
       emptyState.classList.add('hidden');
 
-      const current = todayQueue[0];
-      elHebrew.textContent = current.hebrew;
-      elTrans.textContent = `[${current.transcription}]`;
+      const current = activeQueue[0];
+      const prog = progressData[current.id] || { streak: 0 };
+
+      // Отображение категории и прогресса (цель: 14 дней подряд)
       elCat.textContent = current.category;
-      modalRussianText.textContent = current.russian;
-      modalTheoryText.innerHTML = current.theory || "Разбор временно отсутствует.";
+      elStreak.textContent = `🔥 ${prog.streak}/14 дн.`;
 
-      elRemaining.textContent = todayQueue.length;
-    }
-
-    function handleAnswer(remembered) {
-      if (todayQueue.length === 0) return;
-      
-      const current = todayQueue.shift();
-      const todayStr = new Date().toISOString().split('T')[0];
-
-      if (remembered) {
-        if (!progressData[current.id]) progressData[current.id] = [];
-        if (!progressData[current.id].includes(todayStr)) progressData[current.id].push(todayStr);
-        localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
+      // Языковой режим лицевой стороны
+      if (cardLanguage === 'hebrew') {
+        elMainText.textContent = current.hebrew;
+        elMainText.className = "hebrew-text text-3xl sm:text-4xl font-bold text-slate-800 mb-3 leading-relaxed";
+        elSubText.textContent = `[${current.transcription}]`;
+        langLabel.textContent = "🇮🇱 Иврит";
       } else {
-        delete progressData[current.id];
-        localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
-        todayQueue.push(current);
+        elMainText.textContent = current.russian;
+        elMainText.className = "text-2xl sm:text-3xl font-bold text-slate-800 mb-3 leading-snug";
+        elSubText.textContent = `Категория: ${current.category}`;
+        langLabel.textContent = "🇷🇺 Русский";
       }
 
+      // Содержимое модального окна перевода в зависимости от режима
+      if (cardLanguage === 'hebrew') {
+        modalTransContent.innerHTML = `
+          <p class="text-xl font-bold text-slate-800 leading-normal mb-1">${current.russian}</p>
+        `;
+      } else {
+        modalTransContent.innerHTML = `
+          <div class="hebrew-text text-2xl font-bold text-slate-800 mb-1">${current.hebrew}</div>
+          <div class="text-sm font-semibold text-indigo-600 mb-2">[${current.transcription}]</div>
+        `;
+      }
+
+      modalTheoryText.innerHTML = current.theory || "Разбор временно отсутствует.";
+      elRemaining.textContent = activeQueue.length;
+    }
+
+    // ОБРАБОТКА ОТВЕТОВ ("Помню" / "Не помню")
+    function handleAnswer(remembered) {
+      if (activeQueue.length === 0) return;
+      
+      const current = activeQueue[0];
+      const today = getTodayStr();
+
+      if (!progressData[current.id]) {
+        progressData[current.id] = { streak: 0, lastDate: "", status: "active" };
+      }
+
+      if (remembered) {
+        // Если фразу ответили "Помню", увеличиваем счетчик ежедневных успешных ответов
+        if (progressData[current.id].lastDate !== today) {
+          progressData[current.id].streak = (progressData[current.id].streak || 0) + 1;
+          progressData[current.id].lastDate = today;
+        }
+
+        // Если фраза повторилась 14 дней подряд — помечаем освоенной и убираем в конец списка
+        if (progressData[current.id].streak >= 14) {
+          progressData[current.id].status = "mastered";
+        }
+
+        // Удаляем из текущей очереди
+        activeQueue.shift();
+      } else {
+        // При ошибке: сбрасываем серию успешных дней и оставляем фразу в очереди на сегодня
+        progressData[current.id].streak = 0;
+        
+        // Перемещаем в конец сегодняшнего круга повторений
+        const failedItem = activeQueue.shift();
+        activeQueue.push(failedItem);
+      }
+
+      localStorage.setItem('hebrew_phrases_progress_v2', JSON.stringify(progressData));
       renderCard();
     }
 
+    // ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА
+    btnToggleLang.addEventListener('click', () => {
+      cardLanguage = (cardLanguage === 'hebrew') ? 'russian' : 'hebrew';
+      localStorage.setItem('hebrew_card_lang', cardLanguage);
+      renderCard();
+    });
+
+    // СОБЫТИЯ КНОПОК
     document.getElementById('btn-remember').addEventListener('click', () => handleAnswer(true));
     document.getElementById('btn-forget').addEventListener('click', () => handleAnswer(false));
     
@@ -209,12 +308,14 @@
     document.getElementById('btn-close-theory').addEventListener('click', () => theoryModal.classList.add('hidden'));
     document.getElementById('btn-close-theory-x').addEventListener('click', () => theoryModal.classList.add('hidden'));
 
-    document.getElementById('btn-restart').addEventListener('click', () => {
-      buildTodayQueue();
+    document.getElementById('btn-next-batch').addEventListener('click', () => {
+      fetchNextBatch();
       renderCard();
     });
 
-    buildTodayQueue();
+    // Сохранение и запуск
+    localStorage.setItem('hebrew_phrases_master', JSON.stringify(masterPhrases));
+    initQueue();
     renderCard();
   </script>
 </body>
