@@ -1,0 +1,30 @@
+name: Daily Auto-Add Phrases
+
+on:
+  schedule:
+    # Запуск каждый день в 03:00 UTC (06:00 по Израилю)
+    - cron: '0 3 * * *'
+  workflow_dispatch: # Дает возможность запустить вручную кнопкой в интерфейсе GitHub
+
+jobs:
+  update-phrases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run add_phrases script
+        run: python add_phrases.py
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html phrases_pool.json
+          git commit -m "Auto-add 5 phrases from pool [daily build]" || exit 0
+          git push
