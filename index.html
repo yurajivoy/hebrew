@@ -37,18 +37,15 @@
 
       <!-- Текст карточки -->
       <div class="my-auto py-4">
-        <!-- Фраза на иврите -->
         <div id="card-hebrew" class="hebrew-text text-3xl sm:text-4xl font-bold text-slate-800 mb-3 leading-relaxed">
           שָׁלוֹם, מָה נִשְׁמָע?
         </div>
-        
-        <!-- Транскрипция ЛАТИНИЦЕЙ -->
         <div id="card-transcription" class="text-base font-semibold text-indigo-600 tracking-wide">
           [Shalom, ma nishma?]
         </div>
       </div>
 
-      <!-- Кнопки «Перевод» и «Теория» -->
+      <!-- КНОПКИ «ПЕРЕВОД» И «ТЕОРИЯ» -->
       <div class="flex gap-2 justify-center">
         <button id="btn-show-translation" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-eye"></i> Перевод
@@ -113,16 +110,22 @@
   <script>
     // БАЗА ФРАЗ
     const basePhrasesDB = [
-      { id: 1, hebrew: "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", transcription: "Bevakasha lakhtokh et hapanel lefi hamidot", russian: "Пожалуйста, разрежьте панель по размерам", category: "Столярка и CNC", theory: "• <b>בבקשה</b> (бевакаша) — пожалуйста.<br>• <b>לחתוך</b> (лахтох) — инфинитив глагола 'резать' (биньян пааль). В вежливых просьбах часто используется инфинитив.<br>• <b>את</b> (эт) — предлог винительного падежа.<br>• <b>לפי</b> (лефи) — предлог 'по / согласно'.<br>• <b>המידות</b> (а-мидот) — 'размеры' с артиклем <b>ה</b>." },
-      { id: 2, hebrew: "הַיֶּלֶד אָכַל אֶת כָּל הָאֲרוּחָה הַיּוֹם?", transcription: "Hayeled akhal et kol haarukha hayom?", russian: "Ребенок съел сегодня весь обед?", category: "Детский сад", theory: "• <b>הילד</b> (а-йелед) — ребенок с определенным артиклем.<br>• <b>אכל</b> (ахаль) — глагол 'ел/съел' в прошедшем времени (он).<br>• <b>את כל הארוחה</b> (эт коль а-аруха) — 'весь обед' (прямое дополнение с предлогом <b>את</b>).<br>• <b>היום</b> (а-йом) — сегодня (буквально 'этот день')." },
-      { id: 3, hebrew: "יֵשׁ לִי תּוֹר לָרוֹפֵא בְּשָׁעָה עֶשֶׂר", transcription: "Yesh li tor larofe besha'a eser", russian: "У меня запись к врачу в 10 часов", category: "Больница", theory: "• <b>יש לי</b> (еш ли) — конструкция 'у меня есть'.<br>• <b>תור</b> (тор) — очередь / запись на прием.<br>• <b>לרופא</b> (ла-рофэ) — предлог <b>ל</b> (к) + артикль + <b>רופא</b> (врач).<br>• <b>בשעה עשר</b> (бе-шаа эсер) — в 10 часов (буквально 'в час десять')." },
-      { id: 4, hebrew: "סְלִיחָה, יֵשׁ נְזִילַת מַיִם מֵהַדִּירָה שֶׁלְּךָ", transcription: "Slikha, yesh nezilat mayim mehadira shelkha", russian: "Извините, из вашей квартиры протекает вода", category: "Соседи", theory: "• <b>סליחה</b> (слиха) — извините / простите.<br>• <b>נזילת מים</b> (незилат маим) — сопряжение (смихут): 'утечка воды'. Слово <b>נזילה</b> меняет окончание на <b>ת</b>.<br>• <b>מהדירה שלך</b> (ме-а-дира шельха) — из твоей/вашей квартиры (предлог <b>מ</b> + артикль + квартира + притяжательное слово)." },
-      { id: 5, hebrew: "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", transcription: "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", category: "Столярка и CNC", theory: "• <b>צריך</b> (царих) — нужно / должен.<br>• <b>להחליף</b> (лехахлиф) — инфинитив глагола 'менять/поменять' (биньян гифъиль).<br>• <b>הסכין</b> (а-сакин) — лезвие / фреза (буквально 'нож').<br>• <b>במכרסם</b> (ба-махресем) — во фрезере / фрезерном станке (предлог <b>ב</b> + артикль)." }
+      { id: 1, hebrew: "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", transcription: "Bevakasha lakhtokh et hapanel lefi hamidot", russian: "Пожалуйста, разрежьте панель по размерам", category: "Столярка и CNC", theory: "• <b>בבקשה</b> (бевакаша) — пожалуйста.<br>• <b>לחתוך</b> (лахтох) — инфинитив 'резать' (пааль).<br>• <b>את</b> (эт) — предлог винительного падежа.<br>• <b>לפי</b> (лефи) — предлог 'по / согласно'.<br>• <b>המידות</b> (а-мидот) — 'размеры' с артиклем <b>ה</b>." },
+      { id: 2, hebrew: "הַיֶּלֶד אָכַל אֶת כָּל הָאֲרוּחָה הַיּוֹם?", transcription: "Hayeled akhal et kol haarukha hayom?", russian: "Ребенок съел сегодня весь обед?", category: "Детский сад", theory: "• <b>הילד</b> (а-йелед) — ребенок.<br>• <b>אכל</b> (ахаль) — съел (прошедшее время).<br>• <b>את כל הארוחה</b> (эт коль а-аруха) — весь обед.<br>• <b>היום</b> (а-йом) — сегодня." },
+      { id: 3, hebrew: "יֵשׁ לִי תּוֹר לָרוֹפֵא בְּשָׁעָה עֶשֶׂר", transcription: "Yesh li tor larofe besha'a eser", russian: "У меня запись к врачу в 10 часов", category: "Больница", theory: "• <b>יש לי</b> (еш ли) — у меня есть.<br>• <b>תור</b> (тор) — очередь / запись.<br>• <b>לרופא</b> (ла-рофэ) — к врачу.<br>• <b>בשעה עשר</b> (бе-шаа эсер) — в 10 часов." },
+      { id: 4, hebrew: "סְלִיחָה, יֵשׁ נְזִילַת מַיִם מֵהַדִּירָה שֶׁלְּךָ", transcription: "Slikha, yesh nezilat mayim mehadira shelkha", russian: "Извините, из вашей квартиры протекает вода", category: "Соседи", theory: "• <b>סליחה</b> (слиха) — извините.<br>• <b>נזילת מים</b> (незилат маим) — протечка воды (смихут).<br>• <b>מהדירה שלך</b> (ме-а-дира шельха) — из твоей квартиры." },
+      { id: 5, hebrew: "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", transcription: "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", category: "Столярка и CNC", theory: "• <b>צריך</b> (царих) — нужно.<br>• <b>להחליף</b> (лехахлиф) — заменить (инфинитив, гифъиль).<br>• <b>הסכין</b> (а-сакин) — фреза/лезвие.<br>• <b>במכרסם</b> (ба-махресем) — во фрезере." }
     ];
 
-    let masterPhrases = JSON.parse(localStorage.getItem('hebrew_phrases_master')) || basePhrasesDB;
-    let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress')) || {}; 
+    // Принудительное обновление базы при несоответствии полей
+    let storedMaster = JSON.parse(localStorage.getItem('hebrew_phrases_master'));
+    if (!storedMaster || !storedMaster[0] || !storedMaster[0].theory) {
+      localStorage.setItem('hebrew_phrases_master', JSON.stringify(basePhrasesDB));
+      storedMaster = basePhrasesDB;
+    }
 
+    let masterPhrases = storedMaster;
+    let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress')) || {}; 
     let todayQueue = [];
 
     function buildTodayQueue() {
@@ -131,12 +134,9 @@
 
       todayQueue = masterPhrases.filter(phrase => {
         const history = progressData[phrase.id] || [];
-        
         if (history.length === 0) return true;
-
         const firstSuccess = new Date(history[0]);
         const answeredToday = history.includes(todayStr);
-
         return (firstSuccess >= fourteenDaysAgo) && !answeredToday;
       });
 
@@ -175,7 +175,7 @@
       elTrans.textContent = `[${current.transcription}]`;
       elCat.textContent = current.category;
       modalRussianText.textContent = current.russian;
-      modalTheoryText.innerHTML = current.theory || "Грамматический разбор для этой фразы пока не добавлен.";
+      modalTheoryText.innerHTML = current.theory || "Разбор временно отсутствует.";
 
       elRemaining.textContent = todayQueue.length;
     }
@@ -187,12 +187,8 @@
       const todayStr = new Date().toISOString().split('T')[0];
 
       if (remembered) {
-        if (!progressData[current.id]) {
-          progressData[current.id] = [];
-        }
-        if (!progressData[current.id].includes(todayStr)) {
-          progressData[current.id].push(todayStr);
-        }
+        if (!progressData[current.id]) progressData[current.id] = [];
+        if (!progressData[current.id].includes(todayStr)) progressData[current.id].push(todayStr);
         localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
       } else {
         delete progressData[current.id];
@@ -206,7 +202,6 @@
     document.getElementById('btn-remember').addEventListener('click', () => handleAnswer(true));
     document.getElementById('btn-forget').addEventListener('click', () => handleAnswer(false));
     
-    // Модальные окна
     document.getElementById('btn-show-translation').addEventListener('click', () => transModal.classList.remove('hidden'));
     document.getElementById('btn-close-modal').addEventListener('click', () => transModal.classList.add('hidden'));
 
@@ -218,8 +213,6 @@
       buildTodayQueue();
       renderCard();
     });
-
-    localStorage.setItem('hebrew_phrases_master', JSON.stringify(masterPhrases));
 
     buildTodayQueue();
     renderCard();
