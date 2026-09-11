@@ -1,0 +1,32 @@
+[
+  {
+    "hebrew": "מָתַי יֵשׁ חֹפֶשׁ בְּגַן הַיְלָדִים?",
+    "transcription": "Matai yesh khofesh began hayeladim?",
+    "russian": "Когда каникулы в детском саду?",
+    "category": "Детский сад"
+  },
+  {
+    "hebrew": "צָרִיךְ לְנַקּוֹת אֶת מַעֲרֶכֶת הַשְּׁאִיבָה",
+    "transcription": "Tsarikh lenakot et ma'arekhet hashe'iva",
+    "russian": "Нужно почистить систему аспирации (струшкоотсос)",
+    "category": "Столярка и CNC"
+  },
+  {
+    "hebrew": "הֵיכָן נִמְצֵאת הַבֵּית מִרְקַחַת?",
+    "transcription": "Heikhan nimtsat habeit mirkakhat?",
+    "russian": "Где находится аптека?",
+    "category": "Больница"
+  },
+  {
+    "hebrew": "אֶפְשָׁר לִסְגֹּר אֶת הַדֶּלֶת שֶׁל הַכְּנִיסָה?",
+    "transcription": "Efshar lisgor et hadelet shel haknisa?",
+    "russian": "Можно закрыть входную дверь?",
+    "category": "Соседи"
+  },
+  {
+    "hebrew": "אֲנִי צָרִיךְ לְכַוֵּן אֶת אֶפֶס הַמְּכוֹנָה",
+    "transcription": "Ani tsarikh lekhaven et efes hamekhona",
+    "russian": "Мне нужно настроить ноль станка",
+    "category": "Столярка и CNC"
+  }
+]
