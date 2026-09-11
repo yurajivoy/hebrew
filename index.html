@@ -28,9 +28,9 @@
 
   <!-- КАРТОЧКА -->
   <main class="flex-1 flex flex-col justify-center">
-    <div id="card-wrapper" class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md text-center relative flex flex-col justify-between min-h-[300px]">
+    <div id="card-wrapper" class="bg-white border border-slate-200 rounded-3xl p-6 shadow-md text-center relative flex flex-col justify-between min-h-[320px]">
       
-      <!-- Категория (для информации) -->
+      <!-- Категория -->
       <span id="card-category" class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full self-center">
         Тема
       </span>
@@ -48,10 +48,15 @@
         </div>
       </div>
 
-      <!-- Кнопка «Перевод» -->
-      <button id="btn-show-translation" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2 mx-auto">
-        <i class="fa-solid fa-eye"></i> Перевод
-      </button>
+      <!-- Кнопки «Перевод» и «Теория» -->
+      <div class="flex gap-2 justify-center">
+        <button id="btn-show-translation" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-eye"></i> Перевод
+        </button>
+        <button id="btn-show-theory" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-book-open"></i> Теория
+        </button>
+      </div>
 
     </div>
 
@@ -89,27 +94,37 @@
     </div>
   </div>
 
+  <!-- МОДАЛЬНОЕ ОКНО ТЕОРИИ -->
+  <div id="theory-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-3xl p-6 max-w-sm w-full shadow-xl transform transition-all border border-slate-100 text-left">
+      <div class="flex justify-between items-center mb-3">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-500">Грамматика и разбор</h4>
+        <button id="btn-close-theory-x" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modal-theory-text" class="text-sm text-slate-700 space-y-2 leading-relaxed mb-6 max-h-[60vh] overflow-y-auto">
+        <!-- Текст теории подставится JS-ом -->
+      </div>
+      <button id="btn-close-theory" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition">
+        Понятно
+      </button>
+    </div>
+  </div>
+
   <script>
-    // БАЗА ФРАЗ (Все темы перемешаны)
+    // БАЗА ФРАЗ
     const basePhrasesDB = [
-      { id: 1, hebrew: "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", transcription: "Bevakasha lakhtokh et hapanel lefi hamidot", russian: "Пожалуйста, разрежьте панель по размерам", category: "Столярка и CNC" },
-      { id: 2, hebrew: "הַיֶּלֶד אָכַל אֶת כָּל הָאֲרוּחָה הַיּוֹם?", transcription: "Hayeled akhal et kol haarukha hayom?", russian: "Ребенок съел сегодня весь обед?", category: "Детский сад" },
-      { id: 3, hebrew: "יֵשׁ לִי תּוֹר לָרוֹפֵא בְּשָׁעָה עֶשֶׂר", transcription: "Yesh li tor larofe besha'a eser", russian: "У меня запись к врачу в 10 часов", category: "Больница" },
-      { id: 4, hebrew: "סְלִיחָה, יֵשׁ נְזִילַת מַיִם מֵהַדִּירָה שֶׁלְּךָ", transcription: "Slikha, yesh nezilat mayim mehadira shelkha", russian: "Извините, из вашей квартиры протекает вода", category: "Соседи" },
-      { id: 5, hebrew: "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", transcription: "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", category: "Столярка и CNC" },
-      { id: 6, hebrew: "איפה הַבַּקְבּוּק שֶׁל הַיַּלְדָּה?", transcription: "Eifo habakbuk shel hayalda?", russian: "Где бутылочка девочки?", category: "Детский сад" },
-      { id: 7, hebrew: "כּוֹאֵב לִי הַגָּרוֹן וְיֵשׁ לִי חֹם", transcription: "Koev li hagaron veyesh li khom", russian: "У меня болит горло и есть температура", category: "Больница" },
-      { id: 8, hebrew: "אֶפְשָׁר לְהָזִיז אֶת הָרֶכֶב בְּבַקָּשָׁה?", transcription: "Efshar lehaziz et harekhev bevakasha?", russian: "Можно, пожалуйста, переставить машину?", category: "Соседи" }
+      { id: 1, hebrew: "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", transcription: "Bevakasha lakhtokh et hapanel lefi hamidot", russian: "Пожалуйста, разрежьте панель по размерам", category: "Столярка и CNC", theory: "• <b>בבקשה</b> (бевакаша) — пожалуйста.<br>• <b>לחתוך</b> (лахтох) — инфинитив глагола 'резать' (биньян пааль). В вежливых просьбах часто используется инфинитив.<br>• <b>את</b> (эт) — предлог винительного падежа.<br>• <b>לפי</b> (лефи) — предлог 'по / согласно'.<br>• <b>המידות</b> (а-мидот) — 'размеры' с артиклем <b>ה</b>." },
+      { id: 2, hebrew: "הַיֶּלֶד אָכַל אֶת כָּל הָאֲרוּחָה הַיּוֹם?", transcription: "Hayeled akhal et kol haarukha hayom?", russian: "Ребенок съел сегодня весь обед?", category: "Детский сад", theory: "• <b>הילד</b> (а-йелед) — ребенок с определенным артиклем.<br>• <b>אכל</b> (ахаль) — глагол 'ел/съел' в прошедшем времени (он).<br>• <b>את כל הארוחה</b> (эт коль а-аруха) — 'весь обед' (прямое дополнение с предлогом <b>את</b>).<br>• <b>היום</b> (а-йом) — сегодня (буквально 'этот день')." },
+      { id: 3, hebrew: "יֵשׁ לִי תּוֹר לָרוֹפֵא בְּשָׁעָה עֶשֶׂר", transcription: "Yesh li tor larofe besha'a eser", russian: "У меня запись к врачу в 10 часов", category: "Больница", theory: "• <b>יש לי</b> (еш ли) — конструкция 'у меня есть'.<br>• <b>תור</b> (тор) — очередь / запись на прием.<br>• <b>לרופא</b> (ла-рофэ) — предлог <b>ל</b> (к) + артикль + <b>רופא</b> (врач).<br>• <b>בשעה עשר</b> (бе-шаа эсер) — в 10 часов (буквально 'в час десять')." },
+      { id: 4, hebrew: "סְלִיחָה, יֵשׁ נְזִילַת מַיִם מֵהַדִּירָה שֶׁלְּךָ", transcription: "Slikha, yesh nezilat mayim mehadira shelkha", russian: "Извините, из вашей квартиры протекает вода", category: "Соседи", theory: "• <b>סליחה</b> (слиха) — извините / простите.<br>• <b>נזילת מים</b> (незилат маим) — сопряжение (смихут): 'утечка воды'. Слово <b>נזילה</b> меняет окончание на <b>ת</b>.<br>• <b>מהדירה שלך</b> (ме-а-дира шельха) — из твоей/вашей квартиры (предлог <b>מ</b> + артикль + квартира + притяжательное слово)." },
+      { id: 5, hebrew: "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", transcription: "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", category: "Столярка и CNC", theory: "• <b>צריך</b> (царих) — нужно / должен.<br>• <b>להחליף</b> (лехахлиф) — инфинитив глагола 'менять/поменять' (биньян гифъиль).<br>• <b>הסכין</b> (а-сакин) — лезвие / фреза (буквально 'нож').<br>• <b>במכרסם</b> (ба-махресем) — во фрезере / фрезерном станке (предлог <b>ב</b> + артикль)." }
     ];
 
-    // Инициализация данных
     let masterPhrases = JSON.parse(localStorage.getItem('hebrew_phrases_master')) || basePhrasesDB;
     let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress')) || {}; 
-    // progressData формат: { phraseId: [ '2026-09-11', '2026-09-12' ] } - даты когда ответили "помню"
 
     let todayQueue = [];
 
-    // Алгоритм формирования очереди на сегодня
     function buildTodayQueue() {
       const todayStr = new Date().toISOString().split('T')[0];
       const fourteenDaysAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000);
@@ -117,23 +132,17 @@
       todayQueue = masterPhrases.filter(phrase => {
         const history = progressData[phrase.id] || [];
         
-        // Показываем если:
-        // 1. Фразу еще ни разу не отвечали "помню"
         if (history.length === 0) return true;
 
-        // 2. Фразу уже отвечали "помню", но сегодня её ЕЩЁ НЕ проходили,
-        // И с момента ПЕРВОГО успешного ответа не прошло 14 дней
         const firstSuccess = new Date(history[0]);
         const answeredToday = history.includes(todayStr);
 
         return (firstSuccess >= fourteenDaysAgo) && !answeredToday;
       });
 
-      // Перемешиваем случайным образом
       todayQueue.sort(() => Math.random() - 0.5);
     }
 
-    // Элементы DOM
     const elHebrew = document.getElementById('card-hebrew');
     const elTrans = document.getElementById('card-transcription');
     const elCat = document.getElementById('card-category');
@@ -143,8 +152,10 @@
     const actionButtons = document.getElementById('action-buttons');
     const emptyState = document.getElementById('empty-state');
     
-    const modal = document.getElementById('translation-modal');
+    const transModal = document.getElementById('translation-modal');
+    const theoryModal = document.getElementById('theory-modal');
     const modalRussianText = document.getElementById('modal-russian-text');
+    const modalTheoryText = document.getElementById('modal-theory-text');
 
     function renderCard() {
       if (todayQueue.length === 0) {
@@ -164,6 +175,7 @@
       elTrans.textContent = `[${current.transcription}]`;
       elCat.textContent = current.category;
       modalRussianText.textContent = current.russian;
+      modalTheoryText.innerHTML = current.theory || "Грамматический разбор для этой фразы пока не добавлен.";
 
       elRemaining.textContent = todayQueue.length;
     }
@@ -183,7 +195,6 @@
         }
         localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
       } else {
-        // Если "Не помню" — сбрасываем прогресс 14 дней и возвращаем в конец сегодняшней очереди
         delete progressData[current.id];
         localStorage.setItem('hebrew_phrases_progress', JSON.stringify(progressData));
         todayQueue.push(current);
@@ -192,27 +203,24 @@
       renderCard();
     }
 
-    // События кнопок
     document.getElementById('btn-remember').addEventListener('click', () => handleAnswer(true));
     document.getElementById('btn-forget').addEventListener('click', () => handleAnswer(false));
     
-    // Модальное окно перевода
-    document.getElementById('btn-show-translation').addEventListener('click', () => {
-      modal.classList.remove('hidden');
-    });
-    document.getElementById('btn-close-modal').addEventListener('click', () => {
-      modal.classList.add('hidden');
-    });
+    // Модальные окна
+    document.getElementById('btn-show-translation').addEventListener('click', () => transModal.classList.remove('hidden'));
+    document.getElementById('btn-close-modal').addEventListener('click', () => transModal.classList.add('hidden'));
+
+    document.getElementById('btn-show-theory').addEventListener('click', () => theoryModal.classList.remove('hidden'));
+    document.getElementById('btn-close-theory').addEventListener('click', () => theoryModal.classList.add('hidden'));
+    document.getElementById('btn-close-theory-x').addEventListener('click', () => theoryModal.classList.add('hidden'));
 
     document.getElementById('btn-restart').addEventListener('click', () => {
       buildTodayQueue();
       renderCard();
     });
 
-    // Сохранение основной базы в localStorage при обновлениях из файла
     localStorage.setItem('hebrew_phrases_master', JSON.stringify(masterPhrases));
 
-    // Старт
     buildTodayQueue();
     renderCard();
   </script>
