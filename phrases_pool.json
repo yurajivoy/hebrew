@@ -1,151 +1,1682 @@
 [
-  { "hebrew": "מָתַי יֵשׁ חֹפֶשׁ בְּגַן הַיְלָדִים?", "transcription": "Matai yesh khofesh began hayeladim?", "russian": "Когда каникулы в детском саду?", "category": "Детский сад" },
-  { "hebrew": "צָרִיךְ לְנַקּוֹת אֶת מַעֲרֶכֶת הַשְּׁאִיבָה", "transcription": "Tsarikh lenakot et ma'arekhet hashe'iva", "russian": "Нужно почистить систему аспирации (струшкоотсоס)", "category": "Столярка и CNC" },
-  { "hebrew": "הֵיכָן נִמְצֵאת הַבֵּית מִרְקַחַת?", "transcription": "Heikhan nimtsat habeit mirkakhat?", "russian": "Где находится аптека?", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לִסְגֹּר אֶת הַדֶּלֶת שֶׁל הַכְּנִיסָה?", "transcription": "Efshar lisgor et hadelet shel haknisa?", "russian": "Можно закрыть входную дверь?", "category": "Соседи" },
-  { "hebrew": "אֲנִי צָרִיךְ לְכַוֵּן אֶת אֶפֶס הַמְּכוֹנָה", "transcription": "Ani tsarikh lekhaven et efes hamekhona", "russian": "Мне нужно настроить ноль станка", "category": "Столярка и CNC" },
-  { "hebrew": "הַיֶּלֶד אָכַל הַיּוֹם אֶת כָּל הָאֲרוּחָה?", "transcription": "Hayeled akhal hayom et kol haarukha?", "russian": "Ребенок съел сегодня весь обеד?", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי תּוֹר לָרוֹפֵא בְּשָׁעָה עֶשֶׂר", "transcription": "Yesh li tor larofe besha'a eser", "russian": "У меня запись к врачу в 10 часов", "category": "Больница" },
-  { "hebrew": "סְלִיחָה, יֵשׁ נְזִילַת מַיִם מֵהַדִּירָה שֶׁלְּךָ", "transcription": "Slikha, yesh nezilat mayim mehadira shelkha", "russian": "Извините, из вашей квартиры протекает вода", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַסַּכִּין בַּמַּכְרְסֵם", "transcription": "Tsarikh lehakhlif et hasakin bamakhresem", russian: "Нужно заменить фрезу во фрезере", "category": "Столярка и CNC" },
-  { "hebrew": "איפה הַבַּקְבּוּק שֶׁל הַיַּלְדָּה?", "transcription": "Eifo habakbuk shel hayalda?", "russian": "Где бутылочка девочки?", "category": "Детский сад" },
-  { "hebrew": "כּוֹאֵב לִי הַגָּרוֹן וְיֵשׁ לִי חֹם", "transcription": "Koev li hagaron veyesh li khom", "russian": "У меня болит горло и есть температура", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לְהָזִיז אֶת הָרֶכֶב בְּבַקָּשָׁה?", "transcription": "Efshar lehaziz et harekhev bevakasha?", "russian": "Можно, пожалуйста, переставить машину?", "category": "Соседи" },
-  { "hebrew": "בְּבַקָּשָׁה לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת", "transcription": "Bevakasha lakhtokh et hapanel lefi hamidot", "russian": "Пожалуйста, разрежьте панель по размерам", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא יָשְׁנָה טוֹב בַּצָּהֳרַיִם?", "transcription": "Hi Yashna tov batsohorayim?", "russian": "Она хорошо спала днем?", "category": "Детский сад" },
-  { "hebrew": "אֲנִי צָרִיךְ מִרְשָׁם לַתְּרוּפָה הַזֹּאת", "transcription": "Ani tsarikh mirsham latrufa hazot", "russian": "Мне нужен рецепт на это лекарство", "category": "Больница" },
-  { "hebrew": "תּוֹדָה רַבָּה עַל הָעֶזְרָה, שָׁכֵן!", "transcription": "Toda raba al haezra, shaken!", "russian": "Большое спасибо за помощь, сосед!", "category": "Соседи" },
-  { "hebrew": "מַה הָעוֹבִי שֶׁל הַפְּלָטָה הַזֹּאת?", "transcription": "Ma haovi shel haplatah hazot?", "russian": "Какова толщина этой плиты?", "category": "Столярка и CNC" },
-  { "hebrew": "צָרִיךְ לְהָבִיא מַגֶּבֶת רְטוּבָה לַגַּן?", "transcription": "Tsarikh lehavi magevet retuva lagan?", "russian": "Нужно приносить влажное полотенце в сад?", "category": "Детский сад" },
-  { "hebrew": "איפה נִמְצָא חֲדַר הַמִּיּוּן?", "transcription": "Eifo nimtsa khadar hamiyun?", "russian": "Где находится приемный покой (эрджерси)?", "category": "Больница" },
-  { "hebrew": "הַאִם הַמַּעֲלִית עֹבֶדֶת כָּרֶגַע?", "transcription": "Haim hamaalit ovedet karega?", "russian": "Работает ли сейчас лифт?", "category": "Соседи" },
-  { "hebrew": "הַקֹּבֶץ שֶׁל הָ-CNC מוּכָן לְהַפְעָלָה", "transcription": "Hakovets shel ha-CNC mukhan lehaf'ala", "russian": "Файл CNC готов к запуску", "category": "Столярка и CNC" },
-  { "hebrew": "הַיֶּלֶד שִׂחֵק יָפֶה עִם הַיְלָדִים?", "transcription": "Hayeled sikhek yafe im hayeladim?", "russian": "Ребенок хорошо играл с детьми?", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי רְגִישׁוּת לְפֶנִיצִילִין", "transcription": "Yesh li regishut lepenitsilin", "russian": "У меня аллергия (чувствительность) к пенициллину", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לְהַנְמִיךְ אֶת הַמּוּזִיקָה, בְּבַקָּשָׁה?", "transcription": "Efshar lehanmikh et hamuzika, bevakasha?", "russian": "Можно сделать музыку потише, пожалуйста?", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לְהַדְבִּיק אֶת הַקְּצָווֹת עִם קַנְט", "transcription": "Tsarikh lehadbik et haktsavot im kant", "russian": "Нужно оклеить кромки кромкой (кантом)", "category": "Столярка и CNC" },
-  { "hebrew": "מָתַי יֵשׁ מְסִבָּה בַּגַּן?", "transcription": "Matai yesh mesiba bagan?", "russian": "Когда праздник в детском саду?", "category": "Детский сад" },
-  { "hebrew": "אֲנִי מַרְגִּישׁ סְחַרְחֹרֶת מֵהַבֹּקֶר", "transcription": "Ani margish skharkhoret mehaboker", "russian": "Я чувствую головокружение с утра", "category": "Больница" },
-  { "hebrew": "הַדַּוָּר שָׁאַר חֲבִילָה אֶצְלְךָ?", "transcription": "Hadavar hish'ir khavila etslekh?", "russian": "Курьер оставил посылку у вас?", "category": "Соседи" },
-  { "hebrew": "הַמִּדָּה הזֹאת לא נְכוֹנָה, תִּמְדֹּד שׁוּב", "transcription": "Hamida hazot lo nekhona, timdod shuv", "russian": "Этот размер неверный, перемерь заново", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא בָּכְתָה כְּשֶׁהָלַכְתָּ?", "transcription": "Hi bakhta kshehalakhta?", "russian": "Она плакала, когда ты ушел?", "category": "Детский сад" },
-  { "hebrew": "איפה אֶפְשָׁר לַעֲשׂוֹת בְּדִיקַת דָּם?", "transcription": "Eifo efshar laasot bedikat dam?", "russian": "Где можно сдать анализ крови?", "category": "Больница" },
-  { "hebrew": "הָאֹרַח שֶׁלְּךָ חוֹנֶה בַּמָּקוֹם שֶׁלִּי", "transcription": "Haorakh shelkha khone bamakor sheli", "russian": "Ваш гость припарковался на моем месте", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לִקְדֹּחַ חֹרִים לַצִּירִים", "transcription": "Tsarikh likdoakh khorim latsirim", "russian": "Нужно просверлить отверстия под петли", "category": "Столярка и CNC" },
-  { "hebrew": "צָרִיךְ לְהָבִיא כּוֹבַע וּמַיִם לַטִּיּוּל", "transcription": "Tsarikh lehavi kovah umayim latiyul", "russian": "Нужно принести кепку и воду для экскурсии", "category": "Детский сад" },
-  { "hebrew": "הָרוֹפֵא יְקַבֵּל אוֹתִי בְּקָרוֹב?", "transcription": "Harofe yekabel oti mekarov?", "russian": "Врач скоро меня примет?", "category": "Больница" },
-  { "hebrew": "שַׁבָּת שָׁלוֹם, שָׁכֵן יָקָר!", "transcription": "Shabbat shalom, shaken yakar!", "russian": "Шаббат шалом, дорогой сосед!", "category": "Соседи" },
-  { "hebrew": "הָעֵץ הַזֶּה יָבֵשׁ וּמוּכָן לַעֲבוֹדָה", "transcription": "Haetz haze yavesh umukhan laavoda", "russian": "Это дерево сухое и готово к работе", "category": "Столярка и CNC" },
-  { "hebrew": "מָתַי אֶפְשָׁר לָבֹא לֶאֱסֹף אֶת הַיֶּלֶד?", "transcription": "Matai efshar lavo leesof et hayeled?", "russian": "Когда можно прийти забрать ребенка?", "category": "Детский сад" },
-  { "hebrew": "איפה שֵׁרוּתִים בַּקּוֹמָה הזֹאת?", "transcription": "Eifo sherutim bakoma hazot?", "russian": "Где туалет на этом этаже?", "category": "Больница" },
-  { "hebrew": "מי מְנַקֶּה אֶת הַחֲדַר מַדְרֵגוֹת?", "transcription": "Mi menake et hakhadar madregot?", "russian": "Кто убирает подъезд (лестничную клетку)?", "category": "Соседи" },
-  { "hebrew": "תְּשַׁיֵּף אֶת הַפִּנּוֹת עִם נְיָר זְכוּכִית", "transcription": "Teshayef et hapinot im neyar zkhukhit", "russian": "Зашлифуй углы наждачной бумагой", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא שָׁתָה מַיִם הַיּוֹם?", "transcription": "Hu shata mayim hayom?", "russian": "Он пил сегодня воду?", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי כְּאֵבֵי בֶּטֶן חֲזָקִים", "transcription": "Yesh li keavei beten khazakim", "russian": "У меня сильные боли в животе", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לִלְוֹת מִמְּךָ מַבְרֵגָה?", "transcription": "Efshar lilvot mimkha mavrega?", "russian": "Можно одолжить у тебя шуруповерт?", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לְכַוֵּן אֶת מְהִירוּת הַחִיתוּךְ", "transcription": "Tsarikh lekhaven et mehirut hakhitukh", "russian": "Нужно отрегулировать скорость реза (подачи)", "category": "Столярка и CNC" },
-  { "hebrew": "צָרִיךְ לַחְתֹּם עַל הַטֹּפֶס הַזֶּה?", "transcription": "Tsarikh lakhtom al hatofes haze?", "russian": "Нужно подписать этот бланк?", "category": "Детский сад" },
-  { "hebrew": "כַּמָּה זְמַן נִשְׁאַר עַד הַתּוֹר שֶׁלִּי?", "transcription": "Kama zman nish'ar ad hator sheli?", "russian": "Сколько времени осталось до моей очереди?", "category": "Больница" },
-  { "hebrew": "הַכֶּלֶב שֶׁלְּךָ נוֹבֵחַ כָּל הַלַּיְלָה", "transcription": "Hakelev shelkha noveakh kol halayla", "russian": "Ваша собака лает всю ночь", "category": "Соседи" },
-  { "hebrew": "הִרְכַּבְנוּ אֶת הָאָרוֹן עַל הַקִּיר", "transcription": "Hirkavnu et haaron al hakir", "russian": "Мы смонтировали шкаф на стену", "category": "Столярка и CNC" },
-  { "hebrew": "הַיֶּלֶד צִיֵּר צִיּוּר יָפֶה מְאֹד", "transcription": "Hayeled tsiyer tsiyur yafe meod", "russian": "Ребенок нарисовал очень красивый рисунок", "category": "Детский сад" },
-  { "hebrew": "אֲנִי צָרִיךְ תַּחְבֹּשֶׁת חֲדָשָׁה", "transcription": "Ani tsarikh takhboshet khadasha", "russian": "Мне нужна новая повязка (бинтование)", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לְהַשְׁאִיר אֶת הַמַּפְתֵּחַ אֶצְלְךָ?", "transcription": "Efshar lehash'ir et hamafteakh etslekh?", "russian": "Можно оставить ключ у вас?", "category": "Соседи" },
-  { "hebrew": "הַלָּקָה הזֹאת מִתְיַבֶּשׁת מַהֵר", "transcription": "Halaka hazot mityabeshet maher", "russian": "Этот лак сохнет быстро", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא לֹא מַרְגִּישָׁה טוֹב הַיּוֹם", "transcription": "Hi lo margisha tov hayom", "russian": "Она плохо себя чувствует сегодня", "category": "Детский сад" },
-  { "hebrew": "איפה מְשַׁלְּמִים עַל הַבְּדִיקָה?", "transcription": "Eifo meshalmim al habedika?", "russian": "Где оплачивают обследование?", "category": "Больница" },
-  { "hebrew": "מָתַי מְרוֹקְנִים אֶת הַפַּח הַמְּשׁוּתָף?", "transcription": "Matai meroknim et hapakh hameshutaf?", "russian": "Когда опустошают общий мусорный бак?", "category": "Соседи" },
-  { "hebrew": "תִּבְדֹּק אֶת הַזָּוִיּוֹת עִם זָוִיתָן", "transcription": "Tivdok et hazaviyot im zavitan", "russian": "Проверь углы угольником", "category": "Столярка и CNC" },
-  { "hebrew": "צָרִיךְ לְהָבִיא בְּגָדִים לְהַחְלָפָה", "transcription": "Tsarikh lehavi bgadim lehakhlafa", "russian": "Нужно принести сменную одежду", "category": "Детский сад" },
-  { "hebrew": "אֲנִי מְחַכֶּה לַתּוֹצָאוֹת שֶׁל הָ-C.T", "transcription": "Ani mekhake latotsaot shel ha-CT", "russian": "Я жду результатов КТ", "category": "Больница" },
-  { "hebrew": "אֲנִי סוֹגֵר אֶת הַשַּׁעַר הָרָאשִׁי", "transcription": "Ani soger et Hasha'ar harashi", "russian": "Я закрываю главные ворота", "category": "Соседи" },
-  { "hebrew": "הַמְּכוֹנָה עֹבֶדֶת עַל שָׁלֹשׁ פָֿאזוֹת", "transcription": "Hamekhona ovedet al shalosh fazot", "russian": "Станок работает от трех фаз", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא שִׂחֵק בַּחָצֵר הַיּוֹם?", "transcription": "Hu sikhek bakhatser hayom?", "russian": "Он играл во дворе сегодня?", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי אֲלֶרְגִּיָּה לְאָבָק", "transcription": "Yesh li alergiya leavak", "russian": "У меня аллергия на пыль", "category": "Больница" },
-  { "hebrew": "הַמַּזְגָן שֶׁלְּךָ מַרְעִישׁ מְאֹד", "transcription": "Hamazgan shelkha mar'ish meod", "russian": "Ваш кондиционер сильно шумит", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לִמְרֹחַ דֶּבֶק עֵץ שָׁווֹת", "transcription": "Tsarikh limroakh devek ets shavot", "russian": "Нужно равномерно нанести столярный клей", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא לָמְדָה מִילָה חֲדָשָׁה בְּעִבְרִית", "transcription": "Hi lamda mila khadasha beivrit", "russian": "Она выучила новое слово на иврите", "category": "Детский сад" },
-  { "hebrew": "אֶפְשָׁר ללקחת אֶת הַדַּף הַזֶּה?", "transcription": "Efshar lakakhat et hadaf haze?", "russian": "Можно взять этот лист/справку?", "category": "Больница" },
-  { "hebrew": "תּוֹדָה עַל הַמַּאֲפָה, שְׁכֵנָה!", "transcription": "Toda al hama'afe, shkena!", "russian": "Спасибо за выпечку, соседка!", "category": "Соседи" },
-  { "hebrew": "הַחִיתוּךְ יוֹצֵא מְדֻיָּק מְאֹד", "transcription": "Hakhitukh yotse meduyak meod", "russian": "Рез получается очень точным", "category": "Столярка и CNC" },
-  { "hebrew": "מָתַי תִּהְיֶה אֲרוּחָת צָהֳרַיִם?", "transcription": "Matai tihye arukhat tsohorayim?", "russian": "Когда будет обед?", "category": "Детский сад" },
-  { "hebrew": "הַדֹּפֶק שֶׁלִּי קְצָת גָּבוֹהַּ", "transcription": " Hadofek sheli ktsat gavoha", "russian": "Мой пульс немного повышен", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לְהַחֲנוֹת פֹּה אֶת הָאֹפַנַּיִם?", "transcription": "Efshar lehakhnot po et haofanayim?", "russian": "Можно припарковать здесь велосипед?", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַרְצוּעָה בַּמַּסוֹר", "transcription": "Tsarikh lehakhlif et hartsua bamasor", "russian": "Нужно заменить ремень на пиле", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא אוֹהֵב לְשַׂחֵק בַּלֶּגוֹ", "transcription": "Hu ohev lesakhek balego", "russian": "Он любит играть в лего", "category": "Детский сад" },
-  { "hebrew": "אֲנִי מַרְגִּישׁ חֻלְשָׁה בְּכָל הַגּוּף", "transcription": "Ani margish khulsha bekhol haguf", "russian": "Я чувствую слабость во всем теле", "category": "Больница" },
-  { "hebrew": "תָּשִׂים אֶת הַדֹּאַר בַּתֵּבָה שֶׁלִּי", "transcription": "Tasim et hadoar bateva sheli", "russian": "Положи почту в мой ящик", "category": "Соседи" },
-  { "hebrew": "הַמגֵרָה הזֹאת לא נִסְגֶּרֶת טוֹב", "transcription": "Hamagera hazot lo nisgeret tov", "russian": "Этот выдвижной ящик плохо закрывается", "category": "Столярка и CNC" },
-  { "hebrew": "צָרִיךְ לִגְזֹר אֶת הַצִּפָּרְנַיִם שֶׁל הַיֶּלֶד", "transcription": "Tsarikh ligzor et hatsipornayim shel hayeled", "russian": "Нужно подстричь ногти ребенку", "category": "Детский сад" },
-  { "hebrew": "הָאָחָה תָּבֹא לַעֲשׂוֹת זְרִיקָה", "transcription": "Haakhayot tavo laasot zrika", "russian": "Медсестра придет сделать укол", "category": "Больница" },
-  { "hebrew": "סְלִיחָה, זֶה הַשְּׁטַח הַפְּרָטִי שֶׁלִּי", "transcription": "Slikha, ze Hashetakh haprati sheli", "russian": "Извините, это моя частная территория", "category": "Соседи" },
-  { "hebrew": "הִשְׁתַּמַּשְׁנוּ בְּפָנֶל סָנְדוּויץ' אֵיכוּתִי", "transcription": "Hishtamashnu bepanel sandwich eikhuti", "russian": "Мы использовали качественную фанеру (сэндвич)", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא עָשְׂתָה עֲבוֹדַת יָד מַדְהִימָה", "transcription": "Hi asta avodat yad madhima", "russian": "Она сделала потрясающую поделку", "category": "Детский сад" },
-  { "hebrew": "הַלַּחַץ דָּם שֶׁלִּי תַּקִּין הַיּוֹם", "transcription": "Halakhats dam sheli takin hayom", "russian": "Мое кровяное давление сегодня в норме", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לַעֲזֹר לְךָ עִם הַשָּׂקִיּוֹת?", "transcription": "Efshar laazor lekha im hasakiyot?", "russian": "Помочь вам с пакетами?", "category": "Соседи" },
-  { "hebrew": "הַמְעַבֵּד שֶׁל הַמַּכְרְסֵם חַם מְאֹד", "transcription": "Hamaabed shel hamakhresem kham meod", "russian": "Шпиндель фрезера очень горячий", "category": "Столярка и CNC" },
-  { "hebrew": "הֵם שָׁרוּ שִׁירִים בַּקַּבָּלַת שַׁבָּת", "transcription": "Hem sharu shirim kabalat shabbat", "russian": "Они пели песни на встрече Шаббата", "category": "Детский сад" },
-  { "hebrew": "צָרִיךְ לַעֲשׂוֹת צִלּוּם רֶנְטְגֶּן", "transcription": "Tsarikh laasot tsilum rentgen", "russian": "Нужно сделать рентгеновский снимок", "category": "Больница" },
-  { "hebrew": "מישהו שָׁכַח אֶת הָאוֹר בַּמַּדְרֵגוֹת", "transcription": "Mishehu shakhakh et haor bamadregot", "russian": "Кто-то забыл свет на лестнице", "category": "Соседи" },
-  { "hebrew": "תְּחַזֵּק אֶת הַבְּרָגִים עִם מַפְתֵּחַ אלן", "transcription": "Tekhazek et habragim im mafteakh allen", "russian": "Затяни болты шестигранником (ключом Аллена)", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא לֹא רוֹצֶה לִלְבֹּשׁ אֶת הַמּעִיל", "transcription": "Hu lo rotse lilbosh et hameil", "russian": "Он не хочет надевать куртку", "category": "Детский сад" },
-  { "hebrew": "איפה קוֹנִים כַּרְטִיס לַחֲנָיָה?", "transcription": "Eifo konim kartis lakhanaya?", "russian": "Где покупают парковочный билет?", "category": "Больница" },
-  { "hebrew": "אֲנִי מִצְטַעֵר עַל הָרַעַשׁ מֵהַשִּׁפּוּץ", "transcription": "Ani mitstaer al haraash mehashiputs", "russian": "Приношу извинения за шум от ремонта", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לִלְחֹץ אֶת הַחֲלָקִים עִם כְּלִיבָּה", "transcription": "Tsarikh lilkhots et hakhalakim im kliba", "russian": "Нужно сжать детали струбциной", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא חָלְקָה אֶת הַמְּתֻקִּים עִם כֻּלָּם", "transcription": "Hi khalka et hametukim im kulam", "russian": "Она поделилась сладостями со всеми", "category": "Детский сад" },
-  { "hebrew": "אֲנִי צָרִיךְ מַיִם, בְּבַקָּשָׁה", "transcription": "Ani tsarikh mayim, bevakasha", "russian": "Мне нужна вода, пожалуйста", "category": "Больница" },
-  { "hebrew": "הַשַּׁעַר הַחַשְׁמָלִי לֹא נִפְתָּח", "transcription": "Hashaar hakhashmali lo niftakh", "russian": "Электрические ворота не открываются", "category": "Соседи" },
-  { "hebrew": "תִּבְדֹּק אֶת הָ-G-code לִפְנֵי הַהַפְעָלָה", "transcription": "Tivdok et ha-G-code lifnei hahaf'ala", "russian": "Проверь G-код перед запуском", "category": "Столярка и CNC" },
-  { "hebrew": "הַגַּנֶּנֶת אָמְרָה שֶׁהוּא הָיָה מְעֻלֶּה", "transcription": "Haganenet amra shehu haya meule", "russian": "Воспитательница сказала, что он вести себя отлично", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי נְפִיחוּת בָּרֶגֶל", "transcription": "Yesh li nefikhut baregel", "russian": "У меня отек на ноге", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לֶאֱסֹף אֶת הַדֹּאַר שֶׁלִּי?", "transcription": "Efshar leesof et hadoar sheli?", "russian": "Можешь забрать мою почту?", "category": "Соседи" },
-  { "hebrew": "הַדֶּלֶת שֶׁל הָאָרוֹן עֲקוּמָה קְצָת", "transcription": "Hadelet shel haaron akuma ktsat", "russian": "Дверца шкафа немного перекошена", "category": "Столярка и CNC" },
-  { "hebrew": "מָתַי יוֹצְאִים לַחָצֵר?", "transcription": "Matai yotseim lakhatser?", "russian": "Когда выходят во двор?", "category": "Детский сад" },
-  { "hebrew": "אֲנִי מְחַכֶּה לָרוֹפֵא מְמֻמְחֶה", "transcription": "Ani mekhake larofe mumkhe", "russian": "Я жду врача-специалиста", "category": "Больница" },
-  { "hebrew": "תּוֹדָה עַל הַסַּבְלָנוּת שֶׁלְּךָ", "transcription": "Toda al hasavlanut shelkha", "russian": "Спасибо за твое терпение", "category": "Соседи" },
-  { "hebrew": "תְּנַקֶּה אֶת הַשֻּׁלְחָן עַבּוֹדָה מֵאָבָק", "transcription": "Tenake et shulkhan avoda meavak", "russian": "Очисти рабочий стол от пыли", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא אָהַב אֶת הַהַצָּגָה בַּגַּן", "transcription": "Hu ahav et hahatsaga bagan", "russian": "Ему понравился спектакль в саду", "category": "Детский сад" },
-  { "hebrew": "איפה קוֹנִים תְּרוּפוֹת בַּלַּיְלָה?", "transcription": "Eifo konim trufot balayla?", "russian": "Где купить лекарства ночью?", "category": "Больница" },
-  { "hebrew": "אֲנִי שָׂם אֶת הַזֶּבֶל בַּפַּח", "transcription": "Ani sam et hazevel bapakh", "russian": "Я выбрасываю мусор в бак", "category": "Соседи" },
-  { "hebrew": "הַחֹר הַזֶּה עָמֹק מִדַּי", "transcription": "Hakhor haze amok midai", "russian": "Это отверстие слишком глубокое", "category": "Столярка и CNC" },
-  { "hebrew": "צָרִיךְ לֶאֱסֹף אֶת הַצַּעֲצוּעִים", "transcription": "Tsarikh leesof et hatsaatsuim", "russian": "Нужно собрать игрушки", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי בְּדִיקָת מַעֲבָרָה מָחָר", "transcription": "Yesh li bedikat maabara makhar", "russian": "У меня завтра лабораторный анализ", "category": "Больница" },
-  { "hebrew": "הַגָּדֵר מְלוּכְלֶכֶת קְצָת", "transcription": "Hagader melukhlekhet ktsat", "russian": "Забор немного грязный", "category": "Соседи" },
-  { "hebrew": "תִּשְׁתַּמֵּשׁ בְּפֶלֶס לִבְדֹּק יַצִיבוּת", "transcription": "Tishtamesh befeles livdok yatsivut", "russian": "Используй уровень, чтобы проверить ровность", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא לֹא רוֹצָה לֶאֱכֹל אֶת הַמָּרָק", "transcription": "Hi lo rotsa leakhol et hamarak", "russian": "Она не хочет есть суп", "category": "Детский сад" },
-  { "hebrew": "אֲנִי מַרְגִּישׁ הַרְבֵּה יוֹתֵר טוֹב", "transcription": "Ani margish harbe yoter tov", "russian": "Я чувствую себя гораздо лучше", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לִסְגֹּר אֶת הַחַלּוֹן בַּמַּדְרֵגוֹת?", "transcription": "Efshar lisgor et hakhalon bamadregot?", "russian": "Можно закрыть окно на лестничной площадке?", "category": "Соседи" },
-  { "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַמַּסוֹר הָעֲגֹל", "transcription": "Tsarikh lehakhlif et hamasor haagol", "russian": "Нужно поменять диск дисковой пилы", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא מָצָא חָבֵר חָדָשׁ בַּגַּן", "transcription": "Hu matsa khaver khadash bagan", "russian": "Он нашел нового друга в саду", "category": "Детский сад" },
-  { "hebrew": "מָתַי יִהְיוּ מוּכָנוֹת הַתּוֹצָאוֹת?", "transcription": "Matai yihyu mukhanot hatotsaot?", "russian": "Когда будут готовы результаты?", "category": "Больница" },
-  { "hebrew": "הַשְּׁכֵנִים מִלְמַעְלָה עוֹשִׂים רַעַשׁ", "transcription": "Hashkenim milmalla osim raash", "russian": "Соседи сверху шумят", "category": "Соседи" },
-  { "hebrew": "תָּשִׂים מַסֵּכָה נֶגֶד אָבָק", "transcription": "Tasim masekha neged avak", "russian": "Надень респиратор (маску от пыли)", "category": "Столярка и CNC" },
-  { "hebrew": "מָתַי יֵשׁ יוֹם הוֹלֶדֶת בַּגַּן?", "transcription": "Matai yesh yom holedet bagan?", "russian": "Когда день рождения в саду?", "category": "Детский сад" },
-  { "hebrew": "אֲנִי צָרִיךְ אִישׁוּר מַחֲלָה לָעַבוֹדָה", "transcription": "Ani tsarikh ishur makhala laavoda", "russian": "Мне нужен больничный лист для работы", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לְהַשְׁאִיר אֶת הַכֶּלֶב אֶצְלְךָ?", "transcription": "Efshar lehash'ir et hakelev etslekh?", "russian": "Можно оставить собаку у тебя?", "category": "Соседи" },
-  { "hebrew": "הַדֶּבֶק הַזֶּה מַחֲזִיק חָזָק מְאֹד", "transcription": "Hadevek haze makhazik khazak meod", "russian": "Этот клей держит очень крепко", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא לָמְדָה לִשְׁטֹף יָדַיִם לְבַד", "transcription": "Hi lamda lishtof yadayim levad", "russian": "Она научилась мыть руки сама", "category": "Детский сад" },
-  { "hebrew": "הָרוֹפֵא נָתַן לִי אֶנְטִיבִּיאוֹטִיקָה", "transcription": "Harofe natan li antibiotika", "russian": "Врач дал мне антибиотики", "category": "Больница" },
-  { "hebrew": "הַשָּׁכֵן מִמּוּל עָזַב אֶת הַדִּירָה", "transcription": "Hashaken mimul azav et hadira", "russian": "Сосед напротив съехал из квартиры", "category": "Соседи" },
-  { "hebrew": "תְּכַוֵּן אֶת הַגֹּבַהּ שֶׁל הַלַּהַב", "transcription": "Tekhaven et hagovah shel kalahav", "russian": "Отрегулируй высоту лезвия (пильного диска)", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא רוֹצֶה לָקַחַת אֶת הַבֻּבָּה לַגַּן", "transcription": "Hu rotse lakakhat et habuba lagan", "russian": "Он хочет взять игрушку в сад", "category": "Детский сад" },
-  { "hebrew": "יֵשׁ לִי תּוֹר לְרוֹפֵא עֵינַיִם", "transcription": "Yesh li tor lerofe einayim", "russian": "У меня запись к окулисту", "category": "Больница" },
-  { "hebrew": "תּוֹדָה עַל הַפֵּרוֹת, שָׁכֵן!", "transcription": "Toda al haperot, shaken!", "russian": "Спасибо за фрукты, сосед!", "category": "Соседи" },
-  { "hebrew": "הַפָּנֶל הַזֶּה יָשָׁר לְגַמְרֵי", "transcription": "Hapanel haze yashar legamrei", "russian": "Эта панель абсолютно ровная", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא נִרְדְּמָה מַהֵר מְאֹד הַיּוֹם", "transcription": "Hi nirdema maher meod hayom", "russian": "Она заснула очень быстро сегодня", "category": "Детский сад" },
-  { "hebrew": "אֲנִי צָרִיךְ לַעֲשׂוֹת בְּדִיקַת שֶׁתֶן", "transcription": "Ani tsarikh laasot bedikat sheten", "russian": "Мне нужно сдать анализ мочи", "category": "Больница" },
-  { "hebrew": "אֶפְשָׁר לִלְוֹת מִמְּךָ סֻלָּם?", "transcription": "Efshar lilvot mimkha sulam?", "russian": "Можно одолжить у тебя стремянку?", "category": "Соседи" },
-  { "hebrew": "תְּנַקֶּה אֶת הַמַּכְרְסֵם מִשְּׁבָבִים", "transcription": "Tenake et hamakhresem mishvavim", "russian": "Очисти фрезер от стружки", "category": "Столярка и CNC" },
-  { "hebrew": "מָתַי יֵשׁ קַבָּלַת שַׁבָּת בַּגַּן?", "transcription": "Matai yesh kabalat shabbat bagan?", "russian": "Когда встреча Шаббата в саду?", "category": "Детский сад" },
-  { "hebrew": "הַחוֹם שֶׁלִּי יָרַד נִכָּר", "transcription": "Hakhom sheli yarad nikar", "russian": "Моя температура заметно спала", "category": "Больница" },
-  { "hebrew": "הַאינטרנט לֹא עֹבֵד בַּבִּנְיָן", "transcription": "Hainternet lo oved babinyan", "russian": "Интернет не работает в здании", "category": "Соседи" },
-  { "hebrew": "תִּבְדֹּק אֶת הָעֳבִי שֶׁל הַקַּנְט", "transcription": "Tivdok et haovi shel hakant", "russian": "Проверь толщину кромки", "category": "Столярка и CNC" },
-  { "hebrew": "הוּא שָׂמַח לִרְאוֹת אֶת הַגַּנֶּנֶת", "transcription": "Hu samakh lirot et haganenet", "russian": "Он был рад видеть воспитательницу", "category": "Детский сад" },
-  { "hebrew": "אֲנִי מְחַכֶּה לַמִכְתָּב שִׁחְרוּר", "transcription": "Ani mekhake lamikhtav shikhrur", "russian": "Я жду выписной лист (справку о выписке)", "category": "Больница" },
-  { "hebrew": "תּוֹדָה עַל הָעֶזְרָה עִם הַחֲנָיָה", "transcription": "Toda al haezra im hakhanaya", "russian": "Спасибо за помощь с парковкой", "category": "Соседи" },
-  { "hebrew": "הַמַּעֲרֶכֶת הוּפְעֲלָה בְּהַצְלָחָה", "transcription": "Hamaarekhet huf'ala behatslakha", "russian": "Система успешно запущена", "category": "Столярка и CNC" },
-  { "hebrew": "הִיא אָכְלָה אֶת כָּל הַפֵּרוֹת", "transcription": "Hi akhla et kol haperot", "russian": "Она съела все фрукты", "category": "Детский сад" },
-  { "hebrew": "איפה קוֹנִים מַדְחֹם?", "transcription": "Eifo konim madkhom?", "russian": "Где продается градусник?", "category": "Больница" },
-  { "hebrew": "שַׁבָּת שָׁלוֹם וּמְבֹרָךְ!", "transcription": "Shabbat shalom umevorakh!", "russian": "Благословенного и мирного Шаббата!", "category": "Соседи" },
-  { "hebrew": "הָעֲבוֹדָה הסתיימה בְּהַצְלָחָה", "transcription": "Haavoda histayma behatslakha", "russian": "Работа успешно завершена", "category": "Столярка и CNC" }
+  {
+    "hebrew": "מָתַי יֵשׁ חֹפֶשׁ בְּגַן הַיְלָדִים?",
+    "transcription": "Matai yesh khofesh began hayeladim?",
+    "russian": "Когда каникулы в детском саду?",
+    "category": "Детский сад",
+    "theory": "• <b>מתי</b> (матай) — вопросительное слово 'когда'.<br>• <b>יש</b> (еш) — 'есть / имеется'.<br>• <b>חופש</b> (хофеш) — отпуск / каникулы / свобода.<br>• <b>בגן הילדים</b> (бе-ган а-йеладим) — предлог <b>ב</b> (в) + <b>גן</b> (сад) + сопряжение (смихут) со словом <b>הילדים</b> (дети)."
+  },
+  {
+    "hebrew": "הִיא לֹא מַרְגִּישָׁה טוֹב, יֵשׁ לָהּ חֹם",
+    "transcription": "Hi lo margisha tov, yesh lah khom",
+    "russian": "Она плохо себя чувствует, у нее температура",
+    "category": "Детский сад",
+    "theory": "• <b>מרגישה</b> (маргиша) — 'чувствует себя' (ж.р., наст. вр., биньян гифъиль от кошель <i>ר-ג-ש</i>).<br>• <b>יש לה</b> (еш ла) — конструкция 'у нее есть'.<br>• <b>חום</b> (хом) — температура / жар / тепло."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהָבִיא בְּגָדִים לְהַחְלָפָה?",
+    "transcription": "Tsarikh lehavi bgadim lehakhlafa?",
+    "russian": "Нужно приносить сменную одежду?",
+    "category": "Детский сад",
+    "theory": "• <b>צריך</b> (царих) — надо / нужно.<br>• <b>להביא</b> (лехави) — инфинитив 'приносить/приводить' (биньян гифъиль).<br>• <b>בגדים</b> (бгадим) — одежда (мн. ч. от <i>בגד</i>).<br>• <b>להחלפה</b> (ле-ахлафа) — на смену / для замены."
+  },
+  {
+    "hebrew": "בְּאֵיזוֹ שָׁעָה מִסְתַּיֵּם הַגַּן הַיּוֹם?",
+    "transcription": "Beeizo sha'a mistayem hagan hayom?",
+    "russian": "Во сколько часов заканчивается садик сегодня?",
+    "category": "Детский сад",
+    "theory": "• <b>באיזו שעה</b> (бе-эизо шаа) — в какой час / во сколько.<br>• <b>מסתיים</b> (мистаем) — заканчивается (наст. вр., биньян митпаэль).<br>• <b>היום</b> (а-йом) — сегодня (буквально 'этот день')."
+  },
+  {
+    "hebrew": "הִיא אָכְלָה יَפֶה אֶת אֲרוּחַת הַצָּהֳרַיִם",
+    "transcription": "Hi akhla yafe et arukhat hatsohorayim",
+    "russian": "Она хорошо поела обед",
+    "category": "Детский сад",
+    "theory": "• <b>אכלה</b> (ахла) — 'ела/съела' (прош. вр., она, биньян пааль).<br>• <b>יפה</b> (яфе) — красиво / хорошо.<br>• <b>ארוחת הצהריים</b> (арухат а-цоораим) — обед (сопряжение смихут: <i>ארוחה</i> превращается в <i>ארוחת</i>)."
+  },
+  {
+    "hebrew": "מִי אוֹסֵף אֶת הַיֶּלֶד הַיּוֹם?",
+    "transcription": "Mi osef et hayeled hayom?",
+    "russian": "Кто забирает ребенка сегодня?",
+    "category": "Детский сад",
+    "theory": "• <b>מי</b> (ми) — кто.<br>• <b>אוסף</b> (осеф) — забирает / собирает (наст. вр., м.р., биньян пааль).<br>• <b>את הילד</b> (эт а-йелед) — ребенка (прямое дополнение с предлогом <b>את</b>)."
+  },
+  {
+    "hebrew": "הוּא שָׂמַח מְאֹד לְשַׂחֵק עִם הַחֲבֵרִים",
+    "transcription": "Hu samakh meod lesakhek im hakhaverim",
+    "russian": "Он очень радовался играть с друзьями",
+    "category": "Детский сад",
+    "theory": "• <b>שמח</b> (самаха/самах) — радовался (прош. вр., он).<br>• <b>לשחק</b> (лесазек) — играть (инфинитив, биньян пиэль).<br>• <b>עם החברים</b> (им а-хаверим) — с друзьями (предлог <b>עם</b> + артикль)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְקַבֵּל אֶת הַטֹּפֶס שֶׁל הַהַרְשָׁמָה?",
+    "transcription": "Efshar lekabel et hatofes shel haharshama?",
+    "russian": "Можно получить бланк записи?",
+    "category": "Детский сад",
+    "theory": "• <b>אפשר</b> (эфшар) — можно.<br>• <b>לקבל</b> (лекабель) — получать / принять (инфинитив, биньян пиэль).<br>• <b>הטופס</b> (а-тофес) — бланк / форма.<br>• <b>הרשמה</b> (харшама) — запись / регистрация."
+  },
+  {
+    "hebrew": "הִיא בָּכְתָה בַּבֹּקֶר כְּשֶׁעָזַבְתִּי",
+    "transcription": "Hi bakhta baboker khesheazavti",
+    "russian": "Она плакала утром, когда я ушел/ушла",
+    "category": "Детский сад",
+    "theory": "• <b>בכתה</b> (бахта) — плакала (прош. вр., она, корень <i>ב-כ-ה</i>).<br>• <b>כש...</b> (кше-) — когда (в качестве союза).<br>• <b>עזבתי</b> (азавти) — я оставил / ушел (прош. вр., 1-е лицо)."
+  },
+  {
+    "hebrew": "יֵשׁ מְסִבָּה בַּגַּן בְּיוֹם שׁิשִּׁי",
+    "transcription": "Yesh mesiba bagan beyom shishi",
+    "russian": "В пятницу в садике праздник (вечеринка)",
+    "category": "Детский сад",
+    "theory": "• <b>מסיבה</b> (месиба) — праздник / вечеринка.<br>• <b>בגן</b> (ба-ган) — в садике.<br>• <b>ביום שישי</b> (бе-йом шиши) — в пятницу."
+  },
+  {
+    "hebrew": "הוּא לֹא רוֹצֶה לֶאֱכֹל אֶת הַסָּלָט",
+    "transcription": "Hu lo rotse leekhol et hasalat",
+    "russian": "Он не хочет есть салат",
+    "category": "Детский сад",
+    "theory": "• <b>רוצה</b> (роце) — хочет (м.р., наст. вр.).<br>• <b>לאכול</b> (леэхоль) — есть / кушать (инфинитив, биньян пааль)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְהָבִיא עֻגָה לְיֹם הַהֻלֶּדֶת?",
+    "transcription": "Efshar lehavi uga leyom hahuledet?",
+    "russian": "Можно принести торт на день рождения?",
+    "category": "Детский сад",
+    "theory": "• <b>עוגה</b> (уга) — торт / пирог.<br>• <b>יום ההולדת</b> (йом а-уледет) — день рождения (смихут)."
+  },
+  {
+    "hebrew": "הַיֶּלֶד יָשַׁן שְׁעָתַיִם בַּצָּהֳרַיִם",
+    "transcription": "Hayeled yashan she'atayim batsohorayim",
+    "russian": "Ребенок спал два часа днем",
+    "category": "Детский сад",
+    "theory": "• <b>ישן</b> (яшан) — спал (прош. вр., м.р.).<br>• <b>שעתיים</b> (шаатайим) — два часа (двойственное число с окончанием <i>-аим</i>)."
+  },
+  {
+    "hebrew": "צָרִיךְ לַחְתֹּם עַל הַטֹּפֶס הַזֶּה?",
+    "transcription": "Tsarikh lakhtom al hatofes haze?",
+    "russian": "Нужно подписать этот бланк?",
+    "category": "Детский сад",
+    "theory": "• <b>לחתום</b> (лахтом) — подписывать (инфинитив, пааль).<br>• <b>על</b> (аль) — на / о.<br>• <b>הזה</b> (а-зе) — этот (указательное местоимение м.р.)."
+  },
+  {
+    "hebrew": "הִיא לָמְדָה שִׁיר חָדָשׁ בַּגַּן",
+    "transcription": "Hi lamda shir khadash bagan",
+    "russian": "Она выучила новую песню в саду",
+    "category": "Детский сад",
+    "theory": "• <b>למדה</b> (ламда) — учила / выучила (прош. вр., она).<br>• <b>שיר חדש</b> (шир хадаш) — новая песня (прилагательное стоит после существительного)."
+  },
+  {
+    "hebrew": "הֵם שִׂחֲקוּ בַּחָצֵר כָּל הַבֹּקֶר",
+    "transcription": "Hem sikhatu bakhatser kol haboker",
+    "russian": "Они играли во дворе все утро",
+    "category": "Детский сад",
+    "theory": "• <b>שיחקו</b> (сихаку) — играли (прош. вр., они, биньян пиэль).<br>• <b>בחצר</b> (ба-хацер) — во дворе.<br>• <b>כל הבוקר</b> (коль а-бокер) — все утро."
+  },
+  {
+    "hebrew": "הַיֶּלֶד שָׁכַח אֶת הַמּעִיל בַּגַּן",
+    "transcription": "Hayeled shakhakh et hameil bagan",
+    "russian": "Ребенок забыл куртку в садике",
+    "category": "Детский сад",
+    "theory": "• <b>שכח</b> (шаках) — забыл (прош. вр., м.р.).<br>• <b>המעיל</b> (а-меиль) — куртка / пальто."
+  },
+  {
+    "hebrew": "מָתַי יוֹצְאִים לְחֻפְשַׁת הַקַּיִץ?",
+    "transcription": "Matai yotsem lekhufshat hakayits?",
+    "russian": "Когда выходят на летние каникулы?",
+    "category": "Детский сад",
+    "theory": "• <b>יוצאים</b> (йоцеим) — выходят (мн. ч., м.р., наст. вр.).<br>• <b>חופשת הקיץ</b> (хуфшат а-каиц) — летний отпуск/каникулы (смихут от <i>חופשה</i>)."
+  },
+  {
+    "hebrew": "הִיא לֹא רוֹצָה לִלְבֹּשׁ אֶת הַנַּעֲלַיִם",
+    "transcription": "Hi lo rotsa lilbosh et hanaalayim",
+    "russian": "Она не хочет надевать обувь",
+    "category": "Детский сад",
+    "theory": "• <b>ללבוש</b> (лильбош) — надевать / носить (инфинитив, пааль).<br>• <b>הנעליים</b> (а-наалайим) — обувь / туфли (парная форма на <i>-аим</i>)."
+  },
+  {
+    "hebrew": "יֵשׁ לָכֶם טֶלֶפוֹן שֶׁל הַגַּנֶּנֶת?",
+    "transcription": "Yesh lakhem telefon shel hagannenet?",
+    "russian": "У вас есть телефон воспитательницы?",
+    "category": "Детский сад",
+    "theory": "• <b>יש לכם</b> (еш лахем) — у вас есть.<br>• <b>הגננת</b> (а-ганенет) — воспитательница в детском саду."
+  },
+  {
+    "hebrew": "אֵיפֹה כּוֹאֵב לְךָ?",
+    "transcription": "Eifo koev lekha?",
+    "russian": "Где у тебя болит?",
+    "category": "Больница",
+    "theory": "• <b>כואב</b> (коэв) — болит (м.р., наст. вр.).<br>• <b>לך</b> (леха) — тебе (обращение к мужчине/мальчику)."
+  },
+  {
+    "hebrew": "צָרִיךְ ללקחת אֶת הַתְּרוּפָה שָׁלֹשׁ פְּעָמִים בְּיוֹם",
+    "transcription": "Tsarikh lakakhat et hatrufa shalosh peamim beyom",
+    "russian": "Нужно принимать лекарство три раза в день",
+    "category": "Больница",
+    "theory": "• <b>לקחת</b> (лакахат) — брать / принимать (инфинитив, пааль).<br>• <b>התרופה</b> (а-труфа) — лекарство.<br>• <b>שלוש פעמים</b> (шалош пеамим) — три раза (слово <i>פעם</i> женского рода)."
+  },
+  {
+    "hebrew": "אֲנִי צָרִיךְ אִישׁוּר מַחֲלָה לַעֲבוֹדָה",
+    "transcription": "Ani tsarikh ishur makhala laavoda",
+    "russian": "Мне нужна справка о болезни (больничный) для работы",
+    "category": "Больница",
+    "theory": "• <b>אישור מחלה</b> (ишур мала) — больничный лист / справка о болезни.<br>• <b>לעבודה</b> (ла-авода) — для работы / на работу."
+  },
+  {
+    "hebrew": "יֵשׁ לְךָ רַגָּשׁוּת לִתְרוּפוֹת?",
+    "transcription": "Yesh lekha ragashut litrufot?",
+    "russian": "У вас есть аллергия (чувствительность) к лекарствам?",
+    "category": "Больница",
+    "theory": "• <b>רגישות</b> (регишут) — чувствительность / аллергия.<br>• <b>לתרופות</b> (ли-труфот) — к лекарствам."
+  },
+  {
+    "hebrew": "אֵיפֹה בֵּית הַמִּרְקַחַת הַקָּרוֹב?",
+    "transcription": "Eifo beit hamirkakhat hakarov?",
+    "russian": "Где ближайшая аптека?",
+    "category": "Больница",
+    "theory": "• <b>בית מרקחת</b> (бейт миркахат) — аптека (буквально 'дом приготовлений/зелий').<br>• <b>הקרוב</b> (а-каров) — ближний / ближайший."
+  },
+  {
+    "hebrew": "אֲנִי מַרְגִּישׁ סְחַרחֹרֶת",
+    "transcription": "Ani margish skharkhorets",
+    "russian": "У меня кружится голова (я чувствую головокружение)",
+    "category": "Больница",
+    "theory": "• <b>מרגיש</b> (маргиш) — чувствую (м.р., наст. вр., биньян гифъиль).<br>• <b>סחרחורת</b> (схархорет) — головокружение."
+  },
+  {
+    "hebrew": "אֶפְשָׁר ללקבוע תּוֹר לִבְדִיקַת דָּם?",
+    "transcription": "Efshar likboa tor livdikat dam?",
+    "russian": "Можно записаться на анализ крови?",
+    "category": "Больница",
+    "theory": "• <b>לקבוע</b> (ликбоа) — назначить / зафиксировать (инфинитив, пааль).<br>• <b>בדיקת דם</b> (бдикат дам) — проверка/анализ крови (смихут от <i>בדיקה</i>)."
+  },
+  {
+    "hebrew": "הָרוֹפֵא נָתַן לִי מִרְשָׁם לָאַנְטִיבִיוֹטִיקָה",
+    "transcription": "Harofe natan li mirsham laantibiyotika",
+    "russian": "Врач дал мне рецепт на антибиотики",
+    "category": "Больница",
+    "theory": "• <b>נתן</b> (натан) — дал (прош. вр., м.р.).<br>• <b>מרשם</b> (миршам) — рецепт врача."
+  },
+  {
+    "hebrew": "כַּמָּה זְמַן צָרִיךְ לְחַכּוֹת לַתּוֹצָאוֹת?",
+    "transcription": "Kama zman tsarikh lekhakot latotsaot?",
+    "russian": "Сколько времени нужно ждать результатов?",
+    "category": "Больница",
+    "theory": "• <b>כמה זמן</b> (кама зман) — сколько времени.<br>• <b>לחכות</b> (лехакот) — ждать (инфинитив, биньян пиэль).<br>• <b>לתתוצאות</b> (ла-тоцаот) — результатов."
+  },
+  {
+    "hebrew": "יֵשׁ לִי בְּעָיָה בַּגַּב",
+    "transcription": "Yesh li beaya bagav",
+    "russian": "У меня проблема со спиной",
+    "category": "Больница",
+    "theory": "• <b>בעיה</b> (беая) — проблема.<br>• <b>בגב</b> (ба-гав) — в спине."
+  },
+  {
+    "hebrew": "צָרִיךְ לַעֲשׂוֹת צִלּוּם רֶנְטְגֶּן",
+    "transcription": "Tsarikh laasot tsilum rentgen",
+    "russian": "Нужно сделать рентгеновский снимок",
+    "category": "Больница",
+    "theory": "• <b>לעשות</b> (лаасот) — делать (инфинитив, пааль).<br>• <b>צילום</b> (цилум) — снимок / фотография."
+  },
+  {
+    "hebrew": "הַלַּחַץ דָּם שֶׁלִּי גָּבוֹהַּ הַיּוֹם",
+    "transcription": "Halakhats dam sheli gavoha hayom",
+    "russian": "У меня сегодня высокое кровяное давление",
+    "category": "Больница",
+    "theory": "• <b>לחץ דם</b> (лахац дам) — кровяное давление.<br>• <b>גבוה</b> (гавоа) — высокий."
+  },
+  {
+    "hebrew": "הוּא קִבֵּל זְרִיקָה בַּמִּרְפָּאָה",
+    "transcription": "Hu kibel zrika bamirpaa",
+    "russian": "Он получил укол в поликлинике",
+    "category": "Больница",
+    "theory": "• <b>קיבל</b> (кибель) — получил (прош. вр., биньян пиэль).<br>• <b>זריקה</b> (зрика) — укол / инъекция.<br>• <b>במרפאה</b> (ба-мирпаа) — в поликлинике."
+  },
+  {
+    "hebrew": "אֵיפֹה נִמְצָא חֲדַר הָמִיּוּן?",
+    "transcription": "Eifo nimtsa khadar hamiyun?",
+    "russian": "Где находится приемный покой (миюн)?",
+    "category": "Больница",
+    "theory": "• <b>נמצא</b> (нимца) — находится (наст. вр., биньян нифъаль).<br>• <b>חדר המיון</b> (хадар а-миюн) — отделение скорой помощи / приемный покой."
+  },
+  {
+    "hebrew": "אֲנִי לֹא מַרְגִּישׁ אֶת הָאֶצְבַּע",
+    "transcription": "Ani lo margish et haetsba",
+    "russian": "Я не чувствую палец",
+    "category": "Больница",
+    "theory": "• <b>אצבע</b> (эцба) — палец (женского рода)."
+  },
+  {
+    "hebrew": "צָרִיךְ לָשִׁים תַּחְבֹּשֶׁת עַל הַפֶּצַע",
+    "transcription": "Tsarikh lashim takhboshet al hapetsa",
+    "russian": "Нужно наложить повязку на рану",
+    "category": "Больница",
+    "theory": "• <b>לשים</b> (ласим) — класть / надевать (инфинитив, пааль).<br>• <b>תחבושת</b> (тахбошет) — бинт / повязка.<br>• <b>פצע</b> (пеца) — рана."
+  },
+  {
+    "hebrew": "מָתַי יָבֹא הָרוֹפֵא?",
+    "transcription": "Matai yavo harofe?",
+    "russian": "Когда придет врач?",
+    "category": "Больница",
+    "theory": "• <b>יבוא</b> (яво) — придет (буд. вр., 3-е лицо, м.р.)."
+  },
+  {
+    "hebrew": "יֵשׁ לִי רְגִישׁוּת לְפֶנִיצִילִין",
+    "transcription": "Yesh li regishut lepenitsilin",
+    "russian": "У меня аллергия на пенициллин",
+    "category": "Больница",
+    "theory": "• <b>רגישות ל...</b> (регишут ле-) — аллергия / чувствительность к чему-либо."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לקבל מַיִם, בְּבַקָּשָׁה?",
+    "transcription": "Efshar lekabel mayim, bevakasha?",
+    "russian": "Можно получить воду, пожалуйста?",
+    "category": "Больница",
+    "theory": "• <b>מים</b> (маим) — вода (всегда во множественном числе)."
+  },
+  {
+    "hebrew": "הַבְּדִיקָה כּוֹאֶבֶת?",
+    "transcription": "Habdika koevet?",
+    "russian": "Проверка (анализ) болезненная?",
+    "category": "Больница",
+    "theory": "• <b>כואבת</b> (коэвет) — болит / болезненная (ж.р., согласуется с <i>בדיקה</i>)."
+  },
+  {
+    "hebrew": "סְלִיחָה, הַחֲנָיָה שֶׁלְּךָ חוֹסֶמֶת אֶת הָרֶכֶב שֶׁלִּי",
+    "transcription": "Slikha, hakhnaya shelkha khosemet et harekhev sheli",
+    "russian": "Извините, ваша парковка блокирует мою машину",
+    "category": "Соседи",
+    "theory": "• <b>חנייה</b> (ханая) — парковка / парковочное место.<br>• <b>חוסמת</b> (хосемет) — блокирует / перекрывает (ж.р., наст. вр.)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְהַנְמִיךְ אֶת הַמּוּזִיקָה, בְּבַקָּשָׁה?",
+    "transcription": "Efshar lehanmikh et hamuzika, bevakasha?",
+    "russian": "Можно сделать музыку потише, пожалуйста?",
+    "category": "Соседи",
+    "theory": "• <b>להנמיך</b> (леханмих) — убавить / сделать тише (инфинитив, гифъиль от слова <i>נמוך</i> - низкий)."
+  },
+  {
+    "hebrew": "הַמַּעֲלִית לֹא עוֹבֶדֶת מֵהַבֹּקֶר",
+    "transcription": "Hamaalit lo ovedet mehaboker",
+    "russian": "Лифт не работает с утра",
+    "category": "Соседи",
+    "theory": "• <b>המעלית</b> (а-маалит) — лифт (ж.р.).<br>• <b>מהבוקר</b> (ме-а-бокер) — с утра (предлог <b>מ</b> + артикль)."
+  },
+  {
+    "hebrew": "מָתַי מְנַקִּים אֶת הַחֲדַר מדרגות?",
+    "transcription": "Matai menakim et khadar maderagot?",
+    "russian": "Когда убирают подъезд (лестничную клетку)?",
+    "category": "Соседи",
+    "theory": "• <b>מנקים</b> (менаким) — убирают / чистят (мн. ч., биньян пиэль).<br>• <b>חדר מדרגות</b> (хадар мадрагот) — подъезд / лестничная клетка."
+  },
+  {
+    "hebrew": "יֵשׁ אֲסֵפַת דַּיָּרִים בְּיוֹם רְבִיעִי",
+    "transcription": "Yesh asefat dayarim beyom revii",
+    "russian": "В среду будет собрание жильцов",
+    "category": "Соседи",
+    "theory": "• <b>אספת דיירים</b> (асефат даярим) — собрание жильцов (смихут от <i>אספה</i>).<br>• <b>ביום רביעי</b> (бе-йом ревии) — в среду."
+  },
+  {
+    "hebrew": "הַכֶּלֶב שֶׁלְּךָ נוֹבֵחַ כָּל הַלַּיְלָה",
+    "transcription": "Hakelev shelkha noveakh kol halayla",
+    "russian": "Ваша собака лает всю ночь",
+    "category": "Соседи",
+    "theory": "• <b>נובח</b> (новеах) — лает (м.р., наст. вр., пааль).<br>• <b>כל הלילה</b> (коль а-лайла) — всю ночь."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לִלְוֹת מִמְּךָ מַבְרֵגָה?",
+    "transcription": "Efshar lilvot mimkha mavrega?",
+    "russian": "Можно одолжить у тебя шуруповерт?",
+    "category": "Соседи",
+    "theory": "• <b>ממך</b> (мимха) — у тебя (от тебя).<br>• <b>מברגה</b> (маврега) — шуруповерт."
+  },
+  {
+    "hebrew": "צָרִיךְ לְשַׁלֵּם אֶת הַוַּעַד בַּיִת",
+    "transcription": "Tsarikh leshalem et havaad bayit",
+    "russian": "Нужно заплатить за домоуправление (ваад байт)",
+    "category": "Соседи",
+    "theory": "• <b>לשלם</b> (лешалем) — платить (инфинитив, пиэль).<br>• <b>ועד בית</b> (ваад байт) — домовой комитет / взносы на содержание дома."
+  },
+  {
+    "hebrew": "מִישְׁהוּ שָׁכַח אֶת הַמַּפְתְּחוֹת בַּכְּנִיסָה",
+    "transcription": "Mishhu shakhakh et hamaftekhot bakhnisa",
+    "russian": "Кто-то забыл ключи на входе",
+    "category": "Соседи",
+    "theory": "• <b>מישהו</b> (мишеху) — кто-то.<br>• <b>מפתחות</b> (мафтехот) — ключи (мн. ч. от <i>מפתח</i>)."
+  },
+  {
+    "hebrew": "הַדֶּלֶת שֶׁל הַבִּנְיָן פְּתוּחָה",
+    "transcription": "Hadelet shel habinyan ptukha",
+    "russian": "Дверь здания открыта",
+    "category": "Соседи",
+    "theory": "• <b>בניין</b> (биньян) — здание / дом.<br>• <b>פתוחה</b> (птуха) — открыта (ж.р., от слова <i>פתוח</i>)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְהַשְׁאִיר אֶת הַחֲבִילָה לְיַד הַדֶּלֶת?",
+    "transcription": "Efshar lehashir et hakhavila leyad hadelet?",
+    "russian": "Можно оставить посылку возле двери?",
+    "category": "Соседи",
+    "theory": "• <b>להשאיר</b> (лехашир) — оставлять (инфинитив, гифъиль).<br>• <b>חבילה</b> (хавила) — посылка / пакет.<br>• <b>ליד</b> (леяд) — около / рядом с."
+  },
+  {
+    "hebrew": "יֵשׁ נְזִילָה בַּגַּג שֶׁל הַבִּנְיָן",
+    "transcription": "Yesh nezila bagag shel habinyan",
+    "russian": "На крыше здания протечка",
+    "category": "Соседи",
+    "theory": "• <b>נזילה</b> (незила) — протечка / утечка.<br>• <b>בגג</b> (ба-гаг) — на крыше."
+  },
+  {
+    "hebrew": "מָתַי מפנים אֶת הַזֶּבֶל?",
+    "transcription": "Matai mefanim et hazevel?",
+    "russian": "Когда вывозят мусор?",
+    "category": "Соседи",
+    "theory": "• <b>מפנים</b> (мефаним) — освобождают / убирают / вывозят (наст. вр., мн. ч., пиэль).<br>• <b>זבל</b> (зевель) — мусор."
+  },
+  {
+    "hebrew": "הַשְּׁכֵנִים עוֹשִׂים שִׁפּוּצִים בַּדִּירָה",
+    "transcription": "Hashkhenim osim shiputsim badira",
+    "russian": "Соседи делают ремонт в квартире",
+    "category": "Соседи",
+    "theory": "• <b>שכנים</b> (шкеним) — соседи.<br>• <b>שיפוצים</b> (шипуцим) — ремонтные работы."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לִסְגֹּר אֶת הַשַּׁעַר שֶׁל הַחֲצֵר?",
+    "transcription": "Efshar lisgor et hashAar shel hakhatser?",
+    "russian": "Можно закрывать ворота двора?",
+    "category": "Соседи",
+    "theory": "• <b>לסגור</b> (лисгор) — закрывать (инфинитив, пааль).<br>• <b>שער</b> (шаар) — ворота / калитка."
+  },
+  {
+    "hebrew": "הַאִם רָאִיתָ אֶת הַחָתוּל שֶׁלִּי?",
+    "transcription": "Haim raita et hakhatul sheli?",
+    "russian": "Ты видел моего кота?",
+    "category": "Соседи",
+    "theory": "• <b>האם</b> (хаим) — ли (вопросительная частица).<br>• <b>ראית</b> (раита) — ты видел (прош. вр., м.р.)."
+  },
+  {
+    "hebrew": "יֵשׁ רַעַשׁ חָזָק מֵהַמּזְגָן שֶׁלְּךָ",
+    "transcription": "Yesh raash khazak mehamazgan shelkha",
+    "russian": "От вашего кондиционера сильный шум",
+    "category": "Соседи",
+    "theory": "• <b>רעש חזק</b> (рааш хазак) — сильный шум.<br>• <b>מזגן</b> (мазган) — кондиционер."
+  },
+  {
+    "hebrew": "צָרִיךְ לְנַקּוֹת אֶת הֶחָצֵר הַמְּשֻׁתֶּפֶת",
+    "transcription": "Tsarikh lenakot et hakhatser hameshutefet",
+    "russian": "Нужно убрать общий двор",
+    "category": "Соседи",
+    "theory": "• <b>לנקות</b> (ленакот) — убирать / чистить (инфинитив, пиэль).<br>• <b>משותפת</b> (мешутефет) — общая / совместная."
+  },
+  {
+    "hebrew": "מִישְׁהוּ חָנָה בַּחֲנָיָה הַפְּרָטִית שֶׁלִּי",
+    "transcription": "Mishhu khana bakhnaya hapratit sheli",
+    "russian": "Кто-то припарковался на моей частной парковке",
+    "category": "Соседи",
+    "theory": "• <b>חנה</b> (хана) — припарковался (прош. вр., м.р.).<br>• <b>פרטית</b> (пратит) — частная."
+  },
+  {
+    "hebrew": "תּוֹדָה עַל הָעֶזְרָה, שָׁכֵן!",
+    "transcription": "Toda al haezra, shakhen!",
+    "russian": "Спасибо за помощь, сосед!",
+    "category": "Соседи",
+    "theory": "• <b>עזרה</b> (эзра) — помощь.<br>• <b>שכן</b> (шахен) — сосед."
+  },
+  {
+    "hebrew": "צָרִיךְ לַחְתֹּךְ אֶת הַפָּנֶל לְפִי הַמִּדּוֹת בַּשִּׂרְטוּט",
+    "transcription": "Tsarikh lakhtokh et hapanel lefi hamidot basirtut",
+    "russian": "Нужно вырезать панель по размерам на чертеже",
+    "category": "Столярка и CNC",
+    "theory": "• <b>לחתוך</b> (лахтох) — резать (инфинитив, пааль).<br>• <b>שרטוט</b> (сиртут) — чертеж / эскиз."
+  },
+  {
+    "hebrew": "איזה קוֹטֶר שֶׁל כַּרְסֹם צָרִיךְ לַעֲבוֹדָה הזֹאת?",
+    "transcription": "Eize koter shel karsom tsarikh laavoda hazot?",
+    "russian": "Какой диаметр фрезы нужен для этой работы?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>קוטר</b> (котер) — диаметр.<br>• <b>כרסום</b> (карсом) / <b>מכרסם</b> — фреза."
+  },
+  {
+    "hebrew": "הָאֹפְסֶט שֶׁל הַצִּיר לֹא נָכוֹן",
+    "transcription": "Haofset shel hatsir lo nakhon",
+    "russian": "Смещение (офсет) оси неправильное",
+    "category": "Столярка и CNC",
+    "theory": "• <b>ציר</b> (цир) — ось / петля.<br>• <b>נכון</b> (нахон) — правильный / верный."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַלַּהַב בַּמָּסוֹר",
+    "transcription": "Tsarikh lehakhlif et kalahav баmasor",
+    "russian": "Нужно заменить полотно (лезвие) в пиле",
+    "category": "Столярка и CNC",
+    "theory": "• <b>להחליף</b> (лехахлиф) — менять (инфинитив, гифъиль).<br>• <b>להב</b> (лахав) — лезвие.<br>• <b>מסור</b> (масор) — пила."
+  },
+  {
+    "hebrew": "מה מְהִירוּת הַהֲזָנָה בַּתָּכְנִית?",
+    "transcription": "Ma mehirut hahazana batakhnit?",
+    "russian": "Какая скорость подачи в программе?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מהירות הזנה</b> (мехирут азана) — скорость подачи (смихут).<br>• <b>תוכנית</b> (тахнит) — программа / план."
+  },
+  {
+    "hebrew": "הַדֶּבֶק צָרִיךְ לְהִתְיַבֵּשׁ שְׁעָתַיִם",
+    "transcription": "Hadevek tsarikh lehityabesh she'atayim",
+    "russian": "Клей должен сохнуть два часа",
+    "category": "Столярка и CNC",
+    "theory": "• <b>דבק</b> (девек) — клей.<br>• <b>להתייבש</b> (лехитябеш) — сохнуть / высыхать (инфинитив, митпаэль)."
+  },
+  {
+    "hebrew": "אֵיפֹה שַׂמְתָּ אֶת הַמֵּטֶר?",
+    "transcription": "Eifo samta et hameter?",
+    "russian": "Где ты положил рулетку (метр)?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>שמת</b> (самта) — положил (прош. вр., ты - м.р.).<br>• <b>מטר</b> (метер) — рулетка / метр."
+  },
+  {
+    "hebrew": "צָרִיךְ לִלְחֹץ עַל הַכַּפְתּוֹר שֶׁל הָאֵמֶרְגֶ'נְסִי",
+    "transcription": "Tsarikh lilktots al hakaftor shel haemerdjensi",
+    "russian": "Нужно нажать на кнопку аварийной остановки",
+    "category": "Столярка и CNC",
+    "theory": "• <b>ללחוץ</b> (лильхоц) — нажимать / давить (инфинитив, пааль).<br>• <b>כפתור</b> (кафтор) — кнопка."
+  },
+  {
+    "hebrew": "הַפְּלָטָה הזֹאת עֲקֻמָּה, אֶפְשָׁר לְהַחְלִיף?",
+    "transcription": "Haplatah hazot akuma, efshar lehakhlif?",
+    "russian": "Эта плита изогнута (кривая), можно заменить?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>עקומה</b> (акума) — кривая / изогнутая (ж.р.)."
+  },
+  {
+    "hebrew": "תִּבְדֹק אֶת הָעוֹבִי שֶׁל הַחֹמֶר עִם קָלִיבֶר",
+    "transcription": "Tivdok et haovi shel hakhover im kaliver",
+    "russian": "Проверь толщину материала штангенциркулем",
+    "category": "Столярка и CNC",
+    "theory": "• <b>תבדוק</b> (тивдок) — проверь (повелительное накл. / буд. вр., м.р.).<br>• <b>עובי</b> (ови) — толщина.<br>• <b>קליבר</b> (калибер) — штангенциркуль."
+  },
+  {
+    "hebrew": "הַוָּאקוּם לֹא מַחֲזִיק אֶת הַחֵלֶק",
+    "transcription": "Havakum lo makhazik et hakhelek",
+    "russian": "Вакуум не держит деталь",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מחזיק</b> (махазик) — держит (наст. вр., м.р., гифъиль).<br>• <b>חלק</b> (хелек) — деталь / часть."
+  },
+  {
+    "hebrew": "צָרִיךְ לְלַטֵּשׁ אֶת הַקְּצוֹת לִפְנֵי הַצְּבִיעָה",
+    "transcription": "Tsarikh ledatesh et haktsot lifnei hatsvia",
+    "russian": "Нужно отшлифовать края перед покраской",
+    "category": "Столярка и CNC",
+    "theory": "• <b>ללטש</b> (лелатеш) — шлифовать / полировать (инфинитив, пиэль).<br>• <b>קצוות</b> (кцвот) — края / концы.<br>• <b>צביעה</b> (цвиа) — покраска."
+  },
+  {
+    "hebrew": "תַּעֲלֶה אֶת הַקֹּבֶץ לַמְּכוֹנָה",
+    "transcription": "Taale et hakovets lamakhona",
+    "russian": "Загрузи файл на станок",
+    "category": "Столярка и CNC",
+    "theory": "• <b>תעלה</b> (таале) — подними / загрузи (повелительное накл. / буд. вр.).<br>• <b>קובץ</b> (ковец) — файл.<br>• <b>מכונה</b> (мехона) — станок / машина."
+  },
+  {
+    "hebrew": "הַמָּנוֹעַ עוֹשֶׂה רַעַשׁ מוּזָר",
+    "transcription": "Hamanoa oseh raash muzar",
+    "russian": "Мотор издает странный шум",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מנוע</b> (маноа) — двигатель / мотор.<br>• <b>מוזר</b> (музар) — странный."
+  },
+  {
+    "hebrew": "אֵיפֹה שָׂמַנּוּ אֶת הַקַּנְטִים?",
+    "transcription": "Eifo samnu et hakantim?",
+    "russian": "Где мы положили кромку (канты)?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>שמנו</b> (самну) — мы положили (прош. вр., 1-е лицо мн. ч.).<br>• <b>קנטים</b> (кантим) — кромочный материал / канты."
+  },
+  {
+    "hebrew": "הַחִבּוּר הַזֶּה לֹא חָזָק מַסְפִּיק",
+    "transcription": "Hakhibur haze lo khazak maspik",
+    "russian": "Это соединение недостаточно прочное",
+    "category": "Столярка и CNC",
+    "theory": "• <b>חיבור</b> (хибур) — соединение / стык.<br>• <b>מספיק</b> (маспик) — достаточно."
+  },
+  {
+    "hebrew": "צָרִיךְ לְנַקּוֹת אֶת הַנְּסֹרֶת מֵהַמַּשְׁטֵחַ",
+    "transcription": "Tsarikh lenakot et hanesoret mehamashteakh",
+    "russian": "Нужно очистить опилки со стола (поверхности)",
+    "category": "Столярка и CNC",
+    "theory": "• <b>נסורת</b> (несорет) — опилки / стружка.<br>• <b>משטח</b> (миштах) — рабочая поверхность / стол."
+  },
+  {
+    "hebrew": "תְּכַוֵּן אֶת הָעֹמֶק שֶׁل הַקִּדּוּחַ",
+    "transcription": "Tekhaven et haomek shel hakidukha",
+    "russian": "Отрегулируй глубину сверления",
+    "category": "Столярка и CNC",
+    "theory": "• <b>תכוון</b> (техавен) — настрой / отрегулируй (пиэль).<br>• <b>עומק</b> (омек) — глубина.<br>• <b>קידוח</b> (кидуах) — сверление."
+  },
+  {
+    "hebrew": "הַבֹּרֶג הַזֶּה קָצָר מִדַּי",
+    "transcription": "Haboreg haze katsar midai",
+    "russian": "Этот винт слишком короткий",
+    "category": "Столярка и CNC",
+    "theory": "• <b>בורג</b> (борег) — винт / шуруп.<br>• <b>קצר מדי</b> (кацар мидай) — слишком короткий."
+  },
+  {
+    "hebrew": "הָעֲבוֹדָה הזֹאת מוּכָנָה לְמִשְׁלוֹחַ",
+    "transcription": "Haavoda hazot mukhana lemishloakh",
+    "russian": "Эта работа готова к отгрузке (доставке)",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מוכנה</b> (мухана) — готова (ж.р.).<br>• <b>משלוח</b> (мишлоах) — доставка / отгрузка."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ אֲרוּחַת עֶרֶב בַּגַּן?",
+    "transcription": "Matai yesh arukhat erev bagan?",
+    "russian": "Когда в садике ужин?",
+    "category": "Детский сад",
+    "theory": "• <b>ארוחת ערב</b> (арухат эрев) — ужин (смихут)."
+  },
+  {
+    "hebrew": "הִיא אוֹהֶבֶת לְצַיֵּר בְּצִבְעֵי מַיִם",
+    "transcription": "Hi ohevet letsayer betsivei mayim",
+    "russian": "Она любит рисовать акварелью",
+    "category": "Детский сад",
+    "theory": "• <b>לצייר</b> (лецаер) — рисовать (инфинитив, пиэль).<br>• <b>צבעי מים</b> (цивей маим) — акварельные краски (буквально 'цвета воды')."
+  },
+  {
+    "hebrew": "הַיֶּלֶד צָרִיךְ לִשְׁתּוֹת יוֹתֵר מַיִם",
+    "transcription": "Hayeled tsarikh lishtot yoter mayim",
+    "russian": "Ребенку нужно пить больше воды",
+    "category": "Детский сад",
+    "theory": "• <b>לשתות</b> (лиштот) — пить (инфинитив, пааль).<br>• <b>יותר</b> (йотер) — больше."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לִלְבֹּשׁ אֶת הַכּוֹבַע?",
+    "transcription": "Efshar lilbosh et hakova?",
+    "russian": "Можно надеть шапку?",
+    "category": "Детский сад",
+    "theory": "• <b>כובע</b> (кова) — шапка / шляпа."
+  },
+  {
+    "hebrew": "הוּא שִׂחֵק בַּמִּשְׂחָקִי קֻבְסָא",
+    "transcription": "Hu sikhek bamishkaki kutsa",
+    "russian": "Он играл в настольные игры",
+    "category": "Детский сад",
+    "theory": "• <b>משחקי קופסה</b> (мишкакей куфса) — настольные игры (смихут)."
+  },
+  {
+    "hebrew": "הִיא לֹא רוֹצָה לָלֶכֶת לִישׁוֹן",
+    "transcription": "Hi lo rotsa lakhelet lishon",
+    "russian": "Она не хочет идти спать",
+    "category": "Детский сад",
+    "theory": "• <b>ללכת</b> (лалехет) — идти (инфинитив).<br>• <b>לישון</b> (лишон) — спать (инфинитив)."
+  },
+  {
+    "hebrew": "מָתַי בָּאִים הַהוֹרִים?",
+    "transcription": "Matai baim hahorim?",
+    "russian": "Когда приходят родители?",
+    "category": "Детский сад",
+    "theory": "• <b>באים</b> (баим) — приходят (мн. ч., наст. вр.).<br>• <b>הורים</b> (хорим) — родители."
+  },
+  {
+    "hebrew": "הַיֶּלֶד עָשָׂה עֲבוֹדָה יְפֵהפִיָּה",
+    "transcription": "Hayeled asa avoda yefefiya",
+    "russian": "Ребенок сделал прекрасную поделку/работу",
+    "category": "Детский сад",
+    "theory": "• <b>עשה</b> (аса) — сделал (прош. вр.).<br>• <b>יפהפייה</b> (йефефия) — очень красивая / прекрасная."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהָבִיא חֲבִילַת מגבונים",
+    "transcription": "Tsarikh lehavi khavilat magvonim",
+    "russian": "Нужно принести упаковку влажных салфеток",
+    "category": "Детский сад",
+    "theory": "• <b>חבילת מגבונים</b> (хавилат магвоним) — пачка влажных салфеток (смихут)."
+  },
+  {
+    "hebrew": "הִיא נָפְלָה בַּחָצֵר וְקִבְּלָה מַכָּה",
+    "transcription": "Hi nafla bakhatser vekibla maka",
+    "russian": "Она упала во дворе и ушиблась",
+    "category": "Детский сад",
+    "theory": "• <b>נפלה</b> (нафла) — упала (прош. вр.).<br>• <b>קיבלה מכה</b> (кибла мака) — получила ушиб / ссадину."
+  },
+  {
+    "hebrew": "אֵיפֹה הַתִּיק שֶׁלָּהּ?",
+    "transcription": "Eifo hatik shela?",
+    "russian": "Где ее рюкзак/сумка?",
+    "category": "Детский сад",
+    "theory": "• <b>תיק</b> (тик) — сумка / рюкзак.<br>• <b>שלה</b> (шела) — ее."
+  },
+  {
+    "hebrew": "הוּא לֹא מַרְגִּישׁ טוֹב מֵהַבֹּקֶר",
+    "transcription": "Hu lo margish tov mehaboker",
+    "russian": "Он плохо себя чувствует с утра",
+    "category": "Детский сад",
+    "theory": "• <b>מרגיש</b> (маргиш) — чувствует (м.р.)."
+  },
+  {
+    "hebrew": "הִיא לָמְדָה מִילִים חֲדָשׁוֹת",
+    "transcription": "Hi lamda milim khadashot",
+    "russian": "Она выучила новые слова",
+    "category": "Детский сад",
+    "theory": "• <b>מילים</b> (милиим) — слова (женский род, исключение во мн. ч.).<br>• <b>חדשות</b> (хадашот) — новые (ж.р. мн. ч.)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְקַבֵּל אֶת הַתְּמוֹנוֹת מֵהַמְּסִבָּה?",
+    "transcription": "Efshar lekabel et hatmunot mehamesiba?",
+    "russian": "Можно получить фотографии с праздника?",
+    "category": "Детский сад",
+    "theory": "• <b>תמונות</b> (тмунот) — фотографии / картинки."
+  },
+  {
+    "hebrew": "הַיֶּלֶד שָׁר שִׁירִים בַּבַּיִת",
+    "transcription": "Hayeled shar shirim babayit",
+    "russian": "Ребенок поет песни дома",
+    "category": "Детский сад",
+    "theory": "• <b>שר</b> (шар) — поет (наст./прош. вр., м.р.).<br>• <b>שירים</b> (ширим) — песни."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ קַיְטָנָה בַּגַּן?",
+    "transcription": "Matai yesh kaytana bagan?",
+    "russian": "Когда в садике будет летний лагерь (кайтана)?",
+    "category": "Детский сад",
+    "theory": "• <b>קייטנה</b> (кайтана) — детский летний лагерь."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהָבִיא כּוֹבַע וּמַיִם לַטִּיּוּל",
+    "transcription": "Tsarikh lehavi kova umayim latiyul",
+    "russian": "Нужно принести шапку и воду на экскурсию",
+    "category": "Детский сад",
+    "theory": "• <b>טיול</b> (тиюль) — прогулка / экскурсия / поход."
+  },
+  {
+    "hebrew": "הִיא עָזְרָה לַגַּנֶּנֶת לְסַדֵּר אֶת הַמִּשְׂחָקִים",
+    "transcription": "Hi azra lagannenet lesader et hamishkakim",
+    "russian": "Она помогала воспитательнице убирать игрушки",
+    "category": "Детский сад",
+    "theory": "• <b>עזרה</b> (эзра) — помогла (прош. вр., она).<br>• <b>לסדר</b> (лесадер) — наводить порядок / расставлять (пиэль)."
+  },
+  {
+    "hebrew": "הוּא שָׂמַח לִרְאוֹת אֶת אִמָּא",
+    "transcription": "Hu samakh lirot et ima",
+    "russian": "Он обрадовался, увидев маму",
+    "category": "Детский сад",
+    "theory": "• <b>לראות</b> (лирот) — видеть / смотреть (инфинитив, пааль)."
+  },
+  {
+    "hebrew": "הַמְּסִבָּה תִּהְיֶה בְּשָׁעָה חָמֵשׁ",
+    "transcription": "Hamesiba tihye besha'a khamesh",
+    "russian": "Праздник будет в 5 часов",
+    "category": "Детский сад",
+    "theory": "• <b>תהיה</b> (тихье) — будет (буд. вр., ж.р., от глагола <i>להיות</i>)."
+  },
+  {
+    "hebrew": "אֵיפֹה הַמִּרְפָּאָה הַקְּרוֹבָה?",
+    "transcription": "Eifo hamirpaa hakarova?",
+    "russian": "Где ближайшая поликлиника?",
+    "category": "Больница",
+    "theory": "• <b>מרפאה</b> (мирпаа) — поликлиника / клиника."
+  },
+  {
+    "hebrew": "אֲנִי צָרִיךְ לִבְדֹּק אֶת הַלַּחַץ דָּם",
+    "transcription": "Ani tsarikh livdok et halakhats dam",
+    "russian": "Мне нужно проверить давление",
+    "category": "Больница",
+    "theory": "• <b>לבדוק</b> (ливдок) — проверять (инфинитив, пааль)."
+  },
+  {
+    "hebrew": "הָרוֹפֵא אָמַר לָנוּחַ יוֹמַיִם",
+    "transcription": "Harofe amar lanuakh yomayim",
+    "russian": "Врач сказал отдохнуть два дня",
+    "category": "Больница",
+    "theory": "• <b>לנוח</b> (лануах) — отдыхать (инфинитив, пааль).<br>• <b>יומיים</b> (йомайим) — два дня (двойственное число)."
+  },
+  {
+    "hebrew": "יֵשׁ לִי כְּאֵב רֹאשׁ חָזָק",
+    "transcription": "Yesh li keev rosh khazak",
+    "russian": "У меня сильная головная боль",
+    "category": "Больница",
+    "theory": "• <b>כאב ראש</b> (кеэв рош) — головная боль (смихут)."
+  },
+  {
+    "hebrew": "צָרִיךְ לַעֲשׂוֹת בְּדִיקַת עֵינַיִם",
+    "transcription": "Tsarikh laasot bdikat einayim",
+    "russian": "Нужно проверить зрение (сделать проверку глаз)",
+    "category": "Больница",
+    "theory": "• <b>בדיקת עיניים</b> (бдикат эйнайим) — проверка глаз (смихут)."
+  },
+  {
+    "hebrew": "הִיא קִבְּלָה מִרְשָׁם לַטִּפּוֹת עֵינַיִם",
+    "transcription": "Hi kibla mirsham latipot einayim",
+    "russian": "Она получила рецепт на глазные капли",
+    "category": "Больница",
+    "theory": "• <b>טיפות עיניים</b> (типот эйнайим) — глазные капли."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לקבל אֶת הַתּוֹצָאוֹת בַּמַּיִל?",
+    "transcription": "Efshar lekabel et hatotsaot bamayil?",
+    "russian": "Можно получить результаты по электронной почте?",
+    "category": "Больница",
+    "theory": "• <b>במייל</b> (ба-мейл) — по e-mail."
+  },
+  {
+    "hebrew": "הוּא צָרִיךְ לַעֲבֹר נִתּוּחַ קָטָן",
+    "transcription": "Hu tsarikh laavor nituakh katan",
+    "russian": "Ему нужно пройти небольшую операцию",
+    "category": "Больница",
+    "theory": "• <b>לעבור</b> (лаавор) — проходить / пересекать.<br>• <b>ניתוח</b> (нитуах) — операция."
+  },
+  {
+    "hebrew": "אֵיפֹה שֵׁרוּתִים?",
+    "transcription": "Eifo sherutim?",
+    "russian": "Где туалет?",
+    "category": "Больница",
+    "theory": "• <b>שירותים</b> (ширутим) — туалет / уборная."
+  },
+  {
+    "hebrew": "הָאָחָה עָשְׂתָה לִי חֲבִישָׁה",
+    "transcription": "Haakhta asta li khavisha",
+    "russian": "Медсестра сделала мне перевязку",
+    "category": "Больница",
+    "theory": "• <b>אחות</b> (ахот) — медсестра / сестра.<br>• <b>חבישה</b> (хавиша) — перевязка."
+  },
+  {
+    "hebrew": "יֵשׁ לִי אִישׁוּר מֵהָרוֹפֵא",
+    "transcription": "Yesh li ishur meharofe",
+    "russian": "У меня есть разрешение (справка) от врача",
+    "category": "Больница",
+    "theory": "• <b>אישור</b> (ишур) — разрешение / справка / подтверждение."
+  },
+  {
+    "hebrew": "הַיֶּלֶד מִשְׁתַּעֵל כָּל הַלַּיְלָה",
+    "transcription": "Hayeled mishtael kol halayla",
+    "russian": "Ребенок кашляет всю ночь",
+    "category": "Больница",
+    "theory": "• <b>משתעל</b> (миштаэль) — кашляет (наст. вр., митпаэль)."
+  },
+  {
+    "hebrew": "צָרִיךְ לִמְדֹד אֶת הַחֹם שׁוּב",
+    "transcription": "Tsarikh limdod et hakhom shuv",
+    "russian": "Нужно снова измерить температуру",
+    "category": "Больница",
+    "theory": "• <b>למדוד</b> (лимдод) — измерять (инфинитив, пааль).<br>• <b>שוב</b> (шув) — снова / опять."
+  },
+  {
+    "hebrew": "הִיא קִבְּלָה תְּרוּפָה נֶגֶד כְּאֵבִים",
+    "transcription": "Hi kibla trufa neged keevim",
+    "russian": "Она получила обезболивающее (лекарство против боли)",
+    "category": "Больница",
+    "theory": "• <b>נגד</b> (негед) — против.<br>• <b>כאבים</b> (кеэвим) — боли."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ תּוֹר פָּנוּי?",
+    "transcription": "Matai yesh tor panuy?",
+    "russian": "Когда есть свободное время для записи?",
+    "category": "Больница",
+    "theory": "• <b>פנוי</b> (пануй) — свободный."
+  },
+  {
+    "hebrew": "אֲנִי רוֹצֶה לְבַטֵּל אֶת הַתּוֹר",
+    "transcription": "Ani rotse levatel et hator",
+    "russian": "Я хочу отменить запись",
+    "category": "Больница",
+    "theory": "• <b>לבטל</b> (леватель) — отменять (инфинитив, пиэль)."
+  },
+  {
+    "hebrew": "הָרוֹפֵא בּודֵק אֶת הַגָּרוֹן",
+    "transcription": "Harofe bodek et hagaron",
+    "russian": "Врач проверяет горло",
+    "category": "Больница",
+    "theory": "• <b>בודק</b> (бодек) — проверяет / осматривает (пааль)."
+  },
+  {
+    "hebrew": "יֵשׁ לִי כְּאֵב בַּבֶּטֶן",
+    "transcription": "Yesh li keev babeten",
+    "russian": "У меня болит живот",
+    "category": "Больница",
+    "theory": "• <b>בטן</b> (бетен) — живот (женский род)."
+  },
+  {
+    "hebrew": "צָרִיךְ לָשִׁים מְשָׁחָה עַל הָעוֹר",
+    "transcription": "Tsarikh lashim mshakha al haor",
+    "russian": "Нужно нанести мазь на кожу",
+    "category": "Больница",
+    "theory": "• <b>משחה</b> (мишха) — мазь.<br>• <b>עור</b> (ор) — кожа."
+  },
+  {
+    "hebrew": "הוּא מַרְגִּישׁ יוֹתֵר טוֹב הַיּוֹם",
+    "transcription": "Hu margish yoter tov hayom",
+    "russian": "Он чувствует себя лучше сегодня",
+    "category": "Больница",
+    "theory": "• <b>יותר טוב</b> (йотер тов) — лучше (буквально 'более хорошо')."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְבַקֵּשׁ שֶׁקֶט בַּלַּיְלָה?",
+    "transcription": "Efshar levakesh sheket balayla?",
+    "russian": "Можно попросить тишину ночью?",
+    "category": "Соседи",
+    "theory": "• <b>לבקש</b> (левакеш) — просить (инфинитив, пиэль).<br>• <b>שקט</b> (шекет) — тишина."
+  },
+  {
+    "hebrew": "הַשָּׁכֵן מֵלַמְעְלָה עוֹשֶׂה רַעַשׁ",
+    "transcription": "Hashakhen melamala oseh raash",
+    "russian": "Сосед сверху шумит",
+    "category": "Соседи",
+    "theory": "• <b>מלמעלה</b> (ми-лемала) — сверху."
+  },
+  {
+    "hebrew": "מישהו שָׁכַח אֶת הָאוֹפַנַּיִם בַּחֲדַר מדרגות",
+    "transcription": "Mishhu shakhakh et haofanayim bakhadar maderagot",
+    "russian": "Кто-то забыл велосипед в подъезде",
+    "category": "Соседи",
+    "theory": "• <b>אופניים</b> (офанайим) — велосипед (двойственная форма)."
+  },
+  {
+    "hebrew": "הַדֶּלֶת שֶׁל הַמַּעֲלִית סְגוּרָה",
+    "transcription": "Hadelet shel hamaalit sgura",
+    "russian": "Дверь лифта закрыта",
+    "category": "Соседи",
+    "theory": "• <b>סגורה</b> (сгура) — закрыта (ж.р.)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְנַקּוֹת אֶת הַכְּנִיסָה?",
+    "transcription": "Efshar lenakot et haknisa?",
+    "russian": "Можно убрать вход/подъезд?",
+    "category": "Соседи",
+    "theory": "• <b>כניסה</b> (книса) — вход / подъезд."
+  },
+  {
+    "hebrew": "יֵשׁ מָלֵא אֲבָק בַּמַּדְרֵגוֹת",
+    "transcription": "Yesh male avak bamaderagot",
+    "russian": "На лестнице полно пыли",
+    "category": "Соседи",
+    "theory": "• <b>מלא</b> (мале) — полон / много.<br>• <b>אבק</b> (авак) — пыль."
+  },
+  {
+    "hebrew": "הַמַּנְעוּל שֶׁל הַשַּׁעַר מְקֻלְקָל",
+    "transcription": "Manoal shel hashaar mekukal",
+    "russian": "Замок ворот сломан",
+    "category": "Соседи",
+    "theory": "• <b>מנעול</b> (манъуль) — замок.<br>• <b>מקולקל</b> (мекулькаль) — сломанный / испорченный."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַנּוֹרָה בַּמּסְדְּרוֹן",
+    "transcription": "Tsarikh lehakhlif et hanora bamasdron",
+    "russian": "Нужно заменить лампочку в коридоре",
+    "category": "Соседи",
+    "theory": "• <b>נורה</b> (нура) — лампочка.<br>• <b>מסדרון</b> (мисдрон) — коридор."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ פְּגִישָׁה שֶׁל הַוַּעַד?",
+    "transcription": "Matai yesh pgisha shel havaad?",
+    "russian": "Когда встреча домового комитета?",
+    "category": "Соседи",
+    "theory": "• <b>פגישה</b> (пгиша) — встреча / собрание."
+  },
+  {
+    "hebrew": "הַשְּׁכֵנָה עָזְרָה לִי עִם הַחֲבִילָה",
+    "transcription": "Hashkhena azra li im hakhavila",
+    "russian": "Соседка помогла мне с посылкой",
+    "category": "Соседи",
+    "theory": "• <b>שכנה</b> (шхена) — соседка."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לִסְגֹּר אֶת הַחַלּוֹן בַּחֲדַר מדרגות?",
+    "transcription": "Efshar lisgor et hakhalon bakhadar maderagot?",
+    "russian": "Можно закрыть окно в подъезде?",
+    "category": "Соседи",
+    "theory": "• <b>חלון</b> (халон) — окно."
+  },
+  {
+    "hebrew": "הָאור בַּכְּנִיסָה לֹא עוֹבֵד",
+    "transcription": "Haor baknisa lo oved",
+    "russian": "Свет на входе не работает",
+    "category": "Соседи",
+    "theory": "• <b>אור</b> (ор) — свет."
+  },
+  {
+    "hebrew": "מִישְׁהוּ הִשְׁאִיר זֶבֶל לְיַד הַדֶּלֶת",
+    "transcription": "Mishhu hishir zevel leyad hadelet",
+    "russian": "Кто-то оставил мусор у двери",
+    "category": "Соседи",
+    "theory": "• <b>השאיר</b> (хишир) — оставил (прош. вр., гифъиль)."
+  },
+  {
+    "hebrew": "הַכֶּלֶב רָץ בַּחָצֵר",
+    "transcription": "Hakelev rats bakhatser",
+    "russian": "Собака бегает во дворе",
+    "category": "Соседи",
+    "theory": "• <b>רץ</b> (рац) — бегает / бежит (пааль)."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְקַבֵּל אֶת הַמַּפְתֵּחַ לַמַּקְלֵט?",
+    "transcription": "Efshar lekabel et hamafteakh lamaklet?",
+    "russian": "Можно получить ключ от бомбоубежища (маклети)?",
+    "category": "Соседи",
+    "theory": "• <b>מקלט</b> (маклет) — укрытие / бомбоубежище."
+  },
+  {
+    "hebrew": "הַגַּנָּן בָּא מָחָר בַּבֹּקֶר",
+    "transcription": "Hagannan ba makhar baboker",
+    "russian": "Садовник придет завтра утром",
+    "category": "Соседи",
+    "theory": "• <b>גנן</b> (ганан) — садовник.<br>• <b>מחר</b> (махар) — завтра."
+  },
+  {
+    "hebrew": "צָרִיךְ לְתַקֵּן אֶת הַשַּׁעַר הַחַשְׁמַלִּי",
+    "transcription": "Tsarikh letaken et hashaar hakhashmali",
+    "russian": "Нужно починить электрические ворота",
+    "category": "Соседи",
+    "theory": "• <b>לתקן</b> (летакен) — чинить / ремонтировать (пиэль).<br>• <b>חשמלי</b> (хашмали) — электрический."
+  },
+  {
+    "hebrew": "הַדַּיָּרִים שִׁלְּמוּ אֶת הַוַּעַד",
+    "transcription": "Hadayarim shilmu et havaad",
+    "russian": "Жильцы заплатили взнос в ваад",
+    "category": "Соседи",
+    "theory": "• <b>דיירים</b> (даярим) — жильцы / арендаторы.<br>• <b>שילמו</b> (шильму) — заплатили (прош. вр., мн. ч.)."
+  },
+  {
+    "hebrew": "יֵשׁ נְזִילָה מֵהַצִּנּוֹר בֶּחָצֵר",
+    "transcription": "Yesh nezila mehatsinor bakhatser",
+    "russian": "Утечка из трубы во дворе",
+    "category": "Соседи",
+    "theory": "• <b>צינור</b> (цинор) — труба / шланг."
+  },
+  {
+    "hebrew": "תּוֹדָה עַל הַהוֹדָעָה!",
+    "transcription": "Toda al haodaa!",
+    "russian": "Спасибо за сообщение!",
+    "category": "Соседи",
+    "theory": "• <b>הודעה</b> (одаа) — сообщение / извещение."
+  },
+  {
+    "hebrew": "צָרִיךְ לְכַוֵּן אֶת הַמּכֹנָה לִפְנֵי הָעֲבוֹדָה",
+    "transcription": "Tsarikh lekhaven et hamakhona lifnei haavoda",
+    "russian": "Нужно настроить станок перед работой",
+    "category": "Столярка и CNC",
+    "theory": "• <b>לכוון</b> (лехавен) — настраивать / наводить (пиэль)."
+  },
+  {
+    "hebrew": "מה הָעֹמֶק שֶׁל הַחֲרִיץ?",
+    "transcription": "Ma haomek shel hakharits?",
+    "russian": "Какова глубина паза?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>חריץ</b> (хариц) — паз / прорезь / щель."
+  },
+  {
+    "hebrew": "הַסַּכִּין הזֹאת כְּהָה, צָרִיךְ לְהַחְלִיף",
+    "transcription": "Hasakin hazot keha, tsarikh lehakhlif",
+    "russian": "Эта фреза (лезвие) затупилась, нужно заменить",
+    "category": "Столярка и CNC",
+    "theory": "• <b>כהה</b> (кеха) — тупая / не застренная."
+  },
+  {
+    "hebrew": "תִּבְדֹק אֶת הַזָּוִית עִם זָוִיתָן",
+    "transcription": "Tivdok et hazavit im zavitan",
+    "russian": "Проверь угол угольником",
+    "category": "Столярка и CNC",
+    "theory": "• <b>זווית</b> (завит) — угол.<br>• <b>זויתן</b> (завитан) — угольник."
+  },
+  {
+    "hebrew": "הַפְּלָטָה זָזָה בִּזְמַן הַחִתּוּךְ",
+    "transcription": "Haplatah zaza bizman hakhitukh",
+    "russian": "Плита сдвинулась во время резки",
+    "category": "Столярка и CNC",
+    "theory": "• <b>זזה</b> (заза) — сдвинулась / переместилась.<br>• <b>חיתוך</b> (хитух) — резка / распил."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהוֹסִיף שֶׁמֶן לַמְּכוֹנָה",
+    "transcription": "Tsarikh lehosif shemen lamakhona",
+    "russian": "Нужно добавить масло в станок",
+    "category": "Столярка и CNC",
+    "theory": "• <b>להוסיף</b> (лехосиф) — добавлять (гифъиль).<br>• <b>שמן</b> (шемен) — масло."
+  },
+  {
+    "hebrew": "הַשְּׁאִיבָה לֹא עוֹבֶדֶת חָזָק מַסְפִּיק",
+    "transcription": "Hasheiva lo ovedet khazak maspik",
+    "russian": "Вытяжка (аспирация) работает недостаточно сильно",
+    "category": "Столярка и CNC",
+    "theory": "• <b>שאיבה</b> (шеива) — всасывание / вытяжка / аспирация."
+  },
+  {
+    "hebrew": "אֵיפֹה הַמַּבְרֵגָה הַנִּטְעֶנֶת?",
+    "transcription": "Eifo hamavrega hanitnet?",
+    "russian": "Где аккумуляторный шуруповерт?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>נטענת</b> (нитэнет) — заряжаемая / аккумуляторная."
+  },
+  {
+    "hebrew": "תָּשִׂים מִסְכֵּי אָזְנַיִם בִּזְמַן הָעֲבוֹדָה",
+    "transcription": "Tasim miskei oznayim bizman haavoda",
+    "russian": "Надень наушники во время работы",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מגיני אוזניים</b> / <b>ממסכי אוזניים</b> — защитные наушники."
+  },
+  {
+    "hebrew": "הַדִּיסְק שֶׁל הַמָּסוֹר חַם מְאֹד",
+    "transcription": "Hadisk shel hamasor kham meod",
+    "russian": "Диск пилы очень горячий",
+    "category": "Столярка и CNC",
+    "theory": "• <b>חם</b> (хам) — горячий."
+  },
+  {
+    "hebrew": "צָרִיךְ לֶאֱסֹף אֶת הַשְּׁרִירִים שֶׁל הָעֵץ",
+    "transcription": "Tsarikh leesof et hashririm shel haets",
+    "russian": "Нужно собрать остатки дерева",
+    "category": "Столярка и CNC",
+    "theory": "• <b>עץ</b> (эц) — дерево / древесина."
+  },
+  {
+    "hebrew": "מה הָאֹרֶךְ שֶׁל הַקּוֹרָה?",
+    "transcription": "Ma haorekh shel hakora?",
+    "russian": "Какова длина бруса (балки)?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>אורך</b> (орех) — длина.<br>• <b>קורה</b> (кора) — брус / балка."
+  },
+  {
+    "hebrew": "הַבֹּרֶג נִשְׁבַּר בְּתוֹךְ הָעֵץ",
+    "transcription": "Haboreg nishbar betokh haets",
+    "russian": "Винт сломался внутри дерева",
+    "category": "Столярка и CNC",
+    "theory": "• <b>נשבר</b> (нишбар) — сломался (прош. вр., нифъаль)."
+  },
+  {
+    "hebrew": "תְּנַקֶּה אֶת הַמְּסִלָּה שֶׁל הַצִּיר",
+    "transcription": "Tenake et hamesila shel hatsir",
+    "russian": "Очисти направляющую оси",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מסילה</b> (месила) — рельс / направляющая."
+  },
+  {
+    "hebrew": "הַקַּנְט לֹא נִדְבַּק טוֹב",
+    "transcription": "Hakant lo nidbak tov",
+    "russian": "Кромка плохо приклеилась",
+    "category": "Столярка и CNC",
+    "theory": "• <b>נדבק</b> (нидбак) — приклеился (нифъаль)."
+  },
+  {
+    "hebrew": "צָרִיךְ לִבְדֹּק אֶת הַלַּחַץ אֲוִיר",
+    "transcription": "Tsarikh livdok et halakhats avir",
+    "russian": "Нужно проверить давление воздуха",
+    "category": "Столярка и CNC",
+    "theory": "• <b>לחץ אוויר</b> (лахац авир) — пневмодавление / давление воздуха."
+  },
+  {
+    "hebrew": "הַמִּדּוֹת לֹא מַתְאִימוֹת לַתָּכְנִית",
+    "transcription": "Hamidot lo mataimot latakhnit",
+    "russian": "Размеры не соответствуют программе",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מתאימות</b> (матъимот) — соответствуют / подходят (ж.р., мн. ч.)."
+  },
+  {
+    "hebrew": "תָּבִיא אֶת הַפַּטִּישׁ, בְּבַקָּשָׁה",
+    "transcription": "Tavi et hapatish, bevakasha",
+    "russian": "Принеси молоток, пожалуйста",
+    "category": "Столярка и CNC",
+    "theory": "• <b>פטיש</b> (патиш) — молоток."
+  },
+  {
+    "hebrew": "הַפִּנָּה הזֹאת חַדָּה מִדַּי",
+    "transcription": "Hapina hazot khada midai",
+    "russian": "Этот угол слишком острый",
+    "category": "Столярка и CNC",
+    "theory": "• <b>פינה</b> (пина) — угол.<br>• <b>חדה</b> (хада) — острая."
+  },
+  {
+    "hebrew": "הַמגֵרָה לֹא נִפְתַּחַת נָכוֹן",
+    "transcription": "Mijera lo niftakhat nakhon",
+    "russian": "Выдвижной ящик не открывается правильно",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מגירה</b> (мегера) — выдвижной ящик.<br>• <b>נפתחת</b> (нифтахат) — открывается."
+  },
+  {
+    "hebrew": "מָתַי עוֹשִׂים קַבָּלַת שַׁבָּת בַּגַּן?",
+    "transcription": "Matai osim kabalat shabat bagan?",
+    "russian": "Когда в садике проводят встречу Субботы (Кабалат Шабат)?",
+    "category": "Детский сад",
+    "theory": "• <b>קבלת שבת</b> (кабалат шабат) — традиционная встреча Субботы."
+  },
+  {
+    "hebrew": "הִיא שָׂמָה אֶת הַצִּיּוּר בַּתִּיק",
+    "transcription": "Hi sama et hatsiyur batik",
+    "russian": "Она положила рисунок в рюкзак",
+    "category": "Детский сад",
+    "theory": "• <b>ציור</b> (циюр) — рисунок."
+  },
+  {
+    "hebrew": "הַיֶּלֶד רוֹצֶה לְשַׂחֵק בַּחוֹל",
+    "transcription": "Hayeled rotse lesakhek bakhol",
+    "russian": "Ребенок хочет играть в песке",
+    "category": "Детский сад",
+    "theory": "• <b>חול</b> (холь) — песок."
+  },
+  {
+    "hebrew": "צָרִיךְ לִלְבֹּשׁ סְוֵדֶר, קַר בַּחוּץ",
+    "transcription": "Tsarikh lilbosh sveder, kar bakhuts",
+    "russian": "Нужно надеть свитер, на улице холодно",
+    "category": "Детский сад",
+    "theory": "• <b>סוודר</b> (сведер) — свитер.<br>• <b>קר בחוץ</b> (кар бахуц) — холодно снаружи."
+  },
+  {
+    "hebrew": "הִיא מְאֹד חֲכָמָה וּמְבִינָה הַכֹּל",
+    "transcription": "Hi meod khakama umevina hakol",
+    "russian": "Она очень умная и все понимает",
+    "category": "Детский сад",
+    "theory": "• <b>מבינה</b> (мевина) — понимает (ж.р., гифъиль)."
+  },
+  {
+    "hebrew": "הוּא שָׁתָה אֶת כָּל הַמִּיץ",
+    "transcription": "Hu shata et kol hamits",
+    "russian": "Он выпил весь сок",
+    "category": "Детский сад",
+    "theory": "• <b>שתה</b> (шата) — пил / выпил.<br>• <b>מיץ</b> (миц) — сок."
+  },
+  {
+    "hebrew": "אֵיפֹה הַזּוּג שֶׁנַּעֲלַיִם שֶׁלָּהּ?",
+    "transcription": "Eifo hazug shenaalayim shela?",
+    "russian": "Где ее пара обуви?",
+    "category": "Детский сад",
+    "theory": "• <b>זוג</b> (зуг) — пара."
+  },
+  {
+    "hebrew": "הִיא אוֹהֶבֶת לָשִׁיר וְלִרְקֹד",
+    "transcription": "Hi ohevet lashir velirkod",
+    "russian": "Она любит петь и танцевать",
+    "category": "Детский сад",
+    "theory": "• <b>לרקוד</b> (лиркод) — танцевать (инфинитив, пааль)."
+  },
+  {
+    "hebrew": "הַיֶּלֶד לָמַד לִכְתֹּב אֶת הַשֵּׁם שֶׁלּוֹ",
+    "transcription": "Hayeled lamad likhtov et hashem shelo",
+    "russian": "Ребенок научился писать свое имя",
+    "category": "Детский сад",
+    "theory": "• <b>לכתוב</b> (лихтов) — писать (пааль)."
+  },
+  {
+    "hebrew": "מָתַי חוֹזְרִים מֵהַחֻפְשָׁה?",
+    "transcription": "Matai khozrim mehakhufsha?",
+    "russian": "Когда возвращаются из отпуска/каникул?",
+    "category": "Детский сад",
+    "theory": "• <b>חוזרים</b> (хозрим) — возвращаются."
+  },
+  {
+    "hebrew": "אֲנִי צָרִיךְ לְקַבֵּל טֹפֶס יְרֹק",
+    "transcription": "Ani tsarikh lekabel tofes yarok",
+    "russian": "Мне нужно получить 'зеленый бланк' (тофес ярок)",
+    "category": "Больница",
+    "theory": "• <b>טופס ירוק</b> (тофес ярок) — зеленый бланк (мед. форма)."
+  },
+  {
+    "hebrew": "הָרוֹפֵא שָׁלַח אוֹתִי לְצִלּוּם",
+    "transcription": "Harofe shalakh oti letsilum",
+    "russian": "Врач направил меня на снимок",
+    "category": "Больница",
+    "theory": "• <b>שלח</b> (шалах) — послал / отправил."
+  },
+  {
+    "hebrew": "יֵשׁ לִי אֲלֶרְגִּיָּה לַאֲבָק",
+    "transcription": "Yesh li alergiya laavak",
+    "russian": "У меня аллергия на пыль",
+    "category": "Больница",
+    "theory": "• <b>אלרגיה</b> (алергия) — аллергия."
+  },
+  {
+    "hebrew": "הִיא צְרִיכָה לָנוּחַ בַּבַּיִת",
+    "transcription": "Hi tsrikha lanuakh babayit",
+    "russian": "Ей нужно отдохнуть дома",
+    "category": "Больница",
+    "theory": "• <b>צריכה</b> (цриха) — должна / нужно (ж.р.)."
+  },
+  {
+    "hebrew": "אֵיפֹה מְשַׁלְּמִים עַל הַבְּדִיקָה?",
+    "transcription": "Eifo meshalmim al habdika?",
+    "russian": "Где платят за проверку/анализ?",
+    "category": "Больница",
+    "theory": "• <b>משלמים</b> (мешальмим) — платят."
+  },
+  {
+    "hebrew": "הוּא קִבֵּל מַכָּה בַּבֶּרֶךְ",
+    "transcription": "Hu kibel maka baberekh",
+    "russian": "Он ушиб колено",
+    "category": "Больница",
+    "theory": "• <b>ברך</b> (берех) — колено (женский род)."
+  },
+  {
+    "hebrew": "צָרִיךְ לִשְׁתּוֹת הַרְבֵּה מַיִם בַּקַּיִץ",
+    "transcription": "Tsarikh lishtot harbe mayim bakayits",
+    "russian": "Нужно пить много воды летом",
+    "category": "Больница",
+    "theory": "• <b>הרבה</b> (харбе) — много."
+  },
+  {
+    "hebrew": "הָאָח בָּדַק אֶת הַדֹּפֶק",
+    "transcription": "Haakh badak et hadofek",
+    "russian": "Медбрат проверил пульс",
+    "category": "Больница",
+    "theory": "• <b>אח</b> (ах) — медбрат / брат.<br>• <b>דופק</b> (дофек) — пульс."
+  },
+  {
+    "hebrew": "יֵשׁ לִי תּוֹר לְמוֹמְחֶה בַּחֹדֶשׁ הַבָּא",
+    "transcription": "Yesh li tor lemumkhe bakhodesh haba",
+    "russian": "У меня запись к специалисту в следующем месяце",
+    "category": "Больница",
+    "theory": "• <b>מומחה</b> (мумхе) — специалист / эксперт.<br>• <b>בחודש הבא</b> (ба-ходеш а-ба) — в следующем месяце."
+  },
+  {
+    "hebrew": "הִיא מַרְגִּישָׁה חֲלָשָׁה הַיּוֹם",
+    "transcription": "Hi margisha khalasha hayom",
+    "russian": "Она чувствует слабость сегодня",
+    "category": "Больница",
+    "theory": "• <b>חלשה</b> (халаша) — слабая."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְהַחֲנוֹת אֶת הָרֶכֶב כָּאן?",
+    "transcription": "Efshar lehakhnot et harekhev kan?",
+    "russian": "Можно припарковать машину здесь?",
+    "category": "Соседи",
+    "theory": "• <b>להחנות</b> (лехахнот) — парковать (гифъиль)."
+  },
+  {
+    "hebrew": "הַשְּׁכֵנִים נְחָמְדִים מְאֹד",
+    "transcription": "Hashkhenim nekhamdim meod",
+    "russian": "Соседи очень милые",
+    "category": "Соседи",
+    "theory": "• <b>נחמדים</b> (нехмадим) — милые / приятные."
+  },
+  {
+    "hebrew": "מישהו הִשְׁאִיר אֶת הָאוֹר דּוֹלֵק",
+    "transcription": "Mishhu hishir et haor dolek",
+    "russian": "Кто-то оставил свет включенным",
+    "category": "Соседи",
+    "theory": "• <b>דולק</b> (долек) — горящий / включенный."
+  },
+  {
+    "hebrew": "צָרִיךְ לְנַקּוֹת אֶת הַחַלּוֹנוֹת בַּכְּנִיסָה",
+    "transcription": "Tsarikh lenakot et hakhalonot baknisa",
+    "russian": "Нужно помыть окна на входе",
+    "category": "Соседи",
+    "theory": "• <b>חלונות</b> (халонот) — окна (исключение: мужской род во мн. ч. имеет окончание <i>-от</i>)."
+  },
+  {
+    "hebrew": "הַשַּׁעַר הָאֲחוֹרִי נָעוּל",
+    "transcription": "Hashaar haakhori naul",
+    "russian": "Задние ворота заперты",
+    "category": "Соседи",
+    "theory": "• <b>אחורי</b> (ахори) — задний.<br>• <b>נעול</b> (науль) — заперт / закрыт на замок."
+  },
+  {
+    "hebrew": "מָתַי מַגִּיעַ הַדּוֹאַר?",
+    "transcription": "Matai magia doar?",
+    "russian": "Когда приходит почта?",
+    "category": "Соседи",
+    "theory": "• <b>מגיע</b> (магиа) — прибывает / приходит.<br>• <b>דואר</b> (доар) — почта."
+  },
+  {
+    "hebrew": "יֵשׁ רֵיחַ שֶׁל גָּז בַּמּדְרֵגוֹת",
+    "transcription": "Yesh reakh shel gaz bamaderagot",
+    "russian": "На лестнице запах газа",
+    "category": "Соседи",
+    "theory": "• <b>ריח</b> (реах) — запах."
+  },
+  {
+    "hebrew": "הוּא עָזַר לִי לְהָרִים אֶת הַקֻּפְסָא",
+    "transcription": "Hu azar li leharim et hakufsa",
+    "russian": "Он помог мне поднять коробку",
+    "category": "Соседи",
+    "theory": "• <b>להרים</b> (лехарим) — поднимать (гифъиль)."
+  },
+  {
+    "hebrew": "הַדִּירָה בַּקוֹמָה הַשְּׁנִיָּה למכירה",
+    "transcription": "Hadira bakoma hashniya lemekhira",
+    "russian": "Квартира на втором этаже продается",
+    "category": "Соседи",
+    "theory": "• <b>קומה שנייה</b> (кома шния) — второй этаж.<br>• <b>למכירה</b> (ле-мехира) — на продажу."
+  },
+  {
+    "hebrew": "תּוֹדָה עַל הַסַּבְלָנוּת!",
+    "transcription": "Toda al hasavlanut!",
+    "russian": "Спасибо за терпение!",
+    "category": "Соседи",
+    "theory": "• <b>סבלנות</b> (савланут) — терпение."
+  },
+  {
+    "hebrew": "תִּבְדֹק אֶת הַגֹּבַהּ שֶׁל הַלַּהַב",
+    "transcription": "Tivdok et hagovah shel kalahav",
+    "russian": "Проверь высоту лезвия (диска)",
+    "category": "Столярка и CNC",
+    "theory": "• <b>גובה</b> (гова) — высота."
+  },
+  {
+    "hebrew": "הַחֹמֶר הַזֶּה קָשֶׁה מִדַּי לַחִתּוּךְ",
+    "transcription": "Hakhover haze kashe midai lakhitukh",
+    "russian": "Этот материал слишком твердый для резки",
+    "category": "Столярка и CNC",
+    "theory": "• <b>קשה</b> (каше) — твердый / тяжелый."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַפִּילְטֶר בַּשְּׁאִיבָה",
+    "transcription": "Tsarikh lehakhlif et hafilter basheiva",
+    "russian": "Нужно заменить фильтр в вытяжке",
+    "category": "Столярка и CNC",
+    "theory": "• <b>פילטר</b> (фильтер) — фильтр."
+  },
+  {
+    "hebrew": "הַמִּדָּה הזֹאת לֹא מְדֻיֶּקֶת",
+    "transcription": "Hamida hazot lo mduyeket",
+    "russian": "Этот размер не точен",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מדויקת</b> (медуецет) — точная (ж.р.)."
+  },
+  {
+    "hebrew": "תָּשִׂים אֶת הַדֶּבֶק עַל הַקְּצוֹת",
+    "transcription": "Tasim et hadevek al haktsot",
+    "russian": "Нанеси клей на края",
+    "category": "Столярка и CNC",
+    "theory": "• <b>תשים</b> (тасим) — положи / нанеси."
+  },
+  {
+    "hebrew": "הַכַּרְסֹם נִשְׁבַּר בִּזְמַן הָעֲבוֹדָה",
+    "transcription": "Hakarsom nishbar bizman haavoda",
+    "russian": "Фреза сломалась во время работы",
+    "category": "Столярка и CNC",
+    "theory": "• <b>כרסום</b> (карсом) — фреза."
+  },
+  {
+    "hebrew": "מה הָרַדְיוּס שֶׁל הַפִּנָּה?",
+    "transcription": "Ma haradius shel hapina?",
+    "russian": "Каков радиус угла?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>רדיוס</b> (радиус) — радиус."
+  },
+  {
+    "hebrew": "צָרִיךְ לְנַקּוֹת אֶת הַשֻּׁלְחָן עֲבוֹדָה",
+    "transcription": "Tsarikh lenakot et hashulkhan avoda",
+    "russian": "Нужно очистить рабочий стол",
+    "category": "Столярка и CNC",
+    "theory": "• <b>שולחן עבודה</b> (шульхан авода) — верстак / рабочий стол."
+  },
+  {
+    "hebrew": "הַקּוֹרָה הזֹאת יְשָׁרָה לַלְחוּטִין",
+    "transcription": "Hakora hazot yeshara lakhlutin",
+    "russian": "Этого брус совершенно прямой",
+    "category": "Столярка и CNC",
+    "theory": "• <b>לחלוטין</b> (лахлютин) — совершенно / абсолютно."
+  },
+  {
+    "hebrew": "תָּבִיא אֶת הַמַּבְרֵג, בְּבַקָּשָׁה",
+    "transcription": "Tavi et hamavreg, bevakasha",
+    "russian": "Принеси отвертку, пожалуйста",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מברג</b> (маврег) — отвертка."
+  },
+  {
+    "hebrew": "הַיֶּלֶד אוֹהֵב לְשַׂחֵק בַּכַּדּוּר",
+    "transcription": "Hayeled ohev lesakhek bakadur",
+    "russian": "Ребенок любит играть в мяч",
+    "category": "Детский сад",
+    "theory": "• <b>כדור</b> (кадур) — мяч / шар."
+  },
+  {
+    "hebrew": "הִיא לָמְדָה לִסְפֹּר עַד עֶשֶׂר",
+    "transcription": "Hi lamda lispor ad eser",
+    "russian": "Она научилась считать до десяти",
+    "category": "Детский сад",
+    "theory": "• <b>לספור</b> (лиспор) — считать (инфинитив, пааль)."
+  },
+  {
+    "hebrew": "מָתַי יוֹצְאִים לַחָצֵר?",
+    "transcription": "Matai yotsem lakhatser?",
+    "russian": "Когда выходят во двор?",
+    "category": "Детский сад",
+    "theory": "• <b>לחצר</b> (ла-хацер) — во двор."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהָבִיא בקבוק מַיִם מְלֵא",
+    "transcription": "Tsarikh lehavi bakbuk mayim male",
+    "russian": "Нужно принести полную бутылку воды",
+    "category": "Детский сад",
+    "theory": "• <b>מלא</b> (мале) — полный."
+  },
+  {
+    "hebrew": "הוּא שִׂחֵק יָפֶה עִם כָּל הַיְלָדִים",
+    "transcription": "Hu sikhek yafe im kol hayeladim",
+    "russian": "Он хорошо играл со всеми детьми",
+    "category": "Детский сад",
+    "theory": "• <b>כל הילדים</b> (коль а-йеладим) — все дети."
+  },
+  {
+    "hebrew": "הִיא אָכְלָה אֶת כָּל הַפֵּרוֹת",
+    "transcription": "Hi akhla et kol haperot",
+    "russian": "Она съела все фрукты",
+    "category": "Детский сад",
+    "theory": "• <b>פירות</b> (перот) — фрукты."
+  },
+  {
+    "hebrew": "אֵיפֹה הַמַּעִיל שֶׁלּוֹ?",
+    "transcription": "Eifo hameil shelo?",
+    "russian": "Где его куртка?",
+    "category": "Детский сад",
+    "theory": "• <b>שלו</b> (шело) — его."
+  },
+  {
+    "hebrew": "הַגַּנֶּנֶת אָמְרָה שֶׁהוּא הָיָה מְצוּיָן",
+    "transcription": "Hagannenet amra shehu haya metsuyan",
+    "russian": "Воспитательница сказала, что он вел себя отлично",
+    "category": "Детский сад",
+    "theory": "• <b>מצוין</b> (мецуян) — отличный / замечательный."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ חֻפְשָׁה בַּגַּן?",
+    "transcription": "Matai yesh khufsha bagan?",
+    "russian": "Когда выходной/каникулы в садике?",
+    "category": "Детский сад",
+    "theory": "• <b>חופשה</b> (хуфша) — отпуск / каникулы."
+  },
+  {
+    "hebrew": "תּוֹדָה רַבָּה עַל הַטִּפּוֹל!",
+    "transcription": "Toda raba al hatipul!",
+    "russian": "Большое спасибо за заботу/уход!",
+    "category": "Детский сад",
+    "theory": "• <b>טיפול</b> (типуль) — уход / забота / лечение."
+  },
+  {
+    "hebrew": "אֲנִי צָרִיךְ לְבַקֵּשׁ תּוֹר חָדָשׁ",
+    "transcription": "Ani tsarikh levakesh tor khadash",
+    "russian": "Мне нужно попросить новую запись",
+    "category": "Больница",
+    "theory": "• <b>תור חדש</b> (тор хадаш) — новая очередь / запись."
+  },
+  {
+    "hebrew": "הָרוֹפֵא מְקַבֵּל עַכְשָׁיו?",
+    "transcription": "Harofe mekabel akhshav?",
+    "russian": "Врач принимает сейчас?",
+    "category": "Больница",
+    "theory": "• <b>מקבל</b> (мекабель) — принимает (наст. вр., пиэль).<br>• <b>עכשיו</b> (ахшав) — сейчас."
+  },
+  {
+    "hebrew": "יֵשׁ לִי אִישׁוּר מֵהַקֻּפַּת חוֹלִים",
+    "transcription": "Yesh li ishur mehakupat kholim",
+    "russian": "У меня есть направление от кассы взаимопомощи (купат холим)",
+    "category": "Больница",
+    "theory": "• <b>קופת חולים</b> (купат холим) — больничная касса."
+  },
+  {
+    "hebrew": "הִיא צְרִיכָה לַעֲשׂוֹת בְּדִיקוֹת דָּם",
+    "transcription": "Hi tsrikha laasot bdikot dam",
+    "russian": "Ей нужно сдать анализы крови",
+    "category": "Больница",
+    "theory": "• <b>בדיקות</b> (бдикот) — анализы / проверки (мн. ч.)."
+  },
+  {
+    "hebrew": "אֵיפֹה מָצוּי חֲדַר הָרַנְטְגֶּן?",
+    "transcription": "Eifo matsuy khadar harentgen?",
+    "russian": "Где находится рентген-кабинет?",
+    "category": "Больница",
+    "theory": "• <b>מצוי</b> (мацуй) — находится / расположен."
+  },
+  {
+    "hebrew": "הוּא קִבֵּל מִרְשָׁם לַכַּדּוּרִים",
+    "transcription": "Hu kibel mirsham lakadurim",
+    "russian": "Он получил рецепт на таблетки",
+    "category": "Больница",
+    "theory": "• <b>כדורים</b> (кадурим) — таблетки / пилюли."
+  },
+  {
+    "hebrew": "צָרִיךְ לִמְדֹד אֶת הַמִּשְׁקָל",
+    "transcription": "Tsarikh limdod et hamishkal",
+    "russian": "Нужно измерить вес",
+    "category": "Больница",
+    "theory": "• <b>משקל</b> (мишкаль) — вес."
+  },
+  {
+    "hebrew": "הָאָחָה עָזְרָה לָנוּ מְאֹד",
+    "transcription": "Haakhta azra lanu meod",
+    "russian": "Медсестра очень нам помогла",
+    "category": "Больница",
+    "theory": "• <b>לנו</b> (лану) — нам."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ תּוֹצָאוֹת?",
+    "transcription": "Matai yesh totsaot?",
+    "russian": "Когда будут результаты?",
+    "category": "Больница",
+    "theory": "• <b>תוצאות</b> (тоцаот) — результаты."
+  },
+  {
+    "hebrew": "תּוֹדָה עַל הַטִּפּוֹל הַמְּסוֹרָן!",
+    "transcription": "Toda al hatipul hamesoran!",
+    "russian": "Спасибо за преданный уход!",
+    "category": "Больница",
+    "theory": "• <b>מסור</b> (масур) — преданный / заботливый."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לִסְגֹּר אֶת הַדֶּלֶת שֶׁל הַבִּנְיָן?",
+    "transcription": "Efshar lisgor et hadelet shel habinyan?",
+    "russian": "Можно закрывать дверь здания?",
+    "category": "Соседи",
+    "theory": "• <b>לסגור</b> (лисгор) — закрывать."
+  },
+  {
+    "hebrew": "הַשְּׁכֵנִים שָׂמוּ עֲצִיצִים בַּכְּנִיסָה",
+    "transcription": "Hashkhenim samu atsitsim baknisa",
+    "russian": "Соседи поставили горшки с цветами на входе",
+    "category": "Соседи",
+    "theory": "• <b>עציצים</b> (ацицим) — горшечные растения / цветы."
+  },
+  {
+    "hebrew": "מישהו נִקָּה אֶת הַמַּדְרֵגוֹת הַיּוֹם",
+    "transcription": "Mishhu nika et hamaderagot hayom",
+    "russian": "Кто-то помыл лестницу сегодня",
+    "category": "Соседи",
+    "theory": "• <b>ניקה</b> (ника) — помыл / убрал (пиэль)."
+  },
+  {
+    "hebrew": "הַמַּעֲלִית עוֹבֶדֶת מֻצְלָח הַיּוֹם",
+    "transcription": "Hamaalit ovedet mutslakh hayom",
+    "russian": "Лифт работает отлично сегодня",
+    "category": "Соседи",
+    "theory": "• <b>מוצלח</b> (муцлах) — успешно / хорошо."
+  },
+  {
+    "hebrew": "צָרִיךְ לְלַטֵּשׁ אֶת מַעֲקֵה הַמַּדְרֵגוֹת",
+    "transcription": "Tsarikh ledatesh et maake hamaderagot",
+    "russian": "Нужно отполировать перила лестницы",
+    "category": "Соседи",
+    "theory": "• <b>מעקה</b> (мааке) — перила / поручень."
+  },
+  {
+    "hebrew": "מָתַי יֵשׁ אֲסֵפָה חֲדָשָׁה?",
+    "transcription": "Matai yesh asefa khadasha?",
+    "russian": "Когда новое собрание?",
+    "category": "Соседи",
+    "theory": "• <b>אספה חדשה</b> (асефа хадаша) — новое собрание."
+  },
+  {
+    "hebrew": "הַכֶּלֶב שֶׁל הַשָּׁכֵן מָתוֹק מְאֹד",
+    "transcription": "Hakelev shel hashakhen matok meod",
+    "russian": "Собака соседа очень милая (сладкая)",
+    "category": "Соседи",
+    "theory": "• <b>מתוק</b> (маток) — сладкий / милый."
+  },
+  {
+    "hebrew": "אֶפְשָׁר לְהַשְׁאִיר אֶת הַמַּפְתֵּחַ אֶצְלְךָ?",
+    "transcription": "Efshar lehashir et hamafteakh etslkha?",
+    "russian": "Можно оставить ключ у тебя?",
+    "category": "Соседи",
+    "theory": "• <b>אצלך</b> (эцльха) — у тебя."
+  },
+  {
+    "hebrew": "הַגַּג מְתֻקָּן עַכְשָׁיו",
+    "transcription": "Hagag metukan akhshav",
+    "russian": "Крыша теперь отремонтирована",
+    "category": "Соседи",
+    "theory": "• <b>מתוקן</b> (метукан) — починен / отремонтирован."
+  },
+  {
+    "hebrew": "שַׁבָּת שָׁלוֹם לְכָל הַשְּׁכֵנִים!",
+    "transcription": "Shabat shalom lekhol hashkhenim!",
+    "russian": "Шабат Шалом всем соседям!",
+    "category": "Соседи",
+    "theory": "• <b>לכל</b> (ле-коль) — всем."
+  },
+  {
+    "hebrew": "תִּבְדֹק אֶת הַקּוֹבֶץ בַּמַּחְשֵׁב",
+    "transcription": "Tivdok et hakovets bamakhshev",
+    "russian": "Проверь файл в компьютере",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מחשב</b> (махшев) — компьютер."
+  },
+  {
+    "hebrew": "הַמּכֹנָה מוּכָנָה לְהַפְעָלָה",
+    "transcription": "Hamakhona mukhana lehafala",
+    "russian": "Станок готов к запуску",
+    "category": "Столярка и CNC",
+    "theory": "• <b>הפעלה</b> (хафала) — запуск / включение / активация."
+  },
+  {
+    "hebrew": "צָרִיךְ לְהַחְלִיף אֶת הַשֶּׁמֶן בַּמּסוֹר",
+    "transcription": "Tsarikh lehakhlif et hashemen bamasor",
+    "russian": "Нужно поменять масло в пиле",
+    "category": "Столярка и CNC",
+    "theory": "• <b>שמן</b> (шемен) — масло."
+  },
+  {
+    "hebrew": "מה הָרֹחַב שֶׁל הַפָּנֶל?",
+    "transcription": "Ma harokhav shel hapanel?",
+    "russian": "Какова ширина панели?",
+    "category": "Столярка и CNC",
+    "theory": "• <b>רוחב</b> (рохав) — ширина."
+  },
+  {
+    "hebrew": "הַחִתּוּךְ יָצָא נָקִי מְאֹד",
+    "transcription": "Hakhitukh yatsa naki meod",
+    "russian": "Спил/рез вышел очень чистым",
+    "category": "Столярка и CNC",
+    "theory": "• <b>נקי</b> (наки) — чистый."
+  },
+  {
+    "hebrew": "תָּשִׂים אֶת הַחֲלָקִים עַל הַמִּשְׁטָח",
+    "transcription": "Tasim et hakhalakim al hamashteakh",
+    "russian": "Положи детали на поддон/поверхность",
+    "category": "Столярка и CNC",
+    "theory": "• <b>חלקים</b> (халаким) — детали / части."
+  },
+  {
+    "hebrew": "הַוָּאקוּם עוֹבֵד מֻצְלָח",
+    "transcription": "Havakum oved mutslakh",
+    "russian": "Вакуум работает отлично",
+    "category": "Столярка и CNC",
+    "theory": "• <b>עובד מוצלח</b> (овед муцлах) — хорошо работает."
+  },
+  {
+    "hebrew": "צָרִיךְ לְכַוֵּן אֶת הָאֹפְסֶט שׁוּב",
+    "transcription": "Tsarikh lekhaven et haofset shuv",
+    "russian": "Нужно снова настроить офсет",
+    "category": "Столярка и CNC",
+    "theory": "• <b>שוב</b> (шув) — заново / снова."
+  },
+  {
+    "hebrew": "הַדֶּבֶק הַזֶּה מְעֻלֶּה לָעֵץ",
+    "transcription": "Hadevek haze meule laets",
+    "russian": "Этот клей отлично подходит для дерева",
+    "category": "Столярка и CNC",
+    "theory": "• <b>מעולה</b> (меуле) — отличный / превосходный."
+  },
+  {
+    "hebrew": "הָעֲבוֹדָה הִסְתַּיְּמָה בַּזְּמַן",
+    "transcription": "Haavoda histayma bazman",
+    "russian": "Работа завершилась вовремя",
+    "category": "Столярка и CNC",
+    "theory": "• <b>הסתיימה</b> (хистайма) — завершилась (ж.р., митпаэль).<br>• <b>בזמן</b> (ба-зман) — вовремя."
+  }
 ]
