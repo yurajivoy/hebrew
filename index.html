@@ -22,7 +22,7 @@
     </div>
     <div class="flex items-center gap-3">
       <!-- Переключатель языка -->
-      <button id="btn-toggle-lang" class="bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-bold text-xs py-1.5 px-3 rounded-xl transition flex items-center gap-1.5" title="Изменить язык лицевой стороны">
+      <button id="btn-toggle-lang" class="bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-bold text-xs py-1.5 px-3 rounded-xl transition flex items-center gap-1.5">
         <i class="fa-solid fa-language text-indigo-600 text-sm"></i>
         <span id="lang-label">🇮🇱 Иврит</span>
       </button>
@@ -43,7 +43,7 @@
         <span id="card-category" class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 bg-indigo-50 px-3 py-1 rounded-full">
           Тема
         </span>
-        <span id="card-streak" class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full" title="Дней успешного повторения подряд (цель — 14)">
+        <span id="card-streak" class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full" title="Дней успешного повторения подряд">
           🔥 0/14 дней
         </span>
       </div>
@@ -61,25 +61,13 @@
       <!-- КНОПКИ «ПЕРЕВОД» И «ТЕОРИЯ» -->
       <div class="flex gap-2 justify-center">
         <button id="btn-show-translation" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
-          <i class="fa-solid fa-eye"></i> <span id="btn-trans-label">Перевод</span>
+          <i class="fa-solid fa-eye"></i> <span>Перевод</span>
         </button>
         <button id="btn-show-theory" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold py-2.5 px-4 rounded-xl text-sm transition flex items-center justify-center gap-2">
           <i class="fa-solid fa-book-open"></i> Теория
         </button>
       </div>
 
-    </div>
-
-    <!-- Финишный экран (показывается ТОЛЬКО когда закончились ВСЕ фразы в базе) -->
-    <div id="empty-state" class="hidden text-center py-12 bg-white rounded-3xl p-6 border border-slate-200 shadow-sm">
-      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl">
-        <i class="fa-solid fa-circle-check"></i>
-      </div>
-      <h3 class="text-xl font-bold text-slate-800 mb-1">Отличная работа!</h3>
-      <p class="text-slate-500 text-sm mb-4">Вы повторили все доступные фразы на сегодня!</p>
-      <button id="btn-restart-all" class="text-xs text-indigo-600 font-semibold hover:underline">
-        Пройти текущий круг еще раз
-      </button>
     </div>
   </main>
 
@@ -96,10 +84,8 @@
   <!-- МОДАЛЬНОЕ ОКНО ПЕРЕВОДА -->
   <div id="translation-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
     <div class="bg-white rounded-3xl p-6 max-w-sm w-full text-center shadow-xl transform transition-all border border-slate-100">
-      <h4 id="modal-trans-title" class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Перевод</h4>
-      <div id="modal-translation-content" class="mb-6">
-        <!-- Подставляется JS-ом -->
-      </div>
+      <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Перевод</h4>
+      <div id="modal-translation-content" class="mb-6"></div>
       <button id="btn-close-modal" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition">
         Понятно
       </button>
@@ -113,9 +99,7 @@
         <h4 class="text-xs font-bold uppercase tracking-wider text-indigo-500">Грамматика и разбор</h4>
         <button id="btn-close-theory-x" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <div id="modal-theory-text" class="text-sm text-slate-700 space-y-2 leading-relaxed mb-6 max-h-[60vh] overflow-y-auto">
-        <!-- Подставляется JS-ом -->
-      </div>
+      <div id="modal-theory-text" class="text-sm text-slate-700 space-y-2 leading-relaxed mb-6 max-h-[60vh] overflow-y-auto"></div>
       <button id="btn-close-theory" class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-xl hover:bg-indigo-700 transition">
         Понятно
       </button>
@@ -136,40 +120,30 @@
     let progressData = JSON.parse(localStorage.getItem('hebrew_phrases_progress_v2')) || {};
 
     let activeQueue = [];
-    const BATCH_SIZE = 5;
 
     function getTodayStr() {
       return new Date().toISOString().split('T')[0];
     }
 
-    function initQueue() {
-      const today = getTodayStr();
-      activeQueue = [];
+    // Собирает очередь фраз. Если доступные фразы кончились, повторно закручивает имеющиеся.
+    function fillQueue() {
+      if (masterPhrases.length === 0) return;
 
-      // 1. Фразы на повторение из предыдущих дней
-      const reviewPhrases = masterPhrases.filter(phrase => {
-        const prog = progressData[phrase.id];
-        if (!prog || prog.status === 'mastered') return false;
-        return prog.lastDate !== today;
+      // Берем не полностью освоенные фразы (< 14 дней подряд)
+      let available = masterPhrases.filter(p => {
+        const prog = progressData[p.id];
+        return !prog || prog.status !== 'mastered';
       });
 
-      reviewPhrases.sort((a, b) => (progressData[a.id].streak || 0) - (progressData[b.id].streak || 0));
-      activeQueue.push(...reviewPhrases);
-
-      // 2. Если фраз меньше 5 — подтягиваем новые
-      if (activeQueue.length < BATCH_SIZE) {
-        fetchNextBatch();
+      if (available.length === 0) {
+        available = [...masterPhrases]; // Если освоены вообще все — повторяем всю базу
       }
-    }
 
-    // Автоматически добавляет следующие 5 новых фраз из базы
-    function fetchNextBatch() {
-      const unstudied = masterPhrases.filter(phrase => !progressData[phrase.id]);
-      const newBatch = unstudied.slice(0, BATCH_SIZE);
-      
-      newBatch.forEach(phrase => {
-        if (!activeQueue.some(p => p.id === phrase.id)) {
-          activeQueue.push(phrase);
+      // Перемешиваем и добавляем в очередь
+      const shuffled = [...available].sort(() => Math.random() - 0.5);
+      shuffled.forEach(p => {
+        if (!activeQueue.some(item => item.id === p.id)) {
+          activeQueue.push(p);
         }
       });
     }
@@ -182,33 +156,15 @@
     const btnToggleLang = document.getElementById('btn-toggle-lang');
     const langLabel = document.getElementById('lang-label');
     
-    const cardWrapper = document.getElementById('card-wrapper');
-    const actionButtons = document.getElementById('action-buttons');
-    const emptyState = document.getElementById('empty-state');
-    
     const transModal = document.getElementById('translation-modal');
     const theoryModal = document.getElementById('theory-modal');
     const modalTransContent = document.getElementById('modal-translation-content');
     const modalTheoryText = document.getElementById('modal-theory-text');
 
     function renderCard() {
-      // Авто-догрузка если карточки закончились, но новые фразы еще есть в базе
       if (activeQueue.length === 0) {
-        fetchNextBatch();
+        fillQueue();
       }
-
-      // Если фраз всё еще 0 — значит пройдена вся база
-      if (activeQueue.length === 0) {
-        cardWrapper.classList.add('hidden');
-        actionButtons.classList.add('hidden');
-        emptyState.classList.remove('hidden');
-        elRemaining.textContent = 0;
-        return;
-      }
-
-      cardWrapper.classList.remove('hidden');
-      actionButtons.classList.remove('hidden');
-      emptyState.classList.add('hidden');
 
       const current = activeQueue[0];
       const prog = progressData[current.id] || { streak: 0 };
@@ -229,9 +185,7 @@
       }
 
       if (cardLanguage === 'hebrew') {
-        modalTransContent.innerHTML = `
-          <p class="text-xl font-bold text-slate-800 leading-normal mb-1">${current.russian}</p>
-        `;
+        modalTransContent.innerHTML = `<p class="text-xl font-bold text-slate-800 leading-normal mb-1">${current.russian}</p>`;
       } else {
         modalTransContent.innerHTML = `
           <div class="hebrew-text text-2xl font-bold text-slate-800 mb-1">${current.hebrew}</div>
@@ -290,15 +244,8 @@
     document.getElementById('btn-close-theory').addEventListener('click', () => theoryModal.classList.add('hidden'));
     document.getElementById('btn-close-theory-x').addEventListener('click', () => theoryModal.classList.add('hidden'));
 
-    document.getElementById('btn-restart-all').addEventListener('click', () => {
-      localStorage.removeItem('hebrew_phrases_progress_v2');
-      progressData = {};
-      initQueue();
-      renderCard();
-    });
-
     localStorage.setItem('hebrew_phrases_master', JSON.stringify(masterPhrases));
-    initQueue();
+    fillQueue();
     renderCard();
   </script>
 </body>
